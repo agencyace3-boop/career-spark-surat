@@ -1,14 +1,17 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import FeaturedPrograms from "@/components/FeaturedPrograms";
-import LearningCategories from "@/components/LearningCategories";
-import WhyChooseUs from "@/components/WhyChooseUs";
-import ImpactNumbers from "@/components/ImpactNumbers";
-import SuccessStories from "@/components/SuccessStories";
-import ForBusiness from "@/components/ForBusiness";
-import FreeResources from "@/components/FreeResources";
-import Blog from "@/components/Blog";
-import FinalCTA from "@/components/FinalCTA";
+import ToolsMarquee from "@/components/ToolsMarquee";
+import CourseCategories from "@/components/CourseCategories";
+import PopularCourses from "@/components/PopularCourses";
+import Testimonials from "@/components/Testimonials";
+import FeaturesGrid from "@/components/FeaturesGrid";
+import AboutSection from "@/components/AboutSection";
+import CareerCTA from "@/components/CareerCTA";
+import WhyChooseSection from "@/components/WhyChooseSection";
+import BusinessServices from "@/components/BusinessServices";
+import ResourcesNews from "@/components/ResourcesNews";
+import FAQ from "@/components/FAQ";
+import JoinCTA from "@/components/JoinCTA";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -17,15 +20,18 @@ const Index = () => {
       <Header />
       <main>
         <Hero />
-        <FeaturedPrograms />
-        <LearningCategories />
-        <WhyChooseUs />
-        <ImpactNumbers />
-        <SuccessStories />
-        <ForBusiness />
-        <FreeResources />
-        <Blog />
-        <FinalCTA />
+        <ToolsMarquee />
+        <CourseCategories />
+        <PopularCourses />
+        <Testimonials />
+        <FeaturesGrid />
+        <AboutSection />
+        <CareerCTA />
+        <WhyChooseSection />
+        <BusinessServices />
+        <ResourcesNews />
+        <FAQ />
+        <JoinCTA />
       </main>
       <Footer />
     </div>

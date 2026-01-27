@@ -4,42 +4,51 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 
 const blogs = [
   {
-    title: "How to Get a Digital Marketing Job in 2025",
-    excerpt: "Complete guide to landing your first digital marketing role with practical tips and strategies.",
+    title: "Digital Marketing Expert Surat",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-    date: "Jan 15, 2025",
-    category: "Career",
+    date: "July 15, 2025",
+    category: "Blog",
   },
   {
-    title: "How Businesses Can Grow Online in Surat",
-    excerpt: "Local strategies for Surat businesses to establish and grow their online presence.",
+    title: "10 marketing trends that you should be prepared for in 2022",
     image: "https://images.unsplash.com/photo-1553835973-dec43bfddbeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-    date: "Jan 10, 2025",
-    category: "Business",
+    date: "July 28, 2022",
+    category: "Marketing",
   },
   {
-    title: "Case Study: 10x Growth for Local Restaurant",
-    excerpt: "How we helped a Surat restaurant increase their orders by 10x using digital marketing.",
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-    date: "Jan 5, 2025",
-    category: "Case Study",
+    title: "How to design a simple, yet unique and memorable brand identity",
+    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+    date: "July 28, 2022",
+    category: "Branding",
+  },
+  {
+    title: "Increasing engagement with Instagram and Facebook",
+    image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+    date: "July 28, 2022",
+    category: "Social Media",
   },
 ];
 
-const Blog = () => {
+const ResourcesNews = () => {
   return (
-    <section id="blog" className="py-20 bg-background">
+    <section id="blog" className="py-20 bg-muted">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Knowledge Hub
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Stay updated with the latest digital marketing trends and insights
-          </p>
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12">
+          <div>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Resources & News
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Latest insights and updates from digital marketing world.
+            </p>
+          </div>
+          <Button variant="outline" className="mt-4 md:mt-0">
+            Browse Blog
+            <ArrowRight className="ml-2 h-4 w-4" />
+          </Button>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 mb-10">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {blogs.map((blog, index) => (
             <Card
               key={blog.title}
@@ -61,17 +70,14 @@ const Blog = () => {
                   <Calendar className="h-4 w-4" />
                   <span>{blog.date}</span>
                 </div>
-                <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors line-clamp-2">
+                <h3 className="text-base font-bold text-foreground group-hover:text-primary transition-colors line-clamp-2">
                   {blog.title}
                 </h3>
               </CardHeader>
               <CardContent>
-                <p className="text-sm text-muted-foreground line-clamp-2">
-                  {blog.excerpt}
-                </p>
                 <Button
                   variant="link"
-                  className="p-0 mt-4 text-secondary hover:text-secondary/80"
+                  className="p-0 text-secondary hover:text-secondary/80"
                 >
                   Read More
                   <ArrowRight className="h-4 w-4 ml-1" />
@@ -80,16 +86,9 @@ const Blog = () => {
             </Card>
           ))}
         </div>
-
-        <div className="text-center">
-          <Button variant="outline" size="lg">
-            View All Articles
-            <ArrowRight className="h-5 w-5 ml-2" />
-          </Button>
-        </div>
       </div>
     </section>
   );
 };
 
-export default Blog;
+export default ResourcesNews;

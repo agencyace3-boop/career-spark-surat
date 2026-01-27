@@ -4,36 +4,44 @@ import { Button } from "@/components/ui/button";
 
 const testimonials = [
   {
-    name: "Priya Sharma",
-    role: "Digital Marketing Executive",
-    company: "Tech Solutions Pvt Ltd",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80",
-    quote: "After completing the Digital Marketing course at Surat DMS, I landed my first job within 2 weeks. The practical training made all the difference!",
-  },
-  {
-    name: "Rajesh Patel",
-    role: "Business Owner",
-    company: "Patel Textiles",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80",
-    quote: "My business sales doubled after implementing the strategies I learned. The ROI on this course was incredible!",
-  },
-  {
-    name: "Anjali Mehta",
-    role: "Freelance Marketer",
-    company: "Self-Employed",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80",
-    quote: "I started freelancing after completing the course and now earn more than my previous corporate job. Best decision ever!",
-  },
-  {
-    name: "Vikram Singh",
-    role: "SEO Specialist",
-    company: "Global Marketing Agency",
+    name: "Rahul Mehta",
+    role: "Student",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80",
-    quote: "The SEO training was top-notch. I'm now handling SEO for multiple international clients thanks to Surat DMS.",
+    quote: "Before joining Surat DMS, I struggled with creating effective marketing strategies for my startup. Their structured courses and practical approach have transformed how I manage campaigns.",
+  },
+  {
+    name: "Neha Desai",
+    role: "Student",
+    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80",
+    quote: "The training I received at Surat DMS was exceptional. The courses were well-organized and comprehensive, covering every aspect of digital marketing.",
+  },
+  {
+    name: "Amit Shah",
+    role: "Student",
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80",
+    quote: "Surat DMS helped me elevate my marketing knowledge and skills. The instructors are approachable, knowledgeable, and always ready to assist. The course structure is practical.",
+  },
+  {
+    name: "Ramesh Sharma",
+    role: "Student",
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80",
+    quote: "Amazing design, easy to customize and a design quality superlative account on its cloud platform for the optimized performance. Best investment in my career!",
+  },
+  {
+    name: "Arpita Bansal",
+    role: "Student",
+    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80",
+    quote: "The hands-on training at Surat DMS gave me the practical knowledge I needed to excel in my digital marketing career. The instructors were experienced and helpful.",
+  },
+  {
+    name: "Sneha Patel",
+    role: "Student",
+    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80",
+    quote: "Surat DMS has been a game-changer for me. Their advanced digital marketing course equipped me with skills I couldn't have learned anywhere else.",
   },
 ];
 
-const SuccessStories = () => {
+const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const next = () => {
@@ -45,14 +53,14 @@ const SuccessStories = () => {
   };
 
   return (
-    <section id="testimonials" className="py-20 bg-muted">
+    <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Success Stories
+            What People Say
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Hear from our students and business clients who transformed their careers
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            Here's what our students and professionals have to say about their learning experience at Surat Digital Marketing School. From practical training to career advancement, read about how our courses helped them succeed in the digital marketing world.
           </p>
         </div>
 
@@ -79,9 +87,6 @@ const SuccessStories = () => {
                   </h4>
                   <p className="text-secondary font-medium">
                     {testimonials[currentIndex].role}
-                  </p>
-                  <p className="text-sm text-muted-foreground">
-                    {testimonials[currentIndex].company}
                   </p>
                 </div>
               </div>
@@ -126,4 +131,4 @@ const SuccessStories = () => {
   );
 };
 
-export default SuccessStories;
+export default Testimonials;
