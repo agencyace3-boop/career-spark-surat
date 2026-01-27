@@ -1,56 +1,70 @@
 import { useState, useEffect, useCallback } from "react";
-import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, ArrowRight, Users, Monitor, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const banners = [
   {
     id: 1,
-    headline: "Become Job-Ready with Digital Marketing",
-    subheadline: "Practical courses, real projects & expert-led training for students",
-    cta: "Explore Courses",
+    subtitle: "Surat Digital Marketing School",
+    headline: "Master Digital Marketing Skills with Industry Experts",
+    subheadline: "Join the Surat Digital Marketing School to transform your skills with hands-on courses and practical knowledge.",
+    cta: "Find Courses",
+    ctaSecondary: "Contact Us",
     image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
   },
   {
     id: 2,
-    headline: "Grow Your Business 10x with Digital",
-    subheadline: "Complete digital marketing services for businesses in Surat & across India",
-    cta: "Get Free Consultation",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
-  },
-  {
-    id: 3,
-    headline: "Learn from Industry Experts",
-    subheadline: "Live training sessions with professionals who have real-world experience",
-    cta: "Start Learning",
+    subtitle: "Career Growth",
+    headline: "Grow Your Career Today with Expert-Led Courses",
+    subheadline: "Unlock your potential with industry-leading courses designed to enhance your digital marketing skills.",
+    cta: "Explore Courses",
+    ctaSecondary: "Learn More",
     image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
   },
   {
+    id: 3,
+    subtitle: "Practical Training",
+    headline: "Learn SEO, Google Ads, Social Media & More",
+    subheadline: "Get practical insights and work on live projects with certified industry professionals.",
+    cta: "Start Learning",
+    ctaSecondary: "View Programs",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
+  },
+  {
     id: 4,
-    headline: "100% Placement Assistance",
-    subheadline: "Get placed in top companies with our dedicated career support team",
-    cta: "Join Now",
+    subtitle: "Join 3000+ Students",
+    headline: "Best Digital Marketing Institute in Surat",
+    subheadline: "We are most affordable and experienced training center in Surat with real-time practical curriculum.",
+    cta: "Reserve Your Spot",
+    ctaSecondary: "About Us",
     image: "https://images.unsplash.com/photo-1553835973-dec43bfddbeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
   },
+];
+
+const highlights = [
+  { icon: Users, text: "Over 3000+ students" },
+  { icon: Monitor, text: "Internship Opportunities" },
+  { icon: Award, text: "Industry Experts" },
 ];
 
 const serviceCards = [
   {
     title: "Courses",
-    description: "Master digital marketing with our industry-focused training programs designed for career growth",
+    description: "Digital Marketing, SEO, Google Ads, Social Media Marketing and more. Learn with real-life projects and case studies.",
     image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
     href: "#courses",
-    stats: "15+ Courses",
+    stats: "20+ Courses",
   },
   {
     title: "Consultancy",
-    description: "Get expert guidance and strategies to scale your business online with proven methods",
+    description: "From building your online presence to driving targeted traffic and boosting conversions for your business.",
     image: "https://images.unsplash.com/photo-1553028826-f4804a6dba3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
     href: "#business",
     stats: "500+ Clients",
   },
   {
     title: "Branding",
-    description: "Build a memorable brand identity that stands out and connects with your audience",
+    description: "Build a memorable brand identity with our design and branding services tailored to your business needs.",
     image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
     href: "#business",
     stats: "200+ Brands",
@@ -101,7 +115,7 @@ const Hero = () => {
   return (
     <section className="bg-background">
       {/* Banner Carousel */}
-      <div className="relative w-full h-[400px] md:h-[500px] lg:h-[550px] overflow-hidden">
+      <div className="relative w-full h-[450px] md:h-[550px] lg:h-[600px] overflow-hidden">
         {/* Slides */}
         {banners.map((banner, index) => (
           <div
@@ -119,17 +133,23 @@ const Hero = () => {
                   index === currentIndex ? "scale-110" : "scale-100"
                 }`}
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-primary/50" />
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-primary/60" />
             </div>
 
             {/* Content */}
             <div className="relative h-full container mx-auto px-4 flex items-center">
               <div className="max-w-2xl text-primary-foreground">
+                <span
+                  className={`inline-block text-secondary font-semibold mb-2 transition-all duration-700 ${
+                    index === currentIndex ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                  }`}
+                  style={{ transitionDelay: index === currentIndex ? "100ms" : "0ms" }}
+                >
+                  {banner.subtitle}
+                </span>
                 <h1
-                  className={`text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight transition-all duration-700 ${
-                    index === currentIndex
-                      ? "opacity-100 translate-y-0"
-                      : "opacity-0 translate-y-8"
+                  className={`text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 leading-tight transition-all duration-700 ${
+                    index === currentIndex ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                   }`}
                   style={{ transitionDelay: index === currentIndex ? "200ms" : "0ms" }}
                 >
@@ -137,19 +157,15 @@ const Hero = () => {
                 </h1>
                 <p
                   className={`text-lg md:text-xl text-primary-foreground/90 mb-8 transition-all duration-700 ${
-                    index === currentIndex
-                      ? "opacity-100 translate-y-0"
-                      : "opacity-0 translate-y-8"
+                    index === currentIndex ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                   }`}
                   style={{ transitionDelay: index === currentIndex ? "400ms" : "0ms" }}
                 >
                   {banner.subheadline}
                 </p>
                 <div
-                  className={`transition-all duration-700 ${
-                    index === currentIndex
-                      ? "opacity-100 translate-y-0"
-                      : "opacity-0 translate-y-8"
+                  className={`flex flex-col sm:flex-row gap-4 mb-8 transition-all duration-700 ${
+                    index === currentIndex ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                   }`}
                   style={{ transitionDelay: index === currentIndex ? "600ms" : "0ms" }}
                 >
@@ -160,6 +176,28 @@ const Hero = () => {
                     {banner.cta}
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="border-2 border-primary-foreground text-primary-foreground bg-transparent hover:bg-primary-foreground hover:text-primary px-8 py-6 text-lg font-semibold"
+                  >
+                    {banner.ctaSecondary}
+                  </Button>
+                </div>
+
+                {/* Highlights */}
+                <div
+                  className={`flex flex-wrap gap-6 transition-all duration-700 ${
+                    index === currentIndex ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                  }`}
+                  style={{ transitionDelay: index === currentIndex ? "800ms" : "0ms" }}
+                >
+                  {highlights.map((highlight) => (
+                    <div key={highlight.text} className="flex items-center gap-2 text-primary-foreground/90">
+                      <highlight.icon className="h-5 w-5 text-secondary" />
+                      <span className="text-sm font-medium">{highlight.text}</span>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
