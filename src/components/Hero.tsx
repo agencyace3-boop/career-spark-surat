@@ -1,116 +1,229 @@
-import { Star, Users, Building2, CheckCircle2 } from "lucide-react";
+import { useState, useEffect } from "react";
+import { ChevronLeft, ChevronRight, GraduationCap, Lightbulb, Palette } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const trustBadges = [
-  { icon: Star, label: "4.9/5 Rated", value: "4.9/5" },
-  { icon: Users, label: "3000+ Students", value: "3000+" },
-  { icon: Building2, label: "500+ Businesses Served", value: "500+" },
+const banners = [
+  {
+    id: 1,
+    headline: "Become Job-Ready with Digital Marketing",
+    subheadline: "Practical courses, real projects & expert-led training for students",
+    cta: "Explore Courses",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
+  },
+  {
+    id: 2,
+    headline: "Grow Your Business 10x with Digital",
+    subheadline: "Complete digital marketing services for businesses in Surat & across India",
+    cta: "Get Free Consultation",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
+  },
+  {
+    id: 3,
+    headline: "Learn from Industry Experts",
+    subheadline: "Live training sessions with professionals who have real-world experience",
+    cta: "Start Learning",
+    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
+  },
+  {
+    id: 4,
+    headline: "100% Placement Assistance",
+    subheadline: "Get placed in top companies with our dedicated career support team",
+    cta: "Join Now",
+    image: "https://images.unsplash.com/photo-1553835973-dec43bfddbeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
+  },
 ];
 
-const features = [
-  "Live Expert-Led Training",
-  "100% Practical Learning",
-  "Placement Assistance",
+const serviceCards = [
+  {
+    icon: GraduationCap,
+    title: "Courses",
+    description: "Master digital marketing with our industry-focused training programs",
+    href: "#courses",
+  },
+  {
+    icon: Lightbulb,
+    title: "Consultancy",
+    description: "Get expert guidance to grow your business online",
+    href: "#business",
+  },
+  {
+    icon: Palette,
+    title: "Branding",
+    description: "Build a memorable brand identity that stands out",
+    href: "#business",
+  },
 ];
 
 const Hero = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  // Auto-play carousel
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [currentIndex]);
+
+  const nextSlide = () => {
+    if (isAnimating) return;
+    setIsAnimating(true);
+    setCurrentIndex((prev) => (prev + 1) % banners.length);
+    setTimeout(() => setIsAnimating(false), 500);
+  };
+
+  const prevSlide = () => {
+    if (isAnimating) return;
+    setIsAnimating(true);
+    setCurrentIndex((prev) => (prev - 1 + banners.length) % banners.length);
+    setTimeout(() => setIsAnimating(false), 500);
+  };
+
+  const goToSlide = (index: number) => {
+    if (isAnimating || index === currentIndex) return;
+    setIsAnimating(true);
+    setCurrentIndex(index);
+    setTimeout(() => setIsAnimating(false), 500);
+  };
+
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-muted via-background to-background">
-      <div className="container mx-auto px-4 py-16 lg:py-24">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
-          <div className="space-y-8 animate-fade-in">
-            <div className="space-y-4">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-                Become{" "}
-                <span className="text-primary">Job-Ready</span> or{" "}
-                <span className="text-secondary">Grow Your Business</span> with
-                Digital Marketing
-              </h1>
-              <p className="text-lg md:text-xl text-muted-foreground max-w-xl">
-                Practical Courses, Real Projects & Expert-Led Training for
-                Students and Businesses in Surat & Across India
-              </p>
-            </div>
-
-            {/* Feature List */}
-            <ul className="space-y-3">
-              {features.map((feature) => (
-                <li key={feature} className="flex items-center gap-3">
-                  <CheckCircle2 className="h-5 w-5 text-secondary flex-shrink-0" />
-                  <span className="text-foreground font-medium">{feature}</span>
-                </li>
-              ))}
-            </ul>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button
-                size="lg"
-                className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg font-semibold shadow-elevated"
-              >
-                Explore Courses
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-6 text-lg font-semibold"
-              >
-                Free Consultation
-              </Button>
-            </div>
-
-            {/* Trust Badges */}
-            <div className="flex flex-wrap gap-6 pt-4">
-              {trustBadges.map((badge) => (
-                <div
-                  key={badge.label}
-                  className="flex items-center gap-2 bg-card rounded-lg px-4 py-3 shadow-card"
-                >
-                  <badge.icon className="h-5 w-5 text-secondary" />
-                  <div>
-                    <div className="text-sm font-bold text-foreground">
-                      {badge.value}
-                    </div>
-                    <div className="text-xs text-muted-foreground">
-                      {badge.label.split(" ").slice(1).join(" ")}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Right Content - Hero Image */}
-          <div className="relative hidden lg:block animate-slide-in-right">
-            <div className="relative rounded-2xl overflow-hidden shadow-elevated">
+    <section className="bg-background">
+      {/* Banner Carousel */}
+      <div className="relative w-full h-[400px] md:h-[500px] lg:h-[550px] overflow-hidden">
+        {/* Slides */}
+        {banners.map((banner, index) => (
+          <div
+            key={banner.id}
+            className={`absolute inset-0 transition-all duration-500 ease-in-out ${
+              index === currentIndex
+                ? "opacity-100 translate-x-0"
+                : index < currentIndex
+                ? "opacity-0 -translate-x-full"
+                : "opacity-0 translate-x-full"
+            }`}
+          >
+            {/* Background Image */}
+            <div className="absolute inset-0">
               <img
-                src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                alt="Digital Marketing Training"
-                className="w-full h-[500px] object-cover"
+                src={banner.image}
+                alt={banner.headline}
+                className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-primary/40" />
             </div>
-            {/* Floating Stats Card */}
-            <div className="absolute -bottom-6 -left-6 bg-card rounded-xl p-6 shadow-elevated animate-scale-in">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center">
-                  <Users className="h-6 w-6 text-secondary" />
-                </div>
-                <div>
-                  <div className="text-2xl font-bold text-foreground">99%</div>
-                  <div className="text-sm text-muted-foreground">
-                    Completion Rate
-                  </div>
-                </div>
+
+            {/* Content */}
+            <div className="relative h-full container mx-auto px-4 flex items-center">
+              <div className="max-w-2xl text-primary-foreground">
+                <h1
+                  className={`text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight transition-all duration-500 delay-100 ${
+                    index === currentIndex
+                      ? "opacity-100 translate-y-0"
+                      : "opacity-0 translate-y-4"
+                  }`}
+                >
+                  {banner.headline}
+                </h1>
+                <p
+                  className={`text-lg md:text-xl text-primary-foreground/90 mb-8 transition-all duration-500 delay-200 ${
+                    index === currentIndex
+                      ? "opacity-100 translate-y-0"
+                      : "opacity-0 translate-y-4"
+                  }`}
+                >
+                  {banner.subheadline}
+                </p>
+                <Button
+                  size="lg"
+                  className={`bg-secondary hover:bg-secondary/90 text-secondary-foreground px-8 py-6 text-lg font-semibold transition-all duration-500 delay-300 ${
+                    index === currentIndex
+                      ? "opacity-100 translate-y-0"
+                      : "opacity-0 translate-y-4"
+                  }`}
+                >
+                  {banner.cta}
+                </Button>
               </div>
             </div>
           </div>
+        ))}
+
+        {/* Navigation Arrows */}
+        <button
+          onClick={prevSlide}
+          className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-background/20 backdrop-blur-sm flex items-center justify-center text-primary-foreground hover:bg-background/40 transition-colors z-10"
+          aria-label="Previous slide"
+        >
+          <ChevronLeft className="h-6 w-6" />
+        </button>
+        <button
+          onClick={nextSlide}
+          className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-background/20 backdrop-blur-sm flex items-center justify-center text-primary-foreground hover:bg-background/40 transition-colors z-10"
+          aria-label="Next slide"
+        >
+          <ChevronRight className="h-6 w-6" />
+        </button>
+
+        {/* Dots Indicator */}
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+          {banners.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => goToSlide(index)}
+              className={`h-2 rounded-full transition-all duration-300 ${
+                index === currentIndex
+                  ? "w-8 bg-secondary"
+                  : "w-2 bg-primary-foreground/50 hover:bg-primary-foreground/70"
+              }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
+        </div>
+
+        {/* Progress Bar */}
+        <div className="absolute bottom-0 left-0 w-full h-1 bg-primary-foreground/20">
+          <div
+            className="h-full bg-secondary transition-all duration-[5000ms] ease-linear"
+            style={{
+              width: "100%",
+              transform: `scaleX(${isAnimating ? 0 : 1})`,
+              transformOrigin: "left",
+            }}
+            key={currentIndex}
+          />
         </div>
       </div>
 
-      {/* Background Decoration */}
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-secondary/5 to-transparent pointer-events-none" />
+      {/* Service Cards */}
+      <div className="container mx-auto px-4 py-12">
+        <div className="grid md:grid-cols-3 gap-6">
+          {serviceCards.map((service, index) => (
+            <a
+              key={service.title}
+              href={service.href}
+              className="group relative overflow-hidden rounded-xl bg-secondary p-8 text-secondary-foreground shadow-elevated hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+              style={{ animationDelay: `${index * 100}ms` }}
+            >
+              {/* Background Pattern */}
+              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-2xl transform translate-x-8 -translate-y-8 group-hover:scale-150 transition-transform duration-500" />
+              
+              <div className="relative">
+                <div className="w-16 h-16 rounded-xl bg-primary/20 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-primary/30 transition-all duration-300">
+                  <service.icon className="h-8 w-8" />
+                </div>
+                <h3 className="text-2xl font-bold mb-3">{service.title}</h3>
+                <p className="text-secondary-foreground/80">{service.description}</p>
+              </div>
+
+              {/* Arrow Indicator */}
+              <div className="absolute bottom-4 right-4 w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <ChevronRight className="h-5 w-5" />
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
     </section>
   );
 };
