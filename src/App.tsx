@@ -8,6 +8,7 @@ import Courses from "./pages/Courses";
 import CourseDetail from "./pages/CourseDetail";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
+import LiveClasses from "./pages/LiveClasses";
 import NotFound from "./pages/NotFound";
 import WhatsAppButton from "./components/WhatsAppButton";
 
@@ -25,6 +26,7 @@ const App = () => (
           <Route path="/courses/:slug" element={<CourseDetail />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
+          <Route path="/live-classes" element={<LiveClasses />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
