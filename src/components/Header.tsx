@@ -3,6 +3,7 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "react-router-dom";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import logo from "@/assets/logo.png";
 
 const navItems = [
   { label: "Home", href: "/" },
@@ -43,14 +44,11 @@ const Header = () => {
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
-            <div className="flex items-center">
-              <span className="text-3xl font-bold text-primary group-hover:text-primary/80 transition-colors">
-                Surat
-              </span>
-              <span className="text-3xl font-bold text-secondary group-hover:text-secondary/80 transition-colors">
-                DMS
-              </span>
-            </div>
+            <img 
+              src={logo} 
+              alt="Surat Digital Marketing School" 
+              className="h-14 w-auto object-contain"
+            />
           </Link>
 
           {/* Desktop Navigation */}
