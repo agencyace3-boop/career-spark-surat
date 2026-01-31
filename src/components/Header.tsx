@@ -54,6 +54,7 @@ const Header = () => {
           <nav className="hidden lg:flex items-center gap-1">
             <Link
               to="/"
+              onClick={() => window.scrollTo(0, 0)}
               className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
                 isActive("/") ? "text-primary bg-primary/5" : "text-foreground/80 hover:text-primary hover:bg-primary/5"
               }`}
@@ -75,12 +76,12 @@ const Header = () => {
               </DropdownMenuTrigger>
               <DropdownMenuContent align="start" className="w-48">
                 <DropdownMenuItem asChild>
-                  <Link to="/courses" className="cursor-pointer w-full">
+                  <Link to="/courses" onClick={() => window.scrollTo(0, 0)} className="cursor-pointer w-full">
                     All Courses
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <Link to="/live-classes" className="cursor-pointer w-full">
+                  <Link to="/live-classes" onClick={() => window.scrollTo(0, 0)} className="cursor-pointer w-full">
                     🔴 Live Classes
                   </Link>
                 </DropdownMenuItem>
@@ -91,6 +92,7 @@ const Header = () => {
               <Link
                 key={item.label}
                 to={item.href}
+                onClick={() => window.scrollTo(0, 0)}
                 className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
                   isActive(item.href) ? "text-primary bg-primary/5" : "text-foreground/80 hover:text-primary hover:bg-primary/5"
                 }`}
@@ -102,7 +104,7 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden lg:flex items-center gap-3">
-            <Link to="/live-classes">
+            <Link to="/live-classes" onClick={() => window.scrollTo(0, 0)}>
               <Button size="sm" className="bg-secondary hover:bg-secondary/90 text-secondary-foreground shadow-glow">
                 Join Live Classes
               </Button>
