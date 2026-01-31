@@ -1,36 +1,21 @@
+import googleLogo from "@/assets/tools/google.svg";
+import metaLogo from "@/assets/tools/meta.svg";
+import shopifyLogo from "@/assets/tools/shopify.svg";
+import hubspotLogo from "@/assets/tools/hubspot.svg";
+import mailchimpLogo from "@/assets/tools/mailchimp.svg";
+import wordpressLogo from "@/assets/tools/wordpress.svg";
+import canvaLogo from "@/assets/tools/canva.svg";
+import semrushLogo from "@/assets/tools/semrush.svg";
+
 const toolLogos = [
-  { 
-    name: "Google", 
-    logo: "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
-  },
-  { 
-    name: "Meta", 
-    logo: "https://img.icons8.com/color/480/meta.png"
-  },
-  { 
-    name: "Shopify", 
-    logo: "https://img.icons8.com/color/480/shopify.png"
-  },
-  { 
-    name: "HubSpot", 
-    logo: "https://img.icons8.com/color/480/hubspot.png"
-  },
-  { 
-    name: "Mailchimp", 
-    logo: "https://img.icons8.com/color/480/mailchimp.png"
-  },
-  { 
-    name: "WordPress", 
-    logo: "https://img.icons8.com/color/480/wordpress.png"
-  },
-  { 
-    name: "Canva", 
-    logo: "https://img.icons8.com/color/480/canva.png"
-  },
-  { 
-    name: "Semrush", 
-    logo: "https://img.icons8.com/color/480/semrush.png"
-  },
+  { name: "Google", logo: googleLogo },
+  { name: "Meta", logo: metaLogo },
+  { name: "Shopify", logo: shopifyLogo },
+  { name: "HubSpot", logo: hubspotLogo },
+  { name: "Mailchimp", logo: mailchimpLogo },
+  { name: "WordPress", logo: wordpressLogo },
+  { name: "Canva", logo: canvaLogo },
+  { name: "Semrush", logo: semrushLogo },
 ];
 
 const ToolsMarquee = () => {
@@ -47,18 +32,20 @@ const ToolsMarquee = () => {
         <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-muted/50 to-transparent z-10" />
         <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-muted/50 to-transparent z-10" />
         
-        <div className="flex animate-marquee gap-16 items-center">
+        <div className="flex animate-marquee gap-16 items-center px-20 will-change-transform">
           {[...toolLogos, ...toolLogos].map((tool, index) => (
             <div
               key={`${tool.name}-${index}`}
-              className="flex-shrink-0 h-10 min-w-[120px] flex items-center justify-center opacity-70 hover:opacity-100 transition-opacity duration-300"
+              className="flex-shrink-0 min-w-[140px] flex items-center justify-center transition-transform duration-300 hover:scale-[1.03]"
             >
+              <div className="rounded-xl px-4 py-2 bg-background/60 ring-1 ring-border/40 shadow-sm backdrop-blur-sm">
               <img
                 src={tool.logo}
                 alt={tool.name}
-                className="h-full max-w-[140px] object-contain"
+                className="h-9 md:h-10 w-auto max-w-[160px] object-contain"
                 loading="lazy"
               />
+              </div>
             </div>
           ))}
         </div>
