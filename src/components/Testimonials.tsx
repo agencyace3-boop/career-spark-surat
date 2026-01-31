@@ -105,8 +105,8 @@ const Testimonials = () => {
         <div className="mb-16">
           <div className="relative rounded-3xl overflow-hidden shadow-elevated max-w-4xl mx-auto">
             <img
-              src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
-              alt="Student success story"
+              src="https://images.unsplash.com/photo-1560439514-4e9645039924?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+              alt="Student success story video testimonial"
               className="w-full h-[400px] object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/50 to-transparent" />
