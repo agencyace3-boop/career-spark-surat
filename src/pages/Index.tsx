@@ -1,17 +1,12 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import ToolsMarquee from "@/components/ToolsMarquee";
-import CourseCategories from "@/components/CourseCategories";
+import StatsSection from "@/components/StatsSection";
 import PopularCourses from "@/components/PopularCourses";
 import Testimonials from "@/components/Testimonials";
-import FeaturesGrid from "@/components/FeaturesGrid";
 import AboutSection from "@/components/AboutSection";
-import CareerCTA from "@/components/CareerCTA";
 import WhyChooseSection from "@/components/WhyChooseSection";
-import BusinessServices from "@/components/BusinessServices";
-import ResourcesNews from "@/components/ResourcesNews";
 import FAQ from "@/components/FAQ";
-import JoinCTA from "@/components/JoinCTA";
+import Newsletter from "@/components/Newsletter";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -20,18 +15,13 @@ const Index = () => {
       <Header />
       <main>
         <Hero />
-        <ToolsMarquee />
-        <CourseCategories />
+        <StatsSection />
         <PopularCourses />
         <Testimonials />
-        <FeaturesGrid />
         <AboutSection />
-        <CareerCTA />
         <WhyChooseSection />
-        <BusinessServices />
-        <ResourcesNews />
         <FAQ />
-        <JoinCTA />
+        <Newsletter />
       </main>
       <Footer />
     </div>
