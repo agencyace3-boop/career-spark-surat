@@ -1,11 +1,30 @@
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle, Award, Target, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const keypoints = [
-  "Online and In-Person Classes",
-  "Real-Time Practical Curriculum",
-  "Access to Professional Mentors",
-  "Money-back guarantee",
+  {
+    icon: Award,
+    title: "Industry-Certified Training",
+    description: "Recognized certifications from Google, Meta, and HubSpot",
+  },
+  {
+    icon: Target,
+    title: "Practical Learning Approach",
+    description: "Work on 15+ real projects with actual budgets",
+  },
+  {
+    icon: Users,
+    title: "Expert Mentorship",
+    description: "Learn from professionals with 10+ years experience",
+  },
+];
+
+const achievements = [
+  "Google Partner Certified Institute",
+  "Meta Blueprint Certified Trainers",
+  "HubSpot Academy Partner",
+  "ISO 9001:2015 Certified",
 ];
 
 const AboutSection = () => {
@@ -15,37 +34,108 @@ const AboutSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              <span className="text-secondary">Boost</span> Your Digital Marketing Expertise with us.
+            <span className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
+              About Surat DMS
+            </span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+              Gujarat's Premier <span className="text-secondary">Digital Marketing</span> Training Institute
             </h2>
-            <p className="text-lg text-muted-foreground mb-8">
-              We are most affordable and experienced training center in Surat. Here are some Keypoints which makes us dynamic.
+            <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+              Since 2014, Surat Digital Marketing School has been at the forefront of 
+              digital marketing education in Gujarat. We've trained over 3,000 professionals 
+              who now work at top companies across India and abroad.
+            </p>
+            <p className="text-muted-foreground mb-8 leading-relaxed">
+              Our mission is simple: provide practical, industry-relevant training that 
+              transforms careers. We don't just teach theory—we ensure our students gain 
+              real-world experience through live projects, internships, and hands-on campaigns.
             </p>
 
-            <ul className="space-y-4 mb-8">
+            {/* Key Points */}
+            <div className="space-y-4 mb-8">
               {keypoints.map((point) => (
-                <li key={point} className="flex items-center gap-3">
-                  <div className="w-6 h-6 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
-                    <CheckCircle2 className="h-4 w-4 text-secondary-foreground" />
+                <div key={point.title} className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center flex-shrink-0">
+                    <point.icon className="h-6 w-6 text-secondary" />
                   </div>
-                  <span className="font-medium text-foreground">{point}</span>
-                </li>
+                  <div>
+                    <h3 className="font-semibold text-foreground mb-1">{point.title}</h3>
+                    <p className="text-sm text-muted-foreground">{point.description}</p>
+                  </div>
+                </div>
               ))}
-            </ul>
+            </div>
 
-            <Button size="lg" className="bg-primary hover:bg-primary/90">
-              About Us
-            </Button>
+            {/* Achievements */}
+            <div className="bg-muted p-6 rounded-2xl mb-8">
+              <h4 className="font-semibold text-foreground mb-4">Our Certifications & Accreditations</h4>
+              <div className="grid grid-cols-2 gap-3">
+                {achievements.map((achievement) => (
+                  <div key={achievement} className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-accent flex-shrink-0" />
+                    <span className="text-sm text-foreground">{achievement}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="flex flex-wrap gap-4">
+              <Link to="/about">
+                <Button size="lg" className="bg-primary hover:bg-primary/90">
+                  Learn More About Us
+                </Button>
+              </Link>
+              <Link to="/contact">
+                <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/5">
+                  Schedule a Visit
+                </Button>
+              </Link>
+            </div>
           </div>
 
-          {/* Right Content - Image */}
+          {/* Right Content - Images */}
           <div className="relative">
-            <div className="rounded-2xl overflow-hidden shadow-elevated">
-              <img
-                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                alt="Student learning digital marketing"
-                className="w-full h-[400px] object-cover"
-              />
+            <div className="grid grid-cols-2 gap-4">
+              <div className="space-y-4">
+                <div className="rounded-2xl overflow-hidden shadow-elevated">
+                  <img
+                    src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                    alt="Students learning digital marketing"
+                    className="w-full h-48 object-cover hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <div className="rounded-2xl overflow-hidden shadow-elevated">
+                  <img
+                    src="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                    alt="Classroom training session"
+                    className="w-full h-64 object-cover hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+              </div>
+              <div className="space-y-4 pt-8">
+                <div className="rounded-2xl overflow-hidden shadow-elevated">
+                  <img
+                    src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                    alt="Team collaboration"
+                    className="w-full h-64 object-cover hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <div className="rounded-2xl overflow-hidden shadow-elevated">
+                  <img
+                    src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                    alt="Student presentation"
+                    className="w-full h-48 object-cover hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Floating Badge */}
+            <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground px-6 py-4 rounded-2xl shadow-elevated">
+              <div className="text-center">
+                <div className="text-3xl font-bold">10+</div>
+                <div className="text-sm">Years of Excellence</div>
+              </div>
             </div>
           </div>
         </div>
