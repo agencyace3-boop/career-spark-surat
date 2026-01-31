@@ -105,15 +105,6 @@ const Hero = () => {
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
-            <Link to="/live-classes">
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 text-base px-6"
-              >
-                Join Live Classes
-              </Button>
-            </Link>
           </div>
 
           {/* Trust Indicators */}
