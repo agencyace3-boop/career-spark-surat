@@ -1,35 +1,35 @@
 const toolLogos = [
   { 
     name: "Google", 
-    logo: "https://www.gstatic.com/images/branding/googlelogo/svg/googlelogo_clr_74x24px.svg"
+    logo: "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
   },
   { 
     name: "Meta", 
-    logo: "https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg"
+    logo: "https://img.icons8.com/color/480/meta.png"
   },
   { 
     name: "Shopify", 
-    logo: "https://cdn.shopify.com/shopifycloud/brochure/assets/brand-assets/shopify-logo-primary-logo-456baa801ee66a0a435671082365958316831c9960c480451dd0330bcdae304f.svg"
+    logo: "https://img.icons8.com/color/480/shopify.png"
   },
   { 
     name: "HubSpot", 
-    logo: "https://www.hubspot.com/hubfs/HubSpot_Logos/HubSpot-Inversed-Favicon.png"
+    logo: "https://img.icons8.com/color/480/hubspot.png"
   },
   { 
     name: "Mailchimp", 
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Mailchimp_Logo-Horizontal_Black.svg/512px-Mailchimp_Logo-Horizontal_Black.svg.png"
+    logo: "https://img.icons8.com/color/480/mailchimp.png"
   },
   { 
     name: "WordPress", 
-    logo: "https://s.w.org/style/images/about/WordPress-logotype-standard.png"
+    logo: "https://img.icons8.com/color/480/wordpress.png"
   },
   { 
     name: "Canva", 
-    logo: "https://upload.wikimedia.org/wikipedia/commons/0/08/Canva_icon_2021.svg"
+    logo: "https://img.icons8.com/color/480/canva.png"
   },
   { 
     name: "Semrush", 
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Semrush_Logo.svg/512px-Semrush_Logo.svg.png"
+    logo: "https://img.icons8.com/color/480/semrush.png"
   },
 ];
 
