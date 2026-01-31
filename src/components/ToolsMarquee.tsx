@@ -1,14 +1,36 @@
 const toolLogos = [
-  { name: "Google", color: "#4285F4", textColors: ["#4285F4", "#EA4335", "#FBBC05", "#34A853", "#4285F4", "#EA4335"] },
-  { name: "SEMrush", color: "#FF642D" },
-  { name: "Shopify", color: "#96BF48" },
-  { name: "Mailchimp", color: "#FFE01B" },
-  { name: "Meta", color: "#0081FB" },
-  { name: "HubSpot", color: "#FF7A59" },
-  { name: "Canva", color: "#00C4CC" },
-  { name: "WordPress", color: "#21759B" },
-  { name: "Hootsuite", color: "#143059" },
-  { name: "Ahrefs", color: "#FF6A00" },
+  { 
+    name: "Google", 
+    logo: "https://www.gstatic.com/images/branding/googlelogo/svg/googlelogo_clr_74x24px.svg"
+  },
+  { 
+    name: "Meta", 
+    logo: "https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg"
+  },
+  { 
+    name: "Shopify", 
+    logo: "https://cdn.shopify.com/shopifycloud/brochure/assets/brand-assets/shopify-logo-primary-logo-456baa801ee66a0a435671082365958316831c9960c480451dd0330bcdae304f.svg"
+  },
+  { 
+    name: "HubSpot", 
+    logo: "https://www.hubspot.com/hubfs/HubSpot_Logos/HubSpot-Inversed-Favicon.png"
+  },
+  { 
+    name: "Mailchimp", 
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Mailchimp_Logo-Horizontal_Black.svg/512px-Mailchimp_Logo-Horizontal_Black.svg.png"
+  },
+  { 
+    name: "WordPress", 
+    logo: "https://s.w.org/style/images/about/WordPress-logotype-standard.png"
+  },
+  { 
+    name: "Canva", 
+    logo: "https://upload.wikimedia.org/wikipedia/commons/0/08/Canva_icon_2021.svg"
+  },
+  { 
+    name: "Semrush", 
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Semrush_Logo.svg/512px-Semrush_Logo.svg.png"
+  },
 ];
 
 const ToolsMarquee = () => {
@@ -21,28 +43,22 @@ const ToolsMarquee = () => {
       </div>
       
       <div className="relative">
-        <div className="flex animate-marquee gap-12 items-center">
+        {/* Gradient masks for smooth fade */}
+        <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-muted/50 to-transparent z-10" />
+        <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-muted/50 to-transparent z-10" />
+        
+        <div className="flex animate-marquee gap-16 items-center">
           {[...toolLogos, ...toolLogos].map((tool, index) => (
             <div
               key={`${tool.name}-${index}`}
-              className="flex-shrink-0 flex items-center justify-center px-4"
+              className="flex-shrink-0 h-10 min-w-[120px] flex items-center justify-center opacity-70 hover:opacity-100 transition-opacity duration-300"
             >
-              {tool.textColors ? (
-                <span className="text-2xl font-bold tracking-tight flex">
-                  {tool.name.split('').map((char, i) => (
-                    <span key={i} style={{ color: tool.textColors[i % tool.textColors.length] }}>
-                      {char}
-                    </span>
-                  ))}
-                </span>
-              ) : (
-                <span 
-                  className="text-2xl font-bold tracking-tight"
-                  style={{ color: tool.color }}
-                >
-                  {tool.name}
-                </span>
-              )}
+              <img
+                src={tool.logo}
+                alt={tool.name}
+                className="h-full max-w-[140px] object-contain"
+                loading="lazy"
+              />
             </div>
           ))}
         </div>
@@ -54,7 +70,10 @@ const ToolsMarquee = () => {
           100% { transform: translateX(-50%); }
         }
         .animate-marquee {
-          animation: marquee 25s linear infinite;
+          animation: marquee 30s linear infinite;
+        }
+        .animate-marquee:hover {
+          animation-play-state: paused;
         }
       `}</style>
     </section>
