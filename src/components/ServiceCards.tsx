@@ -7,21 +7,21 @@ const services = [
     title: "Courses",
     description: "Master digital marketing with our comprehensive training programs. From SEO to Social Media, learn skills that get you hired.",
     link: "/courses",
-    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+    image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
   },
   {
     icon: Lightbulb,
     title: "Consultancy",
     description: "Expert digital marketing consultation for your business. Strategy, audits, and actionable insights to grow your brand online.",
     link: "/contact",
-    image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+    image: "https://images.unsplash.com/photo-1553028826-f4804a6dba3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
   },
   {
     icon: Megaphone,
     title: "Branding",
     description: "Build a powerful brand identity. Logo design, brand strategy, and complete digital presence management for businesses.",
     link: "/contact",
-    image: "https://images.unsplash.com/photo-1493421419110-74f4e85ba126?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+    image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
   },
 ];
 
