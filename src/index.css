@@ -10,8 +10,8 @@
     --primary: 221 83% 53%;
     --primary-foreground: 0 0% 100%;
 
-    /* Secondary - Vibrant Orange (Energy & Creativity) */
-    --secondary: 25 95% 53%;
+    /* Secondary - Vibrant Purple (Energy & Creativity) */
+    --secondary: 271 81% 56%;
     --secondary-foreground: 0 0% 100%;
 
     /* Background */
@@ -65,19 +65,19 @@
 
     /* Custom gradients and effects */
     --gradient-primary: linear-gradient(135deg, hsl(221 83% 53%), hsl(221 83% 40%));
-    --gradient-secondary: linear-gradient(135deg, hsl(25 95% 53%), hsl(25 95% 45%));
+    --gradient-secondary: linear-gradient(135deg, hsl(271 81% 56%), hsl(271 81% 45%));
     --gradient-hero: linear-gradient(135deg, hsl(221 83% 53% / 0.95), hsl(221 83% 35% / 0.95));
     --gradient-accent: linear-gradient(135deg, hsl(168 84% 39%), hsl(168 84% 30%));
     --shadow-card: 0 4px 20px -4px hsl(221 83% 53% / 0.1);
     --shadow-elevated: 0 20px 50px -15px hsl(221 83% 53% / 0.2);
-    --shadow-glow: 0 0 40px hsl(25 95% 53% / 0.3);
+    --shadow-glow: 0 0 40px hsl(271 81% 56% / 0.3);
   }
 
   .dark {
     --primary: 221 83% 60%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 25 95% 53%;
+    --secondary: 271 81% 56%;
     --secondary-foreground: 0 0% 100%;
 
     --background: 222 47% 8%;
@@ -209,8 +209,8 @@
 
   /* Pulse glow animation */
   @keyframes pulse-glow {
-    0%, 100% { box-shadow: 0 0 20px hsl(25 95% 53% / 0.3); }
-    50% { box-shadow: 0 0 40px hsl(25 95% 53% / 0.5); }
+    0%, 100% { box-shadow: 0 0 20px hsl(271 81% 56% / 0.3); }
+    50% { box-shadow: 0 0 40px hsl(271 81% 56% / 0.5); }
   }
 
   .animate-pulse-glow {
