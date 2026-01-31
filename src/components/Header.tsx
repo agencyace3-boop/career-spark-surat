@@ -46,7 +46,7 @@ const Header = () => {
           </span>
           </div>
           <div className="flex items-center gap-4">
-            <span className="text-secondary font-medium">🎉 New Batch Starting Soon!</span>
+            <span className="text-secondary font-medium">🎉 New Batch</span>
             <Link to="/live-classes" className="underline hover:text-secondary transition-colors">
               Join Live Classes
             </Link>
