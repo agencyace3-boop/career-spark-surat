@@ -2,10 +2,15 @@ import { useState, useEffect } from "react";
 import { Menu, X, Phone, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "react-router-dom";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const navItems = [
   { label: "Home", href: "/" },
-  { label: "Courses", href: "/courses" },
   { label: "For Business", href: "/#business" },
   { label: "About Us", href: "/about" },
   { label: "Contact", href: "/contact" },
@@ -29,6 +34,8 @@ const Header = () => {
     return location.pathname.startsWith(href);
   };
 
+  const isCoursesActive = location.pathname === "/courses" || location.pathname === "/live-classes" || location.pathname.startsWith("/courses/");
+
   return (
     <header
       className={`sticky top-0 z-50 w-full transition-all duration-300 ${
@@ -41,7 +48,7 @@ const Header = () => {
       <div className="hidden lg:block bg-primary text-primary-foreground py-2">
         <div className="container mx-auto px-4 flex justify-between items-center text-sm">
           <div className="flex items-center gap-6">
-            <a href="tel:+919924abortr" className="flex items-center gap-2 hover:text-secondary transition-colors">
+            <a href="tel:+919924707478" className="flex items-center gap-2 hover:text-secondary transition-colors">
               <Phone className="h-4 w-4" />
               <span>+91 99247 07478</span>
             </a>
@@ -50,8 +57,8 @@ const Header = () => {
           </div>
           <div className="flex items-center gap-4">
             <span className="text-secondary font-medium">🎉 New Batch Starting Soon!</span>
-            <Link to="/courses" className="underline hover:text-secondary transition-colors">
-              Enroll Now
+            <Link to="/live-classes" className="underline hover:text-secondary transition-colors">
+              Join Live Classes
             </Link>
           </div>
         </div>
@@ -73,7 +80,46 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-1">
-            {navItems.map((item) => (
+            <Link
+              to="/"
+              className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
+                isActive("/")
+                  ? "text-primary bg-primary/5"
+                  : "text-foreground/80 hover:text-primary hover:bg-primary/5"
+              }`}
+            >
+              Home
+            </Link>
+
+            {/* Courses Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <button
+                  className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 flex items-center gap-1 ${
+                    isCoursesActive
+                      ? "text-primary bg-primary/5"
+                      : "text-foreground/80 hover:text-primary hover:bg-primary/5"
+                  }`}
+                >
+                  Courses
+                  <ChevronDown className="h-4 w-4" />
+                </button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="start" className="w-48">
+                <DropdownMenuItem asChild>
+                  <Link to="/courses" className="cursor-pointer w-full">
+                    All Courses
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/live-classes" className="cursor-pointer w-full">
+                    🔴 Live Classes
+                  </Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            {navItems.slice(1).map((item) => (
               <Link
                 key={item.label}
                 to={item.href}
@@ -93,9 +139,9 @@ const Header = () => {
             <Button variant="ghost" size="sm" className="text-foreground">
               Student Login
             </Button>
-            <Link to="/contact">
+            <Link to="/live-classes">
               <Button size="sm" className="bg-secondary hover:bg-secondary/90 text-secondary-foreground shadow-glow">
-                Book Free Demo
+                Join Live Classes
               </Button>
             </Link>
           </div>
@@ -118,7 +164,40 @@ const Header = () => {
         {isMobileMenuOpen && (
           <nav className="lg:hidden py-6 border-t border-border animate-fade-in">
             <div className="flex flex-col gap-2">
-              {navItems.map((item) => (
+              <Link
+                to="/"
+                className={`px-4 py-3 text-base font-medium rounded-lg transition-colors ${
+                  isActive("/")
+                    ? "text-primary bg-primary/5"
+                    : "text-foreground/80 hover:text-primary hover:bg-muted"
+                }`}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Home
+              </Link>
+              <Link
+                to="/courses"
+                className={`px-4 py-3 text-base font-medium rounded-lg transition-colors ${
+                  location.pathname === "/courses"
+                    ? "text-primary bg-primary/5"
+                    : "text-foreground/80 hover:text-primary hover:bg-muted"
+                }`}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                All Courses
+              </Link>
+              <Link
+                to="/live-classes"
+                className={`px-4 py-3 text-base font-medium rounded-lg transition-colors ${
+                  location.pathname === "/live-classes"
+                    ? "text-primary bg-primary/5"
+                    : "text-foreground/80 hover:text-primary hover:bg-muted"
+                }`}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                🔴 Live Classes
+              </Link>
+              {navItems.slice(1).map((item) => (
                 <Link
                   key={item.label}
                   to={item.href}
@@ -136,9 +215,9 @@ const Header = () => {
                 <Button variant="outline" className="w-full">
                   Student Login
                 </Button>
-                <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>
+                <Link to="/live-classes" onClick={() => setIsMobileMenuOpen(false)}>
                   <Button className="w-full bg-secondary hover:bg-secondary/90 text-secondary-foreground">
-                    Book Free Demo
+                    Join Live Classes
                   </Button>
                 </Link>
               </div>
