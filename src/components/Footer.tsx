@@ -8,6 +8,7 @@ import {
   Mail,
   MessageCircle,
 } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const quickLinks = [
   { label: "Home", href: "#" },
@@ -44,8 +45,11 @@ const Footer = () => {
           {/* Brand Column */}
           <div className="lg:col-span-2">
             <div className="flex items-center mb-6">
-              <span className="text-2xl font-bold">Surat</span>
-              <span className="text-2xl font-bold text-secondary">DMS</span>
+              <img 
+                src={logo} 
+                alt="Surat Digital Marketing School" 
+                className="h-16 w-auto object-contain"
+              />
             </div>
             
             <h4 className="font-semibold mb-4">Follow us on social media</h4>
