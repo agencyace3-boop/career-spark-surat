@@ -1,4 +1,4 @@
-import { GraduationCap, Lightbulb, Megaphone, ArrowRight } from "lucide-react";
+import { GraduationCap, Lightbulb, Megaphone } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const services = [
@@ -42,7 +42,7 @@ const ServiceCards = () => {
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
-          {services.map((service, index) => (
+          {services.map((service) => (
             <Link
               key={service.title}
               to={service.link}
@@ -66,13 +66,9 @@ const ServiceCards = () => {
                 <h3 className="text-2xl font-bold text-primary-foreground mb-2">
                   {service.title}
                 </h3>
-                <p className="text-primary-foreground/80 text-sm mb-4 line-clamp-2 group-hover:line-clamp-none transition-all">
+                <p className="text-primary-foreground/80 text-sm line-clamp-2 group-hover:line-clamp-none transition-all">
                   {service.description}
                 </p>
-                <div className="flex items-center gap-2 text-secondary font-medium">
-                  <span className="text-sm">Learn More</span>
-                  <ArrowRight className="h-4 w-4 group-hover:translate-x-2 transition-transform" />
-                </div>
               </div>
             </Link>
           ))}
