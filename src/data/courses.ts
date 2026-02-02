@@ -116,6 +116,25 @@ export const courses: Course[] = [
       "Link building strategies",
       "Content gap analysis",
       "Local SEO optimization"
+    ],
+    curriculum: [
+      "Week 1: Technical SEO & Site Architecture",
+      "Week 2: Advanced Keyword Research & Content Strategy",
+      "Week 3: Link Building & Authority Development",
+      "Week 4: Local SEO & Performance Optimization"
+    ],
+    careerOpportunities: [
+      "SEO Specialist",
+      "SEO Manager",
+      "Digital Marketing Consultant",
+      "Content Strategist",
+      "Search Marketing Expert"
+    ],
+    tools: ["SEMrush", "Ahrefs", "Screaming Frog", "Google Search Console", "Moz Pro"],
+    projects: [
+      "Complete technical SEO audit for a live website",
+      "Build a link building outreach campaign",
+      "Create a comprehensive local SEO strategy"
     ]
   },
   {
@@ -136,6 +155,25 @@ export const courses: Course[] = [
       "Bidding strategies",
       "Ad copywriting",
       "Conversion tracking"
+    ],
+    curriculum: [
+      "Week 1: Google Ads Fundamentals & Account Setup",
+      "Week 2: Campaign Types & Ad Group Structuring",
+      "Week 3: Bidding Strategies & Budget Optimization",
+      "Week 4: Conversion Tracking & Performance Analysis"
+    ],
+    careerOpportunities: [
+      "PPC Specialist",
+      "Google Ads Manager",
+      "Paid Search Analyst",
+      "Digital Advertising Executive",
+      "Performance Marketing Manager"
+    ],
+    tools: ["Google Ads", "Google Analytics", "Google Tag Manager", "Optmyzr", "SpyFu"],
+    projects: [
+      "Set up a complete Google Ads campaign",
+      "Create A/B tested ad variations",
+      "Build conversion tracking with Google Tag Manager"
     ]
   },
   {
@@ -156,6 +194,25 @@ export const courses: Course[] = [
       "Technical SEO basics",
       "Keyword research tools",
       "SEO auditing"
+    ],
+    curriculum: [
+      "Week 1: SEO Fundamentals & Keyword Research",
+      "Week 2: On-Page SEO & Content Optimization",
+      "Week 3: Off-Page SEO & Link Building",
+      "Week 4: Technical SEO & Site Auditing"
+    ],
+    careerOpportunities: [
+      "SEO Executive",
+      "SEO Analyst",
+      "Content Marketing Specialist",
+      "Digital Marketing Associate",
+      "Freelance SEO Consultant"
+    ],
+    tools: ["Google Search Console", "SEMrush", "Yoast SEO", "Ubersuggest", "Google Keyword Planner"],
+    projects: [
+      "Optimize a website for target keywords",
+      "Create an SEO content calendar",
+      "Perform complete website SEO audit"
     ]
   },
   {
@@ -176,6 +233,25 @@ export const courses: Course[] = [
       "Payment gateway integration",
       "Inventory management",
       "E-commerce marketing"
+    ],
+    curriculum: [
+      "Week 1: E-commerce Fundamentals & Platform Setup",
+      "Week 2: Product Catalog & Inventory Management",
+      "Week 3: Payment Gateways & Shipping Integration",
+      "Week 4: Marketing & Sales Optimization"
+    ],
+    careerOpportunities: [
+      "E-commerce Manager",
+      "Online Store Owner",
+      "E-commerce Consultant",
+      "Marketplace Specialist",
+      "Product Listing Manager"
+    ],
+    tools: ["Shopify", "WooCommerce", "Razorpay", "Shiprocket", "Amazon Seller Central"],
+    projects: [
+      "Launch a complete e-commerce store",
+      "Integrate payment gateway and shipping",
+      "Create product optimization strategy"
     ]
   },
   {
@@ -196,6 +272,25 @@ export const courses: Course[] = [
       "Custom audience creation",
       "Conversion optimization",
       "Retargeting strategies"
+    ],
+    curriculum: [
+      "Week 1: Facebook Pixel Fundamentals & Installation",
+      "Week 2: Standard & Custom Event Tracking",
+      "Week 3: Custom Audiences & Lookalike Creation",
+      "Week 4: Retargeting Campaigns & Optimization"
+    ],
+    careerOpportunities: [
+      "Facebook Ads Specialist",
+      "Performance Marketing Analyst",
+      "Digital Tracking Expert",
+      "Social Media Advertiser",
+      "Conversion Optimization Specialist"
+    ],
+    tools: ["Meta Business Suite", "Facebook Events Manager", "Google Tag Manager", "Meta Pixel Helper"],
+    projects: [
+      "Install and configure Facebook Pixel",
+      "Set up custom conversion events",
+      "Build retargeting campaign with custom audiences"
     ]
   },
   {
@@ -216,6 +311,25 @@ export const courses: Course[] = [
       "LinkedIn Ads",
       "Lead generation techniques",
       "B2B networking strategies"
+    ],
+    curriculum: [
+      "Week 1: LinkedIn Profile & Company Page Optimization",
+      "Week 2: Content Strategy & Engagement Tactics",
+      "Week 3: LinkedIn Ads & Sponsored Content",
+      "Week 4: Lead Generation & B2B Networking"
+    ],
+    careerOpportunities: [
+      "LinkedIn Marketing Specialist",
+      "B2B Marketing Manager",
+      "Social Selling Expert",
+      "Corporate Communications Manager",
+      "Lead Generation Specialist"
+    ],
+    tools: ["LinkedIn Sales Navigator", "LinkedIn Campaign Manager", "Canva", "Hootsuite", "Shield Analytics"],
+    projects: [
+      "Optimize personal and company LinkedIn profiles",
+      "Create and run LinkedIn ad campaign",
+      "Build B2B lead generation funnel"
     ]
   },
   {
@@ -236,6 +350,25 @@ export const courses: Course[] = [
       "Custom reports and dashboards",
       "Conversion tracking",
       "Data analysis techniques"
+    ],
+    curriculum: [
+      "Week 1: GA4 Setup & Interface Overview",
+      "Week 2: Event Tracking & Data Streams",
+      "Week 3: Reports, Dashboards & Explorations",
+      "Week 4: Conversion Tracking & Attribution"
+    ],
+    careerOpportunities: [
+      "Web Analytics Specialist",
+      "Data Analyst",
+      "Marketing Analytics Manager",
+      "Digital Marketing Analyst",
+      "Business Intelligence Associate"
+    ],
+    tools: ["Google Analytics 4", "Google Tag Manager", "Looker Studio", "Google Data Studio", "BigQuery"],
+    projects: [
+      "Set up GA4 for a website from scratch",
+      "Create custom event tracking",
+      "Build comprehensive analytics dashboard"
     ]
   },
   {
@@ -256,6 +389,25 @@ export const courses: Course[] = [
       "Moz for domain authority",
       "Google Search Console",
       "Competitive analysis tools"
+    ],
+    curriculum: [
+      "Week 1: SEMrush Complete Training",
+      "Week 2: Ahrefs & Backlink Analysis",
+      "Week 3: Moz, Ubersuggest & Other Tools",
+      "Week 4: Google Search Console Mastery"
+    ],
+    careerOpportunities: [
+      "SEO Tools Specialist",
+      "SEO Analyst",
+      "Competitive Research Analyst",
+      "Digital Marketing Executive",
+      "Freelance SEO Consultant"
+    ],
+    tools: ["SEMrush", "Ahrefs", "Moz Pro", "Ubersuggest", "Google Search Console", "Screaming Frog"],
+    projects: [
+      "Complete competitor analysis using SEMrush",
+      "Build backlink profile report with Ahrefs",
+      "Create monthly SEO performance dashboard"
     ]
   },
   {
@@ -276,6 +428,25 @@ export const courses: Course[] = [
       "Campaign planning",
       "ROI measurement",
       "Influencer relationship management"
+    ],
+    curriculum: [
+      "Week 1: Influencer Marketing Fundamentals",
+      "Week 2: Finding & Vetting Influencers",
+      "Week 3: Campaign Planning & Execution",
+      "Week 4: ROI Measurement & Relationship Building"
+    ],
+    careerOpportunities: [
+      "Influencer Marketing Manager",
+      "Brand Partnerships Coordinator",
+      "Social Media Strategist",
+      "Talent Relations Manager",
+      "Campaign Manager"
+    ],
+    tools: ["Upfluence", "AspireIQ", "Grin", "Instagram Insights", "TikTok Creator Marketplace"],
+    projects: [
+      "Identify and vet influencers for a brand",
+      "Create influencer outreach campaign",
+      "Design influencer contract and brief"
     ]
   },
   {
@@ -296,6 +467,25 @@ export const courses: Course[] = [
       "Landing page creation",
       "Lead nurturing sequences",
       "Conversion optimization"
+    ],
+    curriculum: [
+      "Week 1: Sales Funnel Strategy & Planning",
+      "Week 2: Facebook Ads Campaign Setup",
+      "Week 3: Landing Pages & Lead Magnets",
+      "Week 4: Retargeting & Conversion Optimization"
+    ],
+    careerOpportunities: [
+      "Funnel Strategist",
+      "Facebook Ads Manager",
+      "Conversion Rate Optimizer",
+      "Growth Marketing Specialist",
+      "Performance Marketer"
+    ],
+    tools: ["Meta Ads Manager", "ClickFunnels", "Leadpages", "Zapier", "ActiveCampaign"],
+    projects: [
+      "Build complete lead generation funnel",
+      "Create landing page with lead magnet",
+      "Set up automated email nurture sequence"
     ]
   },
   {
@@ -316,6 +506,25 @@ export const courses: Course[] = [
       "App store optimization",
       "Mobile-first strategies",
       "Push notification marketing"
+    ],
+    curriculum: [
+      "Week 1: Mobile Marketing Fundamentals",
+      "Week 2: SMS & WhatsApp Marketing",
+      "Week 3: App Store Optimization (ASO)",
+      "Week 4: Mobile Ads & Push Notifications"
+    ],
+    careerOpportunities: [
+      "Mobile Marketing Manager",
+      "App Marketing Specialist",
+      "SMS Marketing Executive",
+      "Growth Hacker",
+      "Mobile Advertising Specialist"
+    ],
+    tools: ["Firebase", "AppsFlyer", "CleverTap", "MSG91", "OneSignal"],
+    projects: [
+      "Create SMS marketing campaign",
+      "Optimize app store listing",
+      "Design push notification strategy"
     ]
   },
   {
@@ -336,6 +545,25 @@ export const courses: Course[] = [
       "Email copywriting",
       "A/B testing",
       "Deliverability optimization"
+    ],
+    curriculum: [
+      "Week 1: Email Marketing Fundamentals & List Building",
+      "Week 2: Email Copywriting & Design",
+      "Week 3: Automation & Drip Campaigns",
+      "Week 4: Analytics, Testing & Deliverability"
+    ],
+    careerOpportunities: [
+      "Email Marketing Specialist",
+      "Marketing Automation Manager",
+      "CRM Marketing Executive",
+      "Email Copywriter",
+      "Lifecycle Marketing Manager"
+    ],
+    tools: ["Mailchimp", "ActiveCampaign", "ConvertKit", "Klaviyo", "Sendinblue"],
+    projects: [
+      "Build email list with lead magnet",
+      "Create automated welcome sequence",
+      "Design and test email campaign"
     ]
   },
   {
@@ -356,6 +584,22 @@ export const courses: Course[] = [
       "Lead qualification bots",
       "Customer service automation",
       "Chatbot analytics"
+    ],
+    curriculum: [
+      "Week 1: Chatbot Fundamentals & Platform Setup",
+      "Week 2: Conversation Flow Design & Building"
+    ],
+    careerOpportunities: [
+      "Chatbot Developer",
+      "Conversational Marketing Specialist",
+      "Customer Experience Automation Expert",
+      "Digital Marketing Executive"
+    ],
+    tools: ["ManyChat", "Chatfuel", "MobileMonkey", "Dialogflow", "Meta Business Suite"],
+    projects: [
+      "Build lead qualification chatbot",
+      "Create FAQ automation bot",
+      "Design sales funnel chatbot"
     ]
   },
   {
@@ -376,6 +620,23 @@ export const courses: Course[] = [
       "Content planning",
       "YouTube Ads",
       "Monetization strategies"
+    ],
+    curriculum: [
+      "Week 1: YouTube Channel Setup & Optimization",
+      "Week 2: Video SEO & YouTube Ads"
+    ],
+    careerOpportunities: [
+      "YouTube Content Creator",
+      "Video Marketing Specialist",
+      "YouTube Channel Manager",
+      "Video SEO Expert",
+      "Content Strategist"
+    ],
+    tools: ["YouTube Studio", "TubeBuddy", "VidIQ", "Canva", "Adobe Premiere Pro"],
+    projects: [
+      "Optimize YouTube channel for growth",
+      "Create video SEO strategy",
+      "Run YouTube advertising campaign"
     ]
   },
   {
@@ -396,6 +657,25 @@ export const courses: Course[] = [
       "Social media scheduling",
       "Community management",
       "Social media analytics"
+    ],
+    curriculum: [
+      "Week 1-2: Facebook & Instagram Marketing",
+      "Week 3-4: LinkedIn & Twitter Marketing",
+      "Week 5: Content Creation & Scheduling",
+      "Week 6: Analytics & Optimization"
+    ],
+    careerOpportunities: [
+      "Social Media Manager",
+      "Social Media Strategist",
+      "Community Manager",
+      "Content Creator",
+      "Brand Manager"
+    ],
+    tools: ["Meta Business Suite", "Hootsuite", "Buffer", "Canva", "Later", "Sprout Social"],
+    projects: [
+      "Create multi-platform content calendar",
+      "Build and manage social media community",
+      "Design comprehensive social media strategy"
     ]
   },
   {
@@ -416,6 +696,21 @@ export const courses: Course[] = [
       "Online advertising intro",
       "Website essentials",
       "Digital strategy planning"
+    ],
+    curriculum: [
+      "Day 1: Digital Marketing Overview & Social Media",
+      "Day 2: Advertising, Website & Strategy"
+    ],
+    careerOpportunities: [
+      "Business Owner with Digital Skills",
+      "Startup Founder",
+      "Marketing-Savvy Entrepreneur",
+      "Small Business Manager"
+    ],
+    tools: ["Google Business Profile", "Facebook Pages", "Canva", "WhatsApp Business"],
+    projects: [
+      "Create digital marketing plan for your business",
+      "Set up social media presence"
     ]
   },
   {
@@ -436,6 +731,24 @@ export const courses: Course[] = [
       "Lead generation",
       "Sales funnel creation",
       "Marketing automation"
+    ],
+    curriculum: [
+      "Week 1-2: Digital Strategy & Brand Building",
+      "Week 3-4: Lead Generation & Funnels",
+      "Week 5-6: Marketing Automation & Scaling"
+    ],
+    careerOpportunities: [
+      "Digital-First Entrepreneur",
+      "Startup Founder",
+      "Business Growth Consultant",
+      "Marketing Strategist",
+      "E-commerce Entrepreneur"
+    ],
+    tools: ["HubSpot", "Mailchimp", "Google Ads", "Meta Ads", "Canva", "WordPress"],
+    projects: [
+      "Create complete digital marketing strategy",
+      "Build lead generation funnel",
+      "Launch marketing automation campaign"
     ]
   },
   {
@@ -456,6 +769,24 @@ export const courses: Course[] = [
       "Data analytics",
       "Conversion optimization",
       "Campaign management"
+    ],
+    curriculum: [
+      "Week 1-2: Advanced SEO & SEM Strategies",
+      "Week 3-4: Marketing Automation & CRM",
+      "Week 5-6: Data Analytics & Conversion Optimization"
+    ],
+    careerOpportunities: [
+      "Digital Marketing Manager",
+      "Head of Digital Marketing",
+      "Marketing Director",
+      "Growth Marketing Lead",
+      "Digital Strategy Consultant"
+    ],
+    tools: ["Google Analytics", "SEMrush", "HubSpot", "Salesforce", "Google Ads", "Meta Ads", "Hotjar"],
+    projects: [
+      "Create multi-channel marketing campaign",
+      "Build comprehensive analytics dashboard",
+      "Design conversion optimization strategy"
     ]
   }
 ];
