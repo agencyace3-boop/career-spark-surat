@@ -29,7 +29,7 @@ const Header = () => {
     return location.pathname.startsWith(href);
   };
 
-  const isCoursesActive = location.pathname === "/courses" || location.pathname === "/live-classes" || location.pathname.startsWith("/courses/");
+  const isCoursesActive = location.pathname === "/courses" || location.pathname === "/online-course" || location.pathname.startsWith("/courses/");
 
   return (
     <header
@@ -81,7 +81,7 @@ const Header = () => {
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <Link to="/live-classes" onClick={() => window.scrollTo(0, 0)} className="cursor-pointer w-full">
+                  <Link to="/online-course" onClick={() => window.scrollTo(0, 0)} className="cursor-pointer w-full">
                     🎓 Online Course
                   </Link>
                 </DropdownMenuItem>
@@ -104,7 +104,7 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden lg:flex items-center gap-3">
-            <Link to="/live-classes" onClick={() => window.scrollTo(0, 0)}>
+            <Link to="/online-course" onClick={() => window.scrollTo(0, 0)}>
               <Button size="sm" className="bg-secondary hover:bg-secondary/90 text-secondary-foreground shadow-glow font-bold">
                 Join Online Course
               </Button>
@@ -148,9 +148,9 @@ const Header = () => {
                 All Courses
               </Link>
               <Link
-                to="/live-classes"
+                to="/online-course"
                 className={`px-4 py-3 text-base font-medium rounded-lg transition-colors ${
-                  location.pathname === "/live-classes" ? "text-white bg-primary" : "text-primary hover:bg-primary/10"
+                  location.pathname === "/online-course" ? "text-white bg-primary" : "text-primary hover:bg-primary/10"
                 }`}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
@@ -169,7 +169,7 @@ const Header = () => {
                 </Link>
               ))}
               <div className="flex flex-col gap-3 mt-4 pt-4 border-t border-primary/10">
-                <Link to="/live-classes" onClick={() => setIsMobileMenuOpen(false)}>
+                <Link to="/online-course" onClick={() => setIsMobileMenuOpen(false)}>
                   <Button className="w-full bg-secondary hover:bg-secondary/90 text-secondary-foreground font-bold">
                     Join Online Course
                   </Button>
