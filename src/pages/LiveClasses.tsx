@@ -2,38 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import {
-  Play,
-  CheckCircle,
-  Clock,
-  Users,
-  Award,
-  BookOpen,
-  Target,
-  Briefcase,
-  GraduationCap,
-  Video,
-  Headphones,
-  FileText,
-  Rocket,
-  Calendar,
-  Globe,
-  MessageCircle,
-  Star,
-  Zap,
-  TrendingUp,
-  ArrowRight,
-  Gift,
-  Shield,
-  Monitor,
-  MapPin,
-  Settings,
-  BarChart3,
-  Megaphone,
-  Image,
-  MousePointer,
-  LineChart,
-} from "lucide-react";
+import { Play, CheckCircle, Clock, Users, Award, BookOpen, Target, Briefcase, GraduationCap, Video, Headphones, FileText, Rocket, Calendar, Globe, MessageCircle, Star, Zap, TrendingUp, ArrowRight, Gift, Shield, Monitor, MapPin, Settings, BarChart3, Megaphone, Image, MousePointer, LineChart } from "lucide-react";
 
 // Import mentor image and tool logos
 import mentorImage from "@/assets/mentor-vikaas.png";
@@ -47,214 +16,209 @@ import canvaLogo from "@/assets/tools/canva.svg";
 import semrushLogo from "@/assets/tools/semrush.svg";
 
 // Tools that students will master
-const toolsList = [
-  { name: "Meta Ads", logo: metaLogo },
-  { name: "Google", logo: googleLogo },
-  { name: "Canva", logo: canvaLogo },
-  { name: "Semrush", logo: semrushLogo },
-  { name: "HubSpot", logo: hubspotLogo },
-  { name: "Mailchimp", logo: mailchimpLogo },
-  { name: "WordPress", logo: wordpressLogo },
-  { name: "Shopify", logo: shopifyLogo },
-];
+const toolsList = [{
+  name: "Meta Ads",
+  logo: metaLogo
+}, {
+  name: "Google",
+  logo: googleLogo
+}, {
+  name: "Canva",
+  logo: canvaLogo
+}, {
+  name: "Semrush",
+  logo: semrushLogo
+}, {
+  name: "HubSpot",
+  logo: hubspotLogo
+}, {
+  name: "Mailchimp",
+  logo: mailchimpLogo
+}, {
+  name: "WordPress",
+  logo: wordpressLogo
+}, {
+  name: "Shopify",
+  logo: shopifyLogo
+}];
 
 // 12-Day Course Schedule based on Meta Ads + GMB Course
-const courseSchedule = [
-  {
-    day: "DAY 1",
-    title: "Digital Marketing & Meta Ecosystem Overview",
-    topics: [
-      "Introduction to Digital Marketing (Practical View)",
-      "Facebook, Instagram & Meta Business Suite overview",
-      "Understanding paid vs organic marketing",
-      "Business Manager vs Personal Account",
-    ],
-    icon: Globe,
-    color: "from-blue-500 to-cyan-500",
-  },
-  {
-    day: "DAY 2",
-    title: "Facebook Business Manager Setup",
-    topics: [
-      "Business Manager creation (Step-by-step)",
-      "Page & Ad Account setup",
-      "Payment methods & access control",
-      "Security & business verification",
-    ],
-    icon: Settings,
-    color: "from-indigo-500 to-blue-500",
-  },
-  {
-    day: "DAY 3",
-    title: "Facebook & Instagram Page Optimization",
-    topics: [
-      "Professional Page setup",
-      "Bio, CTA & branding strategy",
-      "Content structure for engagement",
-      "Page health & quality score",
-    ],
-    icon: Star,
-    color: "from-pink-500 to-rose-500",
-  },
-  {
-    day: "DAY 4",
-    title: "Understanding Meta Ads Fundamentals",
-    topics: [
-      "Campaign objectives (Awareness, Traffic, Leads, Sales)",
-      "Ad structure: Campaign → Ad Set → Ad",
-      "Budgeting & bidding concepts",
-      "Learning phase explained simply",
-    ],
-    icon: Target,
-    color: "from-orange-500 to-amber-500",
-  },
-  {
-    day: "DAY 5",
-    title: "Audience Targeting Masterclass",
-    topics: [
-      "Core audience vs Custom audience",
-      "Lookalike audience strategy",
-      "Interest & behavior targeting",
-      "Retargeting concepts (real examples)",
-    ],
-    icon: Users,
-    color: "from-green-500 to-emerald-500",
-  },
-  {
-    day: "DAY 6",
-    title: "Creative Strategy for High-Converting Ads",
-    topics: [
-      "Ad copywriting formulas",
-      "Image vs Video ads",
-      "Reels & Story ads strategy",
-      "Creative mistakes to avoid",
-    ],
-    icon: Image,
-    color: "from-purple-500 to-violet-500",
-  },
-  {
-    day: "DAY 7",
-    title: "Lead Generation Ads (Practical)",
-    topics: [
-      "Lead form setup (Instant forms)",
-      "CRM & WhatsApp integration ideas",
-      "Lead quality improvement techniques",
-      "Follow-up strategy",
-    ],
-    icon: MousePointer,
-    color: "from-teal-500 to-cyan-500",
-  },
-  {
-    day: "DAY 8",
-    title: "Sales & Conversion Ads",
-    topics: [
-      "Website conversion ads",
-      "Pixel basics (easy explanation)",
-      "Catalogue & product ads",
-      "Scaling winning campaigns",
-    ],
-    icon: TrendingUp,
-    color: "from-red-500 to-pink-500",
-  },
-  {
-    day: "DAY 9",
-    title: "Ads Optimization & Performance Analysis",
-    topics: [
-      "Reading Ads Manager reports",
-      "CTR, CPC, CPM, ROAS explained",
-      "A/B testing basics",
-      "Budget scaling methods",
-    ],
-    icon: BarChart3,
-    color: "from-yellow-500 to-orange-500",
-  },
-  {
-    day: "DAY 10",
-    title: "Google My Business (GMB) Setup",
-    topics: [
-      "GMB account creation & verification",
-      "Business profile optimization",
-      "Categories, services & keywords",
-      "Local SEO basics",
-    ],
-    icon: MapPin,
-    color: "from-blue-500 to-indigo-500",
-  },
-  {
-    day: "DAY 11",
-    title: "GMB Growth & Local Lead Strategy",
-    topics: [
-      "Posting strategy on GMB",
-      "Reviews & reputation management",
-      "Map ranking improvement techniques",
-      "Combining GMB with Meta Ads",
-    ],
-    icon: LineChart,
-    color: "from-emerald-500 to-teal-500",
-  },
-  {
-    day: "DAY 12",
-    title: "Case Studies, Strategy & Career Guidance",
-    topics: [
-      "Live campaign case studies",
-      "Budget planning for clients",
-      "Freelancing & agency roadmap",
-      "Q&A + Final Assessment",
-    ],
-    icon: Rocket,
-    color: "from-violet-500 to-purple-500",
-  },
-];
-
-const bonusItems = [
-  { title: "12 LIVE Training Sessions (90 mins each)", value: "₹14,999" },
-  { title: "Access to Recorded Sessions", value: "₹4,999" },
-  { title: "Practical Assignments After Every Session", value: "₹2,999" },
-  { title: "Final Project - Real-World Campaign", value: "₹3,999" },
-  { title: "Dedicated Q&A and Community Support", value: "₹2,999" },
-  { title: "Industry-Recognized Certificate", value: "₹2,999" },
-];
-
+const courseSchedule = [{
+  day: "DAY 1",
+  title: "Digital Marketing & Meta Ecosystem Overview",
+  topics: ["Introduction to Digital Marketing (Practical View)", "Facebook, Instagram & Meta Business Suite overview", "Understanding paid vs organic marketing", "Business Manager vs Personal Account"],
+  icon: Globe,
+  color: "from-blue-500 to-cyan-500"
+}, {
+  day: "DAY 2",
+  title: "Facebook Business Manager Setup",
+  topics: ["Business Manager creation (Step-by-step)", "Page & Ad Account setup", "Payment methods & access control", "Security & business verification"],
+  icon: Settings,
+  color: "from-indigo-500 to-blue-500"
+}, {
+  day: "DAY 3",
+  title: "Facebook & Instagram Page Optimization",
+  topics: ["Professional Page setup", "Bio, CTA & branding strategy", "Content structure for engagement", "Page health & quality score"],
+  icon: Star,
+  color: "from-pink-500 to-rose-500"
+}, {
+  day: "DAY 4",
+  title: "Understanding Meta Ads Fundamentals",
+  topics: ["Campaign objectives (Awareness, Traffic, Leads, Sales)", "Ad structure: Campaign → Ad Set → Ad", "Budgeting & bidding concepts", "Learning phase explained simply"],
+  icon: Target,
+  color: "from-orange-500 to-amber-500"
+}, {
+  day: "DAY 5",
+  title: "Audience Targeting Masterclass",
+  topics: ["Core audience vs Custom audience", "Lookalike audience strategy", "Interest & behavior targeting", "Retargeting concepts (real examples)"],
+  icon: Users,
+  color: "from-green-500 to-emerald-500"
+}, {
+  day: "DAY 6",
+  title: "Creative Strategy for High-Converting Ads",
+  topics: ["Ad copywriting formulas", "Image vs Video ads", "Reels & Story ads strategy", "Creative mistakes to avoid"],
+  icon: Image,
+  color: "from-purple-500 to-violet-500"
+}, {
+  day: "DAY 7",
+  title: "Lead Generation Ads (Practical)",
+  topics: ["Lead form setup (Instant forms)", "CRM & WhatsApp integration ideas", "Lead quality improvement techniques", "Follow-up strategy"],
+  icon: MousePointer,
+  color: "from-teal-500 to-cyan-500"
+}, {
+  day: "DAY 8",
+  title: "Sales & Conversion Ads",
+  topics: ["Website conversion ads", "Pixel basics (easy explanation)", "Catalogue & product ads", "Scaling winning campaigns"],
+  icon: TrendingUp,
+  color: "from-red-500 to-pink-500"
+}, {
+  day: "DAY 9",
+  title: "Ads Optimization & Performance Analysis",
+  topics: ["Reading Ads Manager reports", "CTR, CPC, CPM, ROAS explained", "A/B testing basics", "Budget scaling methods"],
+  icon: BarChart3,
+  color: "from-yellow-500 to-orange-500"
+}, {
+  day: "DAY 10",
+  title: "Google My Business (GMB) Setup",
+  topics: ["GMB account creation & verification", "Business profile optimization", "Categories, services & keywords", "Local SEO basics"],
+  icon: MapPin,
+  color: "from-blue-500 to-indigo-500"
+}, {
+  day: "DAY 11",
+  title: "GMB Growth & Local Lead Strategy",
+  topics: ["Posting strategy on GMB", "Reviews & reputation management", "Map ranking improvement techniques", "Combining GMB with Meta Ads"],
+  icon: LineChart,
+  color: "from-emerald-500 to-teal-500"
+}, {
+  day: "DAY 12",
+  title: "Case Studies, Strategy & Career Guidance",
+  topics: ["Live campaign case studies", "Budget planning for clients", "Freelancing & agency roadmap", "Q&A + Final Assessment"],
+  icon: Rocket,
+  color: "from-violet-500 to-purple-500"
+}];
+const bonusItems = [{
+  title: "12 LIVE Training Sessions (90 mins each)",
+  value: "₹14,999"
+}, {
+  title: "Access to Recorded Sessions",
+  value: "₹4,999"
+}, {
+  title: "Practical Assignments After Every Session",
+  value: "₹2,999"
+}, {
+  title: "Final Project - Real-World Campaign",
+  value: "₹3,999"
+}, {
+  title: "Dedicated Q&A and Community Support",
+  value: "₹2,999"
+}, {
+  title: "Industry-Recognized Certificate",
+  value: "₹2,999"
+}];
 const totalValue = 32994;
-
-const targetAudience = [
-  { icon: Briefcase, title: "Small Business Owners", description: "Grow your online presence and generate leads with targeted ads", image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" },
-  { icon: TrendingUp, title: "Marketing Professionals", description: "Seeking Meta certification and advanced advertising skills", image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" },
-  { icon: Target, title: "Freelancers", description: "Expand your service offerings and attract high-paying clients", image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" },
-  { icon: GraduationCap, title: "Students & Career Switchers", description: "Target social media marketing roles with practical skills", image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" },
-];
-
-const whyChoose = [
-  { icon: Award, title: "Real-World Experience", description: "Learn from someone who has managed 500+ clients and ₹1 crore+ in ad campaigns" },
-  { icon: GraduationCap, title: "Proven Track Record", description: "Guest Faculty at Auro University with 30+ years of marketing experience" },
-  { icon: Megaphone, title: "Meta-Certified Curriculum", description: "Industry-aligned curriculum based on Meta's official marketing principles" },
-  { icon: Headphones, title: "Complete Support System", description: "Continuous mentorship, Q&A sessions, and community support" },
-  { icon: TrendingUp, title: "Income-Focused Training", description: "Learn to run profitable Facebook & Instagram ad campaigns" },
-  { icon: Rocket, title: "Practical Implementation", description: "Work on live projects and real-world campaign strategies" },
-];
-
-const courseDeliverables = [
-  { icon: Award, title: "Certificate of Completion", description: "Industry-recognized certification" },
-  { icon: BookOpen, title: "Practical Campaign Knowledge", description: "Real hands-on experience" },
-  { icon: BarChart3, title: "Live Ad Strategy Experience", description: "Work on actual campaigns" },
-  { icon: Users, title: "Mentorship by Vikaas Parekh", description: "Personal guidance from expert" },
-];
-
+const targetAudience = [{
+  icon: Briefcase,
+  title: "Small Business Owners",
+  description: "Grow your online presence and generate leads with targeted ads",
+  image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+}, {
+  icon: TrendingUp,
+  title: "Marketing Professionals",
+  description: "Seeking Meta certification and advanced advertising skills",
+  image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+}, {
+  icon: Target,
+  title: "Freelancers",
+  description: "Expand your service offerings and attract high-paying clients",
+  image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+}, {
+  icon: GraduationCap,
+  title: "Students & Career Switchers",
+  description: "Target social media marketing roles with practical skills",
+  image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+}];
+const whyChoose = [{
+  icon: Award,
+  title: "Real-World Experience",
+  description: "Learn from someone who has managed 500+ clients and ₹1 crore+ in ad campaigns"
+}, {
+  icon: GraduationCap,
+  title: "Proven Track Record",
+  description: "Guest Faculty at Auro University with 30+ years of marketing experience"
+}, {
+  icon: Megaphone,
+  title: "Meta-Certified Curriculum",
+  description: "Industry-aligned curriculum based on Meta's official marketing principles"
+}, {
+  icon: Headphones,
+  title: "Complete Support System",
+  description: "Continuous mentorship, Q&A sessions, and community support"
+}, {
+  icon: TrendingUp,
+  title: "Income-Focused Training",
+  description: "Learn to run profitable Facebook & Instagram ad campaigns"
+}, {
+  icon: Rocket,
+  title: "Practical Implementation",
+  description: "Work on live projects and real-world campaign strategies"
+}];
+const courseDeliverables = [{
+  icon: Award,
+  title: "Certificate of Completion",
+  description: "Industry-recognized certification"
+}, {
+  icon: BookOpen,
+  title: "Practical Campaign Knowledge",
+  description: "Real hands-on experience"
+}, {
+  icon: BarChart3,
+  title: "Live Ad Strategy Experience",
+  description: "Work on actual campaigns"
+}, {
+  icon: Users,
+  title: "Mentorship by Vikaas Parekh",
+  description: "Personal guidance from expert"
+}];
 const RAZORPAY_LINK = "https://rzp.io/rzp/IAVCWNAq";
 
 // Batch start date: 21st Feb 2026
 const BATCH_START_DATE = new Date("2026-02-21T20:00:00+05:30");
-
-const AnimatedCounter = ({ target, suffix = "", inView }: { target: number; suffix?: string; inView: boolean }) => {
+const AnimatedCounter = ({
+  target,
+  suffix = "",
+  inView
+}: {
+  target: number;
+  suffix?: string;
+  inView: boolean;
+}) => {
   const [count, setCount] = useState(0);
-  
   useEffect(() => {
     if (!inView) return;
     const duration = 2000;
     const steps = 60;
     const increment = target / steps;
     let current = 0;
-    
     const timer = setInterval(() => {
       current += increment;
       if (current >= target) {
@@ -264,10 +228,8 @@ const AnimatedCounter = ({ target, suffix = "", inView }: { target: number; suff
         setCount(Math.floor(current));
       }
     }, duration / steps);
-    
     return () => clearInterval(timer);
   }, [target, inView]);
-  
   return <>{count.toLocaleString()}{suffix}</>;
 };
 
@@ -275,78 +237,74 @@ const AnimatedCounter = ({ target, suffix = "", inView }: { target: number; suff
 const calculateTimeLeft = () => {
   const now = new Date();
   const difference = BATCH_START_DATE.getTime() - now.getTime();
-  
   if (difference > 0) {
     return {
       days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-      hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-      minutes: Math.floor((difference / 1000 / 60) % 60),
-      seconds: Math.floor((difference / 1000) % 60),
+      hours: Math.floor(difference / (1000 * 60 * 60) % 24),
+      minutes: Math.floor(difference / 1000 / 60 % 60),
+      seconds: Math.floor(difference / 1000 % 60)
     };
   }
-  return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+  return {
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0
+  };
 };
-
 const CountdownTimer = () => {
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft);
-
   useEffect(() => {
     const timer = setInterval(() => {
       setTimeLeft(calculateTimeLeft());
     }, 1000);
     return () => clearInterval(timer);
   }, []);
-
-  return (
-    <div className="flex items-center justify-center gap-2 md:gap-4">
-      {[
-        { value: timeLeft.days, label: "Days" },
-        { value: timeLeft.hours, label: "Hours" },
-        { value: timeLeft.minutes, label: "Mins" },
-        { value: timeLeft.seconds, label: "Secs" },
-      ].map((item, index) => (
-        <div key={item.label} className="flex flex-col items-center">
+  return <div className="flex items-center justify-center gap-2 md:gap-4">
+      {[{
+      value: timeLeft.days,
+      label: "Days"
+    }, {
+      value: timeLeft.hours,
+      label: "Hours"
+    }, {
+      value: timeLeft.minutes,
+      label: "Mins"
+    }, {
+      value: timeLeft.seconds,
+      label: "Secs"
+    }].map((item, index) => <div key={item.label} className="flex flex-col items-center">
           <div className="bg-secondary text-secondary-foreground font-bold text-xl md:text-3xl px-3 md:px-4 py-2 md:py-3 rounded-lg min-w-[50px] md:min-w-[70px] text-center shadow-lg">
             {String(item.value).padStart(2, "0")}
           </div>
           <span className="text-xs md:text-sm font-medium text-white mt-1">{item.label}</span>
-        </div>
-      ))}
-    </div>
-  );
+        </div>)}
+    </div>;
 };
-
 const LiveClasses = () => {
   const [seatsLeft, setSeatsLeft] = useState(18);
   const [statsInView, setStatsInView] = useState(false);
   const statsRef = useRef<HTMLDivElement>(null);
-
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setStatsInView(true); },
-      { threshold: 0.3 }
-    );
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) setStatsInView(true);
+    }, {
+      threshold: 0.3
+    });
     if (statsRef.current) observer.observe(statsRef.current);
     return () => observer.disconnect();
   }, []);
-
   const handleEnrollNow = () => {
     window.open(RAZORPAY_LINK, "_blank");
   };
-
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       <Header />
       <main>
         {/* Hero Section */}
         <section className="relative min-h-screen flex items-center overflow-hidden">
           {/* Background Image */}
           <div className="absolute inset-0">
-            <img
-              src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
-              alt=""
-              className="w-full h-full object-cover"
-            />
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="" className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-r from-background via-background/98 to-background/90" />
           </div>
 
@@ -366,67 +324,88 @@ const LiveClasses = () => {
                   <span className="text-sm font-bold text-secondary">Fresh Batch Starting 21st February 2026!</span>
                 </div>
 
-                <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 animate-fade-in-up text-white drop-shadow-lg">
-                  Facebook & Instagram
-                  <br />
+                <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 animate-fade-in-up text-white drop-shadow-lg">Facebook & Instagram
+Google My Business<br />
                   <span className="text-secondary drop-shadow-md">(Meta Ads)</span>
                   <br />
                   <span className="text-secondary drop-shadow-md">+ GMB Certification</span>
                 </h1>
 
-                <p className="text-lg md:text-xl text-white mb-8 max-w-xl leading-relaxed animate-fade-in-up font-medium drop-shadow-md" style={{ animationDelay: "0.2s" }}>
+                <p className="text-lg md:text-xl text-white mb-8 max-w-xl leading-relaxed animate-fade-in-up font-medium drop-shadow-md" style={{
+                animationDelay: "0.2s"
+              }}>
                   Master Meta Ads & Google My Business in <strong className="text-secondary font-bold">1 Month</strong>. 
                   12 Live Sessions under the mentorship of <strong className="text-secondary font-bold">Vikaas Parekh</strong>.
                 </p>
 
                 {/* Countdown Timer */}
-                <div className="mb-8 animate-fade-in-up" style={{ animationDelay: "0.25s" }}>
+                <div className="mb-8 animate-fade-in-up" style={{
+                animationDelay: "0.25s"
+              }}>
                   <p className="text-sm font-bold text-secondary mb-3 text-center lg:text-left">⏰ Batch Starts In:</p>
                   <CountdownTimer />
                 </div>
 
                 {/* Course Highlights */}
-                <div className="flex flex-wrap gap-2 md:gap-4 mb-8 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
-                  {[
-                    { icon: Clock, text: "1 Month" },
-                    { icon: Video, text: "12 Sessions" },
-                    { icon: Calendar, text: "90 Min Each" },
-                  ].map((item) => (
-                    <div key={item.text} className="flex items-center gap-2 bg-card border border-secondary/30 px-3 md:px-4 py-2 md:py-2.5 rounded-full shadow-md">
+                <div className="flex flex-wrap gap-2 md:gap-4 mb-8 animate-fade-in-up" style={{
+                animationDelay: "0.3s"
+              }}>
+                  {[{
+                  icon: Clock,
+                  text: "1 Month"
+                }, {
+                  icon: Video,
+                  text: "12 Sessions"
+                }, {
+                  icon: Calendar,
+                  text: "90 Min Each"
+                }].map(item => <div key={item.text} className="flex items-center gap-2 bg-card border border-secondary/30 px-3 md:px-4 py-2 md:py-2.5 rounded-full shadow-md">
                       <item.icon className="h-4 w-4 text-secondary" />
                       <span className="text-xs md:text-sm font-bold text-white">{item.text}</span>
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
 
                 {/* Stats Row */}
                 <div ref={statsRef} className="grid grid-cols-3 gap-3 md:gap-6 mb-8 bg-card/90 backdrop-blur-sm rounded-2xl p-4 md:p-5 border border-secondary/30">
-                  {[
-                    { value: 30, suffix: "+", label: "Years Exp." },
-                    { value: 500, suffix: "+", label: "Clients" },
-                    { value: 1, suffix: "Cr+", label: "Ad Spend" },
-                  ].map((stat, i) => (
-                    <div key={stat.label} className="text-center animate-fade-in-up" style={{ animationDelay: `${0.4 + i * 0.1}s` }}>
+                  {[{
+                  value: 30,
+                  suffix: "+",
+                  label: "Years Exp."
+                }, {
+                  value: 500,
+                  suffix: "+",
+                  label: "Clients"
+                }, {
+                  value: 1,
+                  suffix: "Cr+",
+                  label: "Ad Spend"
+                }].map((stat, i) => <div key={stat.label} className="text-center animate-fade-in-up" style={{
+                  animationDelay: `${0.4 + i * 0.1}s`
+                }}>
                       <div className="text-xl md:text-3xl font-bold text-secondary drop-shadow-md">
                         {stat.value === 1 ? "₹" : ""}<AnimatedCounter target={stat.value} suffix={stat.suffix} inView={statsInView} />
                       </div>
                       <div className="text-xs md:text-sm text-white font-medium">{stat.label}</div>
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
 
                 {/* Trust Points */}
-                <div className="flex flex-wrap gap-2 md:gap-4 animate-fade-in-up" style={{ animationDelay: "0.6s" }}>
-                  {[
-                    { icon: Monitor, text: "Live on Zoom" },
-                    { icon: Play, text: "Recordings" },
-                    { icon: Award, text: "Certificate" },
-                  ].map((item) => (
-                    <div key={item.text} className="flex items-center gap-2 bg-secondary/20 border border-secondary/30 px-3 md:px-4 py-2 md:py-2.5 rounded-full">
+                <div className="flex flex-wrap gap-2 md:gap-4 animate-fade-in-up" style={{
+                animationDelay: "0.6s"
+              }}>
+                  {[{
+                  icon: Monitor,
+                  text: "Live on Zoom"
+                }, {
+                  icon: Play,
+                  text: "Recordings"
+                }, {
+                  icon: Award,
+                  text: "Certificate"
+                }].map(item => <div key={item.text} className="flex items-center gap-2 bg-secondary/20 border border-secondary/30 px-3 md:px-4 py-2 md:py-2.5 rounded-full">
                       <item.icon className="h-4 w-4 text-secondary" />
                       <span className="text-xs md:text-sm font-bold text-white">{item.text}</span>
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
               </div>
 
@@ -470,25 +449,25 @@ const LiveClasses = () => {
                   </div>
 
                   {/* Enroll Button - Links to Razorpay */}
-                  <Button
-                    onClick={handleEnrollNow}
-                    className="w-full bg-secondary hover:bg-secondary/90 text-secondary-foreground py-6 text-lg font-bold rounded-xl shadow-glow transition-all hover:scale-[1.02] mb-4"
-                  >
+                  <Button onClick={handleEnrollNow} className="w-full bg-secondary hover:bg-secondary/90 text-secondary-foreground py-6 text-lg font-bold rounded-xl shadow-glow transition-all hover:scale-[1.02] mb-4">
                     Enroll Now - Pay ₹2,999 →
                   </Button>
 
                   {/* Bottom Features */}
                   <div className="flex justify-center gap-6 mt-4 pt-4 border-t border-border">
-                    {[
-                      { icon: Clock, text: "1 Month" },
-                      { icon: Monitor, text: "LIVE on Zoom" },
-                      { icon: Award, text: "Certificate" },
-                    ].map((item) => (
-                      <div key={item.text} className="flex items-center gap-2 text-muted-foreground text-sm font-medium">
+                    {[{
+                    icon: Clock,
+                    text: "1 Month"
+                  }, {
+                    icon: Monitor,
+                    text: "LIVE on Zoom"
+                  }, {
+                    icon: Award,
+                    text: "Certificate"
+                  }].map(item => <div key={item.text} className="flex items-center gap-2 text-muted-foreground text-sm font-medium">
                         <item.icon className="h-4 w-4 text-secondary" />
                         <span>{item.text}</span>
-                      </div>
-                    ))}
+                      </div>)}
                   </div>
                 </div>
               </div>
@@ -513,20 +492,29 @@ const LiveClasses = () => {
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[
-                { icon: TrendingUp, title: "Run Profitable Ads", description: "Master Facebook & Instagram ad campaigns that generate real results" },
-                { icon: Target, title: "Generate Leads & Sales", description: "Create campaigns that drive conversions and brand visibility" },
-                { icon: MapPin, title: "Optimize GMB", description: "Leverage Google My Business for local growth and visibility" },
-                { icon: Rocket, title: "Real-World Strategies", description: "Learn techniques used in managing 500+ client portfolios" },
-              ].map((item) => (
-                <div key={item.title} className="bg-card p-6 rounded-2xl border border-border hover:border-secondary/50 transition-all group">
+              {[{
+              icon: TrendingUp,
+              title: "Run Profitable Ads",
+              description: "Master Facebook & Instagram ad campaigns that generate real results"
+            }, {
+              icon: Target,
+              title: "Generate Leads & Sales",
+              description: "Create campaigns that drive conversions and brand visibility"
+            }, {
+              icon: MapPin,
+              title: "Optimize GMB",
+              description: "Leverage Google My Business for local growth and visibility"
+            }, {
+              icon: Rocket,
+              title: "Real-World Strategies",
+              description: "Learn techniques used in managing 500+ client portfolios"
+            }].map(item => <div key={item.title} className="bg-card p-6 rounded-2xl border border-border hover:border-secondary/50 transition-all group">
                   <div className="w-14 h-14 rounded-2xl bg-secondary/20 flex items-center justify-center mb-4 group-hover:bg-secondary transition-colors">
                     <item.icon className="h-7 w-7 text-secondary group-hover:text-secondary-foreground transition-colors" />
                   </div>
                   <h3 className="text-lg font-bold text-foreground mb-2">{item.title}</h3>
                   <p className="text-muted-foreground text-sm font-medium">{item.description}</p>
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
         </section>
@@ -546,12 +534,9 @@ const LiveClasses = () => {
             <div className="grid lg:grid-cols-2 gap-12 items-start max-w-6xl mx-auto">
               {/* Bonus Items List */}
               <div className="space-y-4">
-                {bonusItems.map((item, index) => (
-                  <div
-                    key={item.title}
-                    className="flex items-center justify-between p-5 bg-card rounded-xl border border-border hover:border-secondary/50 hover:shadow-card transition-all group"
-                    style={{ animationDelay: `${index * 0.1}s` }}
-                  >
+                {bonusItems.map((item, index) => <div key={item.title} className="flex items-center justify-between p-5 bg-card rounded-xl border border-border hover:border-secondary/50 hover:shadow-card transition-all group" style={{
+                animationDelay: `${index * 0.1}s`
+              }}>
                     <div className="flex items-center gap-4">
                       <div className="w-8 h-8 rounded-full bg-secondary/20 flex items-center justify-center group-hover:bg-secondary group-hover:scale-110 transition-all">
                         <CheckCircle className="h-5 w-5 text-secondary group-hover:text-secondary-foreground" />
@@ -559,8 +544,7 @@ const LiveClasses = () => {
                       <span className="font-bold text-foreground">{item.title}</span>
                     </div>
                     <span className="text-muted-foreground font-bold">({item.value} Value)</span>
-                  </div>
-                ))}
+                  </div>)}
 
                 {/* Total Value Bar */}
                 <div className="bg-secondary/10 border-2 border-secondary/30 rounded-xl p-5 mt-6">
@@ -596,24 +580,24 @@ const LiveClasses = () => {
                     <div className="text-5xl font-bold text-secondary">₹2,999</div>
                   </div>
 
-                  <Button
-                    onClick={handleEnrollNow}
-                    className="w-full bg-secondary hover:bg-secondary/90 text-secondary-foreground py-6 text-lg font-bold rounded-xl shadow-glow mb-4"
-                  >
+                  <Button onClick={handleEnrollNow} className="w-full bg-secondary hover:bg-secondary/90 text-secondary-foreground py-6 text-lg font-bold rounded-xl shadow-glow mb-4">
                     Enroll Now - Pay ₹2,999 →
                   </Button>
 
                   <div className="flex justify-center gap-6 mt-4 pt-4 border-t border-border">
-                    {[
-                      { icon: Clock, text: "1 Month" },
-                      { icon: Monitor, text: "LIVE on Zoom" },
-                      { icon: Award, text: "Certificate" },
-                    ].map((item) => (
-                      <div key={item.text} className="flex items-center gap-2 text-muted-foreground text-sm font-medium">
+                    {[{
+                    icon: Clock,
+                    text: "1 Month"
+                  }, {
+                    icon: Monitor,
+                    text: "LIVE on Zoom"
+                  }, {
+                    icon: Award,
+                    text: "Certificate"
+                  }].map(item => <div key={item.text} className="flex items-center gap-2 text-muted-foreground text-sm font-medium">
                         <item.icon className="h-4 w-4 text-secondary" />
                         <span>{item.text}</span>
-                      </div>
-                    ))}
+                      </div>)}
                   </div>
                 </div>
               </div>
@@ -628,11 +612,7 @@ const LiveClasses = () => {
               <div className="relative group">
                 <div className="absolute -inset-4 bg-gradient-to-r from-primary via-secondary to-accent rounded-3xl blur-xl opacity-30 group-hover:opacity-50 transition-opacity" />
                 <div className="relative aspect-[4/5] max-w-md mx-auto rounded-3xl overflow-hidden shadow-elevated">
-                  <img
-                    src={mentorImage}
-                    alt="Vikaas Parekh - Founder & Mentor"
-                    className="w-full h-full object-cover"
-                  />
+                  <img src={mentorImage} alt="Vikaas Parekh - Founder & Mentor" className="w-full h-full object-cover" />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-6">
                     <div className="text-white font-bold text-xl drop-shadow-lg">Vikaas Parekh</div>
@@ -666,18 +646,27 @@ const LiveClasses = () => {
                 </p>
 
                 <div className="grid grid-cols-2 gap-4">
-                  {[
-                    { icon: Users, label: "Clients Managed", value: "500+" },
-                    { icon: TrendingUp, label: "Ad Spend Managed", value: "₹1Cr+" },
-                    { icon: GraduationCap, label: "Guest Faculty", value: "Auro University" },
-                    { icon: Award, label: "Success Rate", value: "95%" },
-                  ].map((stat) => (
-                    <div key={stat.label} className="bg-card p-5 rounded-xl shadow-card border border-border group hover:border-secondary/30 transition-all">
+                  {[{
+                  icon: Users,
+                  label: "Clients Managed",
+                  value: "500+"
+                }, {
+                  icon: TrendingUp,
+                  label: "Ad Spend Managed",
+                  value: "₹1Cr+"
+                }, {
+                  icon: GraduationCap,
+                  label: "Guest Faculty",
+                  value: "Auro University"
+                }, {
+                  icon: Award,
+                  label: "Success Rate",
+                  value: "95%"
+                }].map(stat => <div key={stat.label} className="bg-card p-5 rounded-xl shadow-card border border-border group hover:border-secondary/30 transition-all">
                       <stat.icon className="h-6 w-6 text-secondary mb-2" />
                       <div className="text-2xl font-bold text-foreground">{stat.value}</div>
                       <div className="text-sm text-muted-foreground font-medium">{stat.label}</div>
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
               </div>
             </div>
@@ -700,17 +689,9 @@ const LiveClasses = () => {
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {targetAudience.map((item, index) => (
-                <div
-                  key={item.title}
-                  className="group bg-card rounded-2xl overflow-hidden shadow-card hover:shadow-elevated transition-all hover:-translate-y-2 border border-border"
-                >
+              {targetAudience.map((item, index) => <div key={item.title} className="group bg-card rounded-2xl overflow-hidden shadow-card hover:shadow-elevated transition-all hover:-translate-y-2 border border-border">
                   <div className="h-40 overflow-hidden">
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    />
+                    <img src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                   </div>
                   <div className="p-6">
                     <div className="flex items-center gap-3 mb-3">
@@ -721,8 +702,7 @@ const LiveClasses = () => {
                     </div>
                     <p className="text-muted-foreground text-sm font-medium">{item.description}</p>
                   </div>
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
         </section>
@@ -743,11 +723,7 @@ const LiveClasses = () => {
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {courseSchedule.map((module, index) => (
-                <div
-                  key={module.day}
-                  className="group relative bg-card p-6 rounded-2xl border border-border hover:border-secondary/50 hover:shadow-elevated transition-all overflow-hidden"
-                >
+              {courseSchedule.map((module, index) => <div key={module.day} className="group relative bg-card p-6 rounded-2xl border border-border hover:border-secondary/50 hover:shadow-elevated transition-all overflow-hidden">
                   {/* Gradient Background on Hover */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${module.color} opacity-0 group-hover:opacity-5 transition-opacity`} />
                   
@@ -760,16 +736,13 @@ const LiveClasses = () => {
                     </div>
                     <h3 className="text-lg font-bold text-foreground mb-3 group-hover:text-secondary transition-colors">{module.title}</h3>
                     <ul className="space-y-2">
-                      {module.topics.map((topic, i) => (
-                        <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground font-medium">
+                      {module.topics.map((topic, i) => <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground font-medium">
                           <CheckCircle className="h-4 w-4 text-secondary flex-shrink-0 mt-0.5" />
                           <span>{topic}</span>
-                        </li>
-                      ))}
+                        </li>)}
                     </ul>
                   </div>
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
         </section>
@@ -793,8 +766,7 @@ const LiveClasses = () => {
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {whyChoose.map((item, index) => (
-                <div key={item.title} className="flex gap-5 group">
+              {whyChoose.map((item, index) => <div key={item.title} className="flex gap-5 group">
                   <div className="w-14 h-14 rounded-2xl bg-secondary/20 flex items-center justify-center flex-shrink-0 group-hover:bg-secondary transition-colors">
                     <item.icon className="h-7 w-7 text-secondary group-hover:text-secondary-foreground transition-colors" />
                   </div>
@@ -802,8 +774,7 @@ const LiveClasses = () => {
                     <h3 className="font-bold text-lg mb-2">{item.title}</h3>
                     <p className="text-sm text-primary-foreground/70 leading-relaxed font-medium">{item.description}</p>
                   </div>
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
         </section>
@@ -822,24 +793,18 @@ const LiveClasses = () => {
               </div>
 
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-                {courseDeliverables.map((item) => (
-                  <div key={item.title} className="bg-card p-6 rounded-2xl shadow-card border border-border text-center group hover:border-secondary/30 hover:shadow-elevated transition-all">
+                {courseDeliverables.map(item => <div key={item.title} className="bg-card p-6 rounded-2xl shadow-card border border-border text-center group hover:border-secondary/30 hover:shadow-elevated transition-all">
                     <div className="w-14 h-14 mx-auto rounded-2xl bg-secondary/20 flex items-center justify-center mb-4 group-hover:bg-secondary group-hover:scale-110 transition-all">
                       <item.icon className="h-7 w-7 text-secondary group-hover:text-secondary-foreground transition-colors" />
                     </div>
                     <div className="text-lg font-bold text-foreground mb-1">{item.title}</div>
                     <div className="text-sm text-muted-foreground font-medium">{item.description}</div>
-                  </div>
-                ))}
+                  </div>)}
               </div>
 
               {/* Course Format Banner */}
               <div className="relative rounded-3xl overflow-hidden">
-                <img
-                  src="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
-                  alt="Online learning"
-                  className="w-full h-64 object-cover"
-                />
+                <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Online learning" className="w-full h-64 object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-r from-background via-background/95 to-background/80" />
                 <div className="absolute inset-0 flex items-center">
                   <div className="container mx-auto px-8">
@@ -850,17 +815,22 @@ const LiveClasses = () => {
                       12 live interactive sessions via Zoom, each 90 minutes. Learn from anywhere in India.
                     </p>
                     <div className="flex flex-wrap gap-2 md:gap-4">
-                      {[
-                        { icon: Video, text: "Live Zoom" },
-                        { icon: MessageCircle, text: "Q&A" },
-                        { icon: Play, text: "Recordings" },
-                        { icon: Headphones, text: "Support" },
-                      ].map((item) => (
-                        <div key={item.text} className="flex items-center gap-2 bg-secondary/30 backdrop-blur-sm px-3 md:px-4 py-2 rounded-full border border-secondary/50">
+                      {[{
+                      icon: Video,
+                      text: "Live Zoom"
+                    }, {
+                      icon: MessageCircle,
+                      text: "Q&A"
+                    }, {
+                      icon: Play,
+                      text: "Recordings"
+                    }, {
+                      icon: Headphones,
+                      text: "Support"
+                    }].map(item => <div key={item.text} className="flex items-center gap-2 bg-secondary/30 backdrop-blur-sm px-3 md:px-4 py-2 rounded-full border border-secondary/50">
                           <item.icon className="h-4 w-4 text-secondary" />
                           <span className="text-xs md:text-sm text-white font-bold">{item.text}</span>
-                        </div>
-                      ))}
+                        </div>)}
                     </div>
                   </div>
                 </div>
@@ -895,10 +865,7 @@ const LiveClasses = () => {
                   <p className="text-muted-foreground mt-2 font-medium">One-time payment • Lifetime access to recordings</p>
                 </div>
 
-                <Button
-                  onClick={handleEnrollNow}
-                  className="w-full bg-secondary hover:bg-secondary/90 text-secondary-foreground py-6 text-lg font-bold rounded-xl shadow-glow transition-all hover:scale-[1.02] mb-4"
-                >
+                <Button onClick={handleEnrollNow} className="w-full bg-secondary hover:bg-secondary/90 text-secondary-foreground py-6 text-lg font-bold rounded-xl shadow-glow transition-all hover:scale-[1.02] mb-4">
                   Enroll Now — Pay ₹2,999 →
                 </Button>
 
@@ -912,8 +879,6 @@ const LiveClasses = () => {
         </section>
       </main>
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default LiveClasses;
