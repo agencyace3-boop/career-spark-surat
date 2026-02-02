@@ -22,7 +22,7 @@ const faqs = [
   },
   {
     question: "What certifications will I receive after completing the course?",
-    answer: "Upon successful completion, you'll receive our industry-recognized Surat DMS certification. Additionally, we prepare you for and help you obtain certifications from Google (Google Ads, Analytics), Meta (Blueprint), HubSpot, and other industry platforms at no extra cost.",
+    answer: "Upon successful completion, you'll receive our industry-recognized Surat Digital Marketing School certification. Additionally, we prepare you for and help you obtain certifications from Google (Google Ads, Analytics), Meta (Blueprint), HubSpot, and other industry platforms at no extra cost.",
   },
   {
     question: "Do you offer discounts for students or groups?",
@@ -37,7 +37,7 @@ const faqs = [
     answer: "Absolutely! Practical training is our core strength. Every course includes 15+ live projects where you'll work on real campaigns with actual budgets. You'll manage Google Ads campaigns, run social media marketing, perform SEO audits, and more—building a portfolio you can show employers.",
   },
   {
-    question: "What makes Surat DMS different from other institutes?",
+    question: "What makes Surat Digital Marketing School different from other institutes?",
     answer: "Our differentiators include: 10+ years of industry experience, trainers from Fortune 500 companies, 95% placement rate, live project experience with real budgets, lifetime access to course materials, post-course support through our alumni network, and affordable pricing with EMI options.",
   },
 ];

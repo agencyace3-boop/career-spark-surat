@@ -10,7 +10,7 @@ const testimonials = [
     company: "TechCorp India",
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80",
     rating: 5,
-    text: "Surat DMS completely transformed my career. Within 3 months of completing the course, I landed a job at a top tech company with a 150% salary increase. The hands-on training and placement support were exceptional!",
+    text: "Surat Digital Marketing School completely transformed my career. Within 3 months of completing the course, I landed a job at a top tech company with a 150% salary increase. The hands-on training and placement support were exceptional!",
     course: "Advanced Digital Marketing",
     placedAt: "TechCorp India",
   },
@@ -21,7 +21,7 @@ const testimonials = [
     company: "Digital First Agency",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80",
     rating: 5,
-    text: "The SEO training at Surat DMS is unmatched. I learned advanced techniques that helped me rank websites on page 1 of Google. The trainers share real strategies that actually work in today's competitive market.",
+    text: "The SEO training at Surat Digital Marketing School is unmatched. I learned advanced techniques that helped me rank websites on page 1 of Google. The trainers share real strategies that actually work in today's competitive market.",
     course: "Advanced SEO Strategy",
     placedAt: "Digital First Agency",
   },
@@ -32,7 +32,7 @@ const testimonials = [
     company: "Brand Solutions",
     image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80",
     rating: 5,
-    text: "I was a complete beginner when I joined Surat DMS. The structured curriculum and patient trainers helped me master social media marketing. Now I manage campaigns for national brands!",
+    text: "I was a complete beginner when I joined Surat Digital Marketing School. The structured curriculum and patient trainers helped me master social media marketing. Now I manage campaigns for national brands!",
     course: "Social Media Marketing",
     placedAt: "Brand Solutions",
   },
@@ -54,7 +54,7 @@ const testimonials = [
     company: "Self-Employed",
     image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80",
     rating: 5,
-    text: "Thanks to Surat DMS, I now run my own digital marketing consultancy. The agency setup training and business skills I learned here were invaluable. I earn 3x more than my previous job!",
+    text: "Thanks to Surat Digital Marketing School, I now run my own digital marketing consultancy. The agency setup training and business skills I learned here were invaluable. I earn 3x more than my previous job!",
     course: "Agency Setup Training",
     placedAt: "Own Agency",
   },
@@ -105,7 +105,7 @@ const Testimonials = () => {
             Hear from Our <span className="text-secondary">Successful</span> Alumni
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Join thousands of students who transformed their careers with Surat DMS. 
+            Join thousands of students who transformed their careers with Surat Digital Marketing School. 
             Read their inspiring journeys and success stories.
           </p>
         </div>
@@ -126,7 +126,7 @@ const Testimonials = () => {
             </div>
             <div className="absolute bottom-8 left-8 right-8">
               <p className="text-2xl font-bold text-primary-foreground mb-2">
-                "Surat DMS Changed My Life"
+                "Surat Digital Marketing School Changed My Life"
               </p>
               <p className="text-primary-foreground/80">
                 Watch how Priya went from fresher to Digital Marketing Manager in just 6 months

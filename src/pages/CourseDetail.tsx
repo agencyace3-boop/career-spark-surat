@@ -269,7 +269,7 @@ const CourseDetail = () => {
                         </div>
                         <div>
                           <h3 className="text-xl font-bold text-foreground">{course.instructor}</h3>
-                          <p className="text-muted-foreground">Founder & Lead Trainer at Surat DMS</p>
+                          <p className="text-muted-foreground">Founder & Lead Trainer at Surat Digital Marketing School</p>
                         </div>
                       </div>
                       <p className="text-muted-foreground leading-relaxed">

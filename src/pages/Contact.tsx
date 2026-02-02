@@ -269,7 +269,7 @@ const Contact = () => {
                     allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    title="Surat DMS Location"
+                    title="Surat Digital Marketing School Location"
                   />
                 </div>
 
