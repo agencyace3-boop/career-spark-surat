@@ -40,13 +40,13 @@ const Header = () => {
       }`}
     >
       <div className="container mx-auto px-4">
-        <div className="flex h-24 items-center justify-between">
+        <div className="flex h-28 items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
             <img 
               src={logo} 
               alt="Surat Digital Marketing School" 
-              className="h-20 w-auto object-contain"
+              className="h-24 w-auto object-contain"
             />
           </Link>
 

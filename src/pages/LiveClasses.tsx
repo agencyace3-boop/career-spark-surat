@@ -242,8 +242,8 @@ const courseDeliverables = [
 
 const RAZORPAY_LINK = "https://rzp.io/rzp/IAVCWNAq";
 
-// Batch start date: 21st March 2025 (future date for countdown)
-const BATCH_START_DATE = new Date("2025-03-21T20:00:00+05:30");
+// Batch start date: 21st Feb 2026
+const BATCH_START_DATE = new Date("2026-02-21T20:00:00+05:30");
 
 const AnimatedCounter = ({ target, suffix = "", inView }: { target: number; suffix?: string; inView: boolean }) => {
   const [count, setCount] = useState(0);
@@ -366,7 +366,7 @@ const LiveClasses = () => {
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
                     <span className="relative inline-flex rounded-full h-3 w-3 bg-secondary"></span>
                   </span>
-                  <span className="text-sm font-bold text-secondary">Fresh Batch Starting 21st March!</span>
+                  <span className="text-sm font-bold text-secondary">Fresh Batch Starting 21st February 2026!</span>
                 </div>
 
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 animate-fade-in-up text-white drop-shadow-lg">
@@ -458,7 +458,7 @@ const LiveClasses = () => {
                   <div className="bg-primary/10 border border-primary/30 rounded-xl p-4 mb-6">
                     <div className="flex items-center justify-center gap-2">
                       <Calendar className="h-5 w-5 text-secondary" />
-                      <span className="font-bold text-foreground">Batch Starts: 21st March 2025</span>
+                      <span className="font-bold text-foreground">Batch Starts: 21st February 2026</span>
                     </div>
                   </div>
 
