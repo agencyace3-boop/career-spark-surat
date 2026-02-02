@@ -32,19 +32,20 @@ const ToolsMarquee = () => {
         <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-muted/50 to-transparent z-10" />
         <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-muted/50 to-transparent z-10" />
         
-        <div className="flex animate-marquee gap-16 items-center px-20 will-change-transform">
+        <div className="flex animate-marquee gap-12 items-center px-20 will-change-transform">
           {[...toolLogos, ...toolLogos].map((tool, index) => (
             <div
               key={`${tool.name}-${index}`}
               className="flex-shrink-0 min-w-[140px] flex items-center justify-center transition-transform duration-300 hover:scale-[1.03]"
             >
-              <div className="rounded-xl px-4 py-2 bg-background/60 ring-1 ring-border/40 shadow-sm backdrop-blur-sm">
-              <img
-                src={tool.logo}
-                alt={tool.name}
-                className="h-9 md:h-10 w-auto max-w-[160px] object-contain"
-                loading="lazy"
-              />
+              <div className="rounded-xl px-4 py-2 bg-background/60 ring-1 ring-border/40 shadow-sm backdrop-blur-sm flex items-center gap-3">
+                <img
+                  src={tool.logo}
+                  alt={tool.name}
+                  className="h-9 md:h-10 w-auto max-w-[120px] object-contain"
+                  loading="lazy"
+                />
+                <span className="text-sm font-bold text-foreground whitespace-nowrap">{tool.name}</span>
               </div>
             </div>
           ))}
