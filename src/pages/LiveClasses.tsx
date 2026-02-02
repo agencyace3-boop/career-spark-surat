@@ -462,8 +462,8 @@ const LiveClasses = () => {
                   {/* Price Display */}
                   <div className="text-center mb-6 p-4 bg-background/50 rounded-xl border border-secondary/40">
                     <div className="flex items-center justify-center gap-3 mb-1">
-                      <span className="text-lg text-muted-foreground line-through">₹5,999</span>
-                      <span className="bg-secondary text-secondary-foreground px-3 py-1 rounded-full text-sm font-bold">50% OFF</span>
+                      <span className="text-lg text-muted-foreground line-through">₹9,999</span>
+                      <span className="bg-secondary text-secondary-foreground px-3 py-1 rounded-full text-sm font-bold">70% OFF</span>
                     </div>
                     <div className="text-5xl font-bold text-secondary">₹2,999</div>
                     <p className="text-sm text-muted-foreground mt-1 font-medium">One-time payment • Lifetime access to recordings</p>

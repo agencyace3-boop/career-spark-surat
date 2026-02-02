@@ -17,7 +17,6 @@ const quickLinks = [
 
 const quickLinks2 = [
   { label: "Our Services", href: "#business" },
-  { label: "Privacy Policy", href: "/privacy-policy" },
   { label: "Contact Us", href: "#contact" },
 ];
 
@@ -107,22 +106,22 @@ const Footer = () => {
             <h4 className="font-bold mb-4">GET IN TOUCH</h4>
             <div className="space-y-3">
               <a
-                href="tel:+919558866993"
+                href="tel:+919924707478"
                 className="flex items-center gap-3 text-primary-foreground/80 hover:text-primary-foreground transition-colors"
               >
                 <Phone className="h-5 w-5 flex-shrink-0" />
-                <span>(+91) 95588 66993</span>
+                <span>(+91) 99247 07478</span>
               </a>
               <div className="flex items-start gap-3 text-primary-foreground/80">
                 <MapPin className="h-5 w-5 flex-shrink-0 mt-1" />
-                <span>A-1, 504 Subham Residency, Bh L P Savani School, New Pal Road, Adajan Surat.</span>
+                <span>Green signature, 142, opp. THE LEGEND, nr. Prime shoppers, Vesu, Surat, Gujarat 395007</span>
               </div>
               <a
-                href="mailto:info@suratdms.in"
+                href="mailto:Vikasparekh@live.com"
                 className="flex items-center gap-3 text-primary-foreground/80 hover:text-primary-foreground transition-colors"
               >
                 <Mail className="h-5 w-5 flex-shrink-0" />
-                <span>info@suratdms.in</span>
+                <span>Vikasparekh@live.com</span>
               </a>
             </div>
           </div>

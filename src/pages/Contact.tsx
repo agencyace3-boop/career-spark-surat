@@ -9,17 +9,17 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Visit Our Campus",
-    details: ["301-302, Shivalik Plaza", "Near Athwagate, Ring Road", "Surat, Gujarat 395001"],
+    details: ["Green signature, 142, opp. THE LEGEND", "nr. Prime shoppers, Vesu", "Surat, Gujarat 395007"],
   },
   {
     icon: Phone,
     title: "Call Us",
-    details: ["+91 99247 07478", "+91 99247 07478"],
+    details: ["+91 99247 07478"],
   },
   {
     icon: Mail,
     title: "Email Us",
-    details: ["info@suratdms.com", "admissions@suratdms.com"],
+    details: ["Vikasparekh@live.com"],
   },
   {
     icon: Clock,
@@ -247,7 +247,7 @@ const Contact = () => {
                       Call Now
                     </a>
                     <a
-                      href="mailto:info@suratdms.in"
+                      href="mailto:Vikasparekh@live.com"
                       className="inline-flex items-center gap-2 bg-secondary text-secondary-foreground px-4 py-2 rounded-lg text-sm font-medium hover:bg-secondary/90 transition-colors"
                     >
                       <Mail className="h-4 w-4" />
