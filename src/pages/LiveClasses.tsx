@@ -296,7 +296,7 @@ const LiveClasses = () => {
               alt=""
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-background/98 via-background/95 to-background/90" />
+            <div className="absolute inset-0 bg-gradient-to-r from-background via-background/98 to-background/95" />
           </div>
 
           {/* Floating Elements */}
@@ -315,17 +315,17 @@ const LiveClasses = () => {
                   <span className="text-sm font-semibold text-secondary">Live Online Classes Starting Soon!</span>
                 </div>
 
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 animate-fade-in-up">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 animate-fade-in-up text-white drop-shadow-lg">
                   Facebook & Instagram
                   <br />
-                  <span className="text-secondary">(Meta Ads)</span>
+                  <span className="text-secondary drop-shadow-md">(Meta Ads)</span>
                   <br />
-                  <span className="text-secondary">+ GMB Certification</span>
+                  <span className="text-secondary drop-shadow-md">+ GMB Certification</span>
                 </h1>
 
-                <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-xl leading-relaxed animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
-                  Master Meta Ads & Google My Business in <strong className="text-secondary">1 Month</strong>. 
-                  12 Live Sessions under the mentorship of <strong className="text-secondary">Vikaas Parekh</strong>.
+                <p className="text-lg md:text-xl text-foreground/90 mb-8 max-w-xl leading-relaxed animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+                  Master Meta Ads & Google My Business in <strong className="text-secondary font-bold">1 Month</strong>. 
+                  12 Live Sessions under the mentorship of <strong className="text-secondary font-bold">Vikaas Parekh</strong>.
                 </p>
 
                 {/* Course Highlights */}
@@ -335,25 +335,25 @@ const LiveClasses = () => {
                     { icon: Video, text: "12 Live Sessions" },
                     { icon: Calendar, text: "90 Min Each" },
                   ].map((item) => (
-                    <div key={item.text} className="flex items-center gap-2 bg-card/80 border border-border px-4 py-2 rounded-full">
+                    <div key={item.text} className="flex items-center gap-2 bg-card border border-secondary/30 px-4 py-2.5 rounded-full shadow-md">
                       <item.icon className="h-4 w-4 text-secondary" />
-                      <span className="text-sm text-foreground">{item.text}</span>
+                      <span className="text-sm font-medium text-white">{item.text}</span>
                     </div>
                   ))}
                 </div>
 
                 {/* Stats Row */}
-                <div ref={statsRef} className="grid grid-cols-3 gap-6 mb-8">
+                <div ref={statsRef} className="grid grid-cols-3 gap-6 mb-8 bg-card/80 backdrop-blur-sm rounded-2xl p-5 border border-border">
                   {[
                     { value: 30, suffix: "+", label: "Years Experience" },
                     { value: 500, suffix: "+", label: "Clients Managed" },
                     { value: 1, suffix: "Cr+", label: "Ad Spend Managed" },
                   ].map((stat, i) => (
                     <div key={stat.label} className="text-center animate-fade-in-up" style={{ animationDelay: `${0.4 + i * 0.1}s` }}>
-                      <div className="text-3xl font-bold text-secondary">
+                      <div className="text-3xl font-bold text-secondary drop-shadow-md">
                         {stat.value === 1 ? "₹" : ""}<AnimatedCounter target={stat.value} suffix={stat.suffix} inView={statsInView} />
                       </div>
-                      <div className="text-xs text-muted-foreground">{stat.label}</div>
+                      <div className="text-sm text-white/80 font-medium">{stat.label}</div>
                     </div>
                   ))}
                 </div>
@@ -365,9 +365,9 @@ const LiveClasses = () => {
                     { icon: Play, text: "Recording Access" },
                     { icon: Award, text: "Certificate Included" },
                   ].map((item) => (
-                    <div key={item.text} className="flex items-center gap-2 bg-primary/20 px-4 py-2 rounded-full">
+                    <div key={item.text} className="flex items-center gap-2 bg-secondary/20 border border-secondary/30 px-4 py-2.5 rounded-full">
                       <item.icon className="h-4 w-4 text-secondary" />
-                      <span className="text-sm text-foreground">{item.text}</span>
+                      <span className="text-sm font-medium text-white">{item.text}</span>
                     </div>
                   ))}
                 </div>
@@ -395,12 +395,12 @@ const LiveClasses = () => {
                   </div>
 
                   {/* Price Display */}
-                  <div className="text-center mb-6 p-4 bg-background/50 rounded-xl border border-secondary/30">
+                  <div className="text-center mb-6 p-4 bg-background/50 rounded-xl border border-secondary/40">
                     <div className="flex items-center justify-center gap-3 mb-1">
-                      <span className="text-lg text-muted-foreground line-through">₹9,999</span>
-                      <span className="bg-secondary/20 text-secondary px-3 py-1 rounded-full text-sm font-semibold">Limited Offer</span>
+                      <span className="text-lg text-muted-foreground line-through">₹5,999</span>
+                      <span className="bg-secondary text-secondary-foreground px-3 py-1 rounded-full text-sm font-bold">50% OFF</span>
                     </div>
-                    <div className="text-4xl font-bold text-secondary">₹4,999</div>
+                    <div className="text-4xl font-bold text-secondary">₹2,999</div>
                     <p className="text-xs text-muted-foreground mt-1">One-time payment • Lifetime access to recordings</p>
                   </div>
 
@@ -409,7 +409,7 @@ const LiveClasses = () => {
                     onClick={handleEnrollNow}
                     className="w-full bg-secondary hover:bg-secondary/90 text-secondary-foreground py-6 text-lg font-bold rounded-xl shadow-glow transition-all hover:scale-[1.02] mb-4"
                   >
-                    Enroll Now - Pay ₹4,999 →
+                    Enroll Now - Pay ₹2,999 →
                   </Button>
 
                   <p className="text-center text-xs text-muted-foreground mb-4">
