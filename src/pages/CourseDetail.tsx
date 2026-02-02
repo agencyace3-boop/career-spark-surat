@@ -1,16 +1,19 @@
+import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import { Clock, Users, Globe, BarChart3, CheckCircle } from "lucide-react";
+import { Clock, Users, Globe, BarChart3, CheckCircle, BookOpen, Briefcase, Wrench, FolderOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ReservationModal from "@/components/ReservationModal";
 import { getCourseBySlug, courses } from "@/data/courses";
 
 const CourseDetail = () => {
   const { slug } = useParams<{ slug: string }>();
   const course = getCourseBySlug(slug || "");
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   if (!course) {
     return (
@@ -100,7 +103,11 @@ const CourseDetail = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                 </div>
                 <CardContent className="p-6">
-                  <Button className="w-full bg-secondary hover:bg-secondary/90 text-secondary-foreground mb-6" size="lg">
+                  <Button 
+                    onClick={() => setIsModalOpen(true)}
+                    className="w-full bg-secondary hover:bg-secondary/90 text-secondary-foreground mb-6" 
+                    size="lg"
+                  >
                     Reserve Your Spot
                   </Button>
                   
@@ -164,8 +171,11 @@ const CourseDetail = () => {
                         {course.description}
                       </p>
 
-                      <h4 className="text-lg font-semibold text-foreground mb-4">What You'll Learn</h4>
-                      <div className="grid md:grid-cols-2 gap-3">
+                      <h4 className="text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
+                        <CheckCircle className="h-5 w-5 text-secondary" />
+                        What You'll Learn
+                      </h4>
+                      <div className="grid md:grid-cols-2 gap-3 mb-8">
                         {course.overview.map((item, index) => (
                           <div key={index} className="flex items-start gap-3">
                             <CheckCircle className="h-5 w-5 text-secondary flex-shrink-0 mt-0.5" />
@@ -173,6 +183,78 @@ const CourseDetail = () => {
                           </div>
                         ))}
                       </div>
+
+                      {/* Curriculum Section */}
+                      {course.curriculum && course.curriculum.length > 0 && (
+                        <>
+                          <h4 className="text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
+                            <BookOpen className="h-5 w-5 text-primary" />
+                            Course Curriculum
+                          </h4>
+                          <div className="space-y-3 mb-8">
+                            {course.curriculum.map((item, index) => (
+                              <div key={index} className="flex items-start gap-3 p-3 bg-muted/50 rounded-lg">
+                                <span className="w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-bold flex-shrink-0">
+                                  {index + 1}
+                                </span>
+                                <span className="text-foreground font-medium pt-1">{item}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </>
+                      )}
+
+                      {/* Career Opportunities */}
+                      {course.careerOpportunities && course.careerOpportunities.length > 0 && (
+                        <>
+                          <h4 className="text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
+                            <Briefcase className="h-5 w-5 text-secondary" />
+                            Career Opportunities
+                          </h4>
+                          <div className="flex flex-wrap gap-2 mb-8">
+                            {course.careerOpportunities.map((career, index) => (
+                              <Badge key={index} variant="secondary" className="px-4 py-2 text-sm">
+                                {career}
+                              </Badge>
+                            ))}
+                          </div>
+                        </>
+                      )}
+
+                      {/* Tools You'll Master */}
+                      {course.tools && course.tools.length > 0 && (
+                        <>
+                          <h4 className="text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
+                            <Wrench className="h-5 w-5 text-primary" />
+                            Tools You'll Master
+                          </h4>
+                          <div className="flex flex-wrap gap-2 mb-8">
+                            {course.tools.map((tool, index) => (
+                              <Badge key={index} variant="outline" className="px-4 py-2 text-sm border-primary text-primary">
+                                {tool}
+                              </Badge>
+                            ))}
+                          </div>
+                        </>
+                      )}
+
+                      {/* Hands-on Projects */}
+                      {course.projects && course.projects.length > 0 && (
+                        <>
+                          <h4 className="text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
+                            <FolderOpen className="h-5 w-5 text-secondary" />
+                            Hands-on Projects
+                          </h4>
+                          <div className="space-y-3">
+                            {course.projects.map((project, index) => (
+                              <div key={index} className="flex items-start gap-3">
+                                <CheckCircle className="h-5 w-5 text-secondary flex-shrink-0 mt-0.5" />
+                                <span className="text-muted-foreground">{project}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </>
+                      )}
                     </CardContent>
                   </Card>
                 </TabsContent>
@@ -261,6 +343,12 @@ const CourseDetail = () => {
           </div>
         </div>
       </section>
+
+      <ReservationModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+        courseName={course.title}
+      />
 
       <Footer />
     </div>
