@@ -369,7 +369,7 @@ const LiveClasses = () => {
                   <span className="text-sm font-bold text-secondary">Fresh Batch Starting 21st February 2026!</span>
                 </div>
 
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 animate-fade-in-up text-white drop-shadow-lg">
+                <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 animate-fade-in-up text-white drop-shadow-lg">
                   Facebook & Instagram
                   <br />
                   <span className="text-secondary drop-shadow-md">(Meta Ads)</span>
@@ -389,45 +389,45 @@ const LiveClasses = () => {
                 </div>
 
                 {/* Course Highlights */}
-                <div className="flex flex-wrap gap-4 mb-8 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
+                <div className="flex flex-wrap gap-2 md:gap-4 mb-8 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
                   {[
-                    { icon: Clock, text: "1 Month Duration" },
-                    { icon: Video, text: "12 Live Sessions" },
+                    { icon: Clock, text: "1 Month" },
+                    { icon: Video, text: "12 Sessions" },
                     { icon: Calendar, text: "90 Min Each" },
                   ].map((item) => (
-                    <div key={item.text} className="flex items-center gap-2 bg-card border border-secondary/30 px-4 py-2.5 rounded-full shadow-md">
+                    <div key={item.text} className="flex items-center gap-2 bg-card border border-secondary/30 px-3 md:px-4 py-2 md:py-2.5 rounded-full shadow-md">
                       <item.icon className="h-4 w-4 text-secondary" />
-                      <span className="text-sm font-bold text-white">{item.text}</span>
+                      <span className="text-xs md:text-sm font-bold text-white">{item.text}</span>
                     </div>
                   ))}
                 </div>
 
                 {/* Stats Row */}
-                <div ref={statsRef} className="grid grid-cols-3 gap-6 mb-8 bg-card/90 backdrop-blur-sm rounded-2xl p-5 border border-secondary/30">
+                <div ref={statsRef} className="grid grid-cols-3 gap-3 md:gap-6 mb-8 bg-card/90 backdrop-blur-sm rounded-2xl p-4 md:p-5 border border-secondary/30">
                   {[
-                    { value: 30, suffix: "+", label: "Years Experience" },
-                    { value: 500, suffix: "+", label: "Clients Managed" },
-                    { value: 1, suffix: "Cr+", label: "Ad Spend Managed" },
+                    { value: 30, suffix: "+", label: "Years Exp." },
+                    { value: 500, suffix: "+", label: "Clients" },
+                    { value: 1, suffix: "Cr+", label: "Ad Spend" },
                   ].map((stat, i) => (
                     <div key={stat.label} className="text-center animate-fade-in-up" style={{ animationDelay: `${0.4 + i * 0.1}s` }}>
-                      <div className="text-3xl font-bold text-secondary drop-shadow-md">
+                      <div className="text-xl md:text-3xl font-bold text-secondary drop-shadow-md">
                         {stat.value === 1 ? "₹" : ""}<AnimatedCounter target={stat.value} suffix={stat.suffix} inView={statsInView} />
                       </div>
-                      <div className="text-sm text-white font-medium">{stat.label}</div>
+                      <div className="text-xs md:text-sm text-white font-medium">{stat.label}</div>
                     </div>
                   ))}
                 </div>
 
                 {/* Trust Points */}
-                <div className="flex flex-wrap gap-4 animate-fade-in-up" style={{ animationDelay: "0.6s" }}>
+                <div className="flex flex-wrap gap-2 md:gap-4 animate-fade-in-up" style={{ animationDelay: "0.6s" }}>
                   {[
                     { icon: Monitor, text: "Live on Zoom" },
-                    { icon: Play, text: "Recording Access" },
-                    { icon: Award, text: "Certificate Included" },
+                    { icon: Play, text: "Recordings" },
+                    { icon: Award, text: "Certificate" },
                   ].map((item) => (
-                    <div key={item.text} className="flex items-center gap-2 bg-secondary/20 border border-secondary/30 px-4 py-2.5 rounded-full">
+                    <div key={item.text} className="flex items-center gap-2 bg-secondary/20 border border-secondary/30 px-3 md:px-4 py-2 md:py-2.5 rounded-full">
                       <item.icon className="h-4 w-4 text-secondary" />
-                      <span className="text-sm font-bold text-white">{item.text}</span>
+                      <span className="text-xs md:text-sm font-bold text-white">{item.text}</span>
                     </div>
                   ))}
                 </div>
@@ -435,7 +435,7 @@ const LiveClasses = () => {
 
               {/* Right Content - Enroll Card */}
               <div className="relative animate-scale-in">
-                <div className="bg-card rounded-3xl p-8 shadow-elevated border border-secondary/30 relative overflow-hidden">
+                <div className="bg-card rounded-3xl p-6 md:p-8 shadow-elevated border border-secondary/30 relative overflow-hidden">
                   {/* Urgency Badge */}
                   <div className="absolute top-0 right-0 bg-secondary text-secondary-foreground px-4 py-2 rounded-bl-2xl font-bold text-sm flex items-center gap-2">
                     <span className="relative flex h-2 w-2">
@@ -876,16 +876,16 @@ const LiveClasses = () => {
                     <p className="text-foreground mb-6 max-w-xl font-medium drop-shadow-sm">
                       12 live interactive sessions via Zoom, each 90 minutes. Learn from anywhere in India.
                     </p>
-                    <div className="flex flex-wrap gap-4">
+                    <div className="flex flex-wrap gap-2 md:gap-4">
                       {[
-                        { icon: Video, text: "Live Zoom Sessions" },
-                        { icon: MessageCircle, text: "Q&A Support" },
-                        { icon: Play, text: "Recorded Access" },
-                        { icon: Headphones, text: "Community Support" },
+                        { icon: Video, text: "Live Zoom" },
+                        { icon: MessageCircle, text: "Q&A" },
+                        { icon: Play, text: "Recordings" },
+                        { icon: Headphones, text: "Support" },
                       ].map((item) => (
-                        <div key={item.text} className="flex items-center gap-2 bg-secondary/30 backdrop-blur-sm px-4 py-2 rounded-full border border-secondary/50">
+                        <div key={item.text} className="flex items-center gap-2 bg-secondary/30 backdrop-blur-sm px-3 md:px-4 py-2 rounded-full border border-secondary/50">
                           <item.icon className="h-4 w-4 text-secondary" />
-                          <span className="text-sm text-white font-bold">{item.text}</span>
+                          <span className="text-xs md:text-sm text-white font-bold">{item.text}</span>
                         </div>
                       ))}
                     </div>

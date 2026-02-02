@@ -1,7 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useState } from "react";
-import { MapPin, Phone, Mail, Clock, Send, CheckCircle, MessageSquare } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Send, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 
@@ -240,20 +240,18 @@ const Contact = () => {
                   <p className="text-sm text-muted-foreground mb-4">Or reach us directly:</p>
                   <div className="flex flex-wrap gap-4">
                     <a
-                      href="https://wa.me/919924707478"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 bg-green-500 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-green-600 transition-colors"
-                    >
-                      <MessageSquare className="h-4 w-4" />
-                      WhatsApp
-                    </a>
-                    <a
                       href="tel:+919924707478"
                       className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-lg text-sm font-medium hover:bg-primary/90 transition-colors"
                     >
                       <Phone className="h-4 w-4" />
                       Call Now
+                    </a>
+                    <a
+                      href="mailto:info@suratdms.in"
+                      className="inline-flex items-center gap-2 bg-secondary text-secondary-foreground px-4 py-2 rounded-lg text-sm font-medium hover:bg-secondary/90 transition-colors"
+                    >
+                      <Mail className="h-4 w-4" />
+                      Email Us
                     </a>
                   </div>
                 </div>

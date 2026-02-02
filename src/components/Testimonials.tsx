@@ -75,11 +75,20 @@ const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const goToPrevious = () => {
-    setCurrentIndex((prev) => (prev === 0 ? testimonials.length - 3 : prev - 1));
+    setCurrentIndex((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
   };
 
   const goToNext = () => {
-    setCurrentIndex((prev) => (prev >= testimonials.length - 3 ? 0 : prev + 1));
+    setCurrentIndex((prev) => (prev >= testimonials.length - 1 ? 0 : prev + 1));
+  };
+
+  // Show 1 on mobile, 2 on tablet, 3 on desktop
+  const getVisibleCount = () => {
+    if (typeof window !== 'undefined') {
+      if (window.innerWidth < 768) return 1;
+      if (window.innerWidth < 1024) return 2;
+    }
+    return 3;
   };
 
   const visibleTestimonials = testimonials.slice(currentIndex, currentIndex + 3);
