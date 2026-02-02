@@ -11,6 +11,10 @@ export interface Course {
   maxStudents: number;
   language: string;
   overview: string[];
+  curriculum?: string[];
+  careerOpportunities?: string[];
+  tools?: string[];
+  projects?: string[];
 }
 
 export const courses: Course[] = [
@@ -32,6 +36,24 @@ export const courses: Course[] = [
       "Team building and management",
       "Pricing and packaging services",
       "Scaling your agency"
+    ],
+    curriculum: [
+      "Week 1: Agency Foundation & Business Model",
+      "Week 2: Service Offerings & Pricing Strategy",
+      "Week 3: Client Acquisition & Sales Funnel",
+      "Week 4: Operations, Team & Scaling"
+    ],
+    careerOpportunities: [
+      "Digital Marketing Agency Owner",
+      "Freelance Marketing Consultant",
+      "Marketing Director",
+      "Business Development Manager"
+    ],
+    tools: ["HubSpot", "Asana", "Slack", "Canva", "Google Workspace"],
+    projects: [
+      "Create your agency business plan",
+      "Build a client proposal template",
+      "Design service packages with pricing"
     ]
   },
   {
@@ -42,16 +64,38 @@ export const courses: Course[] = [
     duration: "30 Day",
     level: "expert",
     instructor: "Vikaas Parekh",
-    description: "Master web development from HTML to advanced CMS platforms. Build professional websites that convert visitors into customers.",
+    description: "Master web development from HTML to advanced CMS platforms. Build professional websites that convert visitors into customers. This comprehensive course covers everything from basic coding to launching fully functional websites.",
     categories: ["Website & E-commerce Development", "Online Course"],
     maxStudents: 50,
     language: "Hindi, English",
     overview: [
       "HTML, CSS and JavaScript basics",
-      "WordPress development",
+      "WordPress development & customization",
       "Responsive design principles",
-      "E-commerce website setup",
-      "Website optimization"
+      "E-commerce website setup with WooCommerce",
+      "Website speed optimization",
+      "SEO-friendly website structure",
+      "Domain & hosting management",
+      "Website security best practices"
+    ],
+    curriculum: [
+      "Week 1: HTML & CSS Fundamentals",
+      "Week 2: JavaScript & Interactivity",
+      "Week 3: WordPress Setup & Theme Customization",
+      "Week 4: E-commerce & WooCommerce Integration"
+    ],
+    careerOpportunities: [
+      "Web Developer",
+      "WordPress Developer",
+      "Freelance Website Designer",
+      "E-commerce Specialist",
+      "UI/UX Designer"
+    ],
+    tools: ["WordPress", "Elementor", "WooCommerce", "VS Code", "FileZilla", "cPanel"],
+    projects: [
+      "Build a personal portfolio website",
+      "Create a business website with WordPress",
+      "Launch an e-commerce store with payment gateway"
     ]
   },
   {

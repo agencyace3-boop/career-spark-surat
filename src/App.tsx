@@ -11,6 +11,7 @@ import About from "./pages/About";
 import LiveClasses from "./pages/LiveClasses";
 import NotFound from "./pages/NotFound";
 import WhatsAppButton from "./components/WhatsAppButton";
+import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -31,6 +32,7 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
         </Routes>
         <WhatsAppButton />
+        <ScrollToTop />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
