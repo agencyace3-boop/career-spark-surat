@@ -23,100 +23,202 @@ import {
   Star,
   Zap,
   TrendingUp,
-  Bot,
   ArrowRight,
   Gift,
   Shield,
   Monitor,
+  MapPin,
+  Settings,
+  BarChart3,
+  Megaphone,
+  Image,
+  MousePointer,
+  LineChart,
 } from "lucide-react";
 
-const modules = [
+// 12-Day Course Schedule based on Meta Ads + GMB Course
+const courseSchedule = [
   {
-    number: "01",
-    title: "Digital Marketing & AI Fundamentals",
-    description: "Discover how AI is revolutionizing marketing and learn to leverage AI tools to save time and boost results.",
-    icon: Bot,
+    day: "DAY 1",
+    title: "Digital Marketing & Meta Ecosystem Overview",
+    topics: [
+      "Introduction to Digital Marketing (Practical View)",
+      "Facebook, Instagram & Meta Business Suite overview",
+      "Understanding paid vs organic marketing",
+      "Business Manager vs Personal Account",
+    ],
+    icon: Globe,
     color: "from-blue-500 to-cyan-500",
   },
   {
-    number: "02",
-    title: "Social Media Marketing & Management",
-    description: "Master strategies to grow business pages on Facebook, Instagram, and LinkedIn with proven engagement tactics.",
-    icon: Users,
+    day: "DAY 2",
+    title: "Facebook Business Manager Setup",
+    topics: [
+      "Business Manager creation (Step-by-step)",
+      "Page & Ad Account setup",
+      "Payment methods & access control",
+      "Security & business verification",
+    ],
+    icon: Settings,
+    color: "from-indigo-500 to-blue-500",
+  },
+  {
+    day: "DAY 3",
+    title: "Facebook & Instagram Page Optimization",
+    topics: [
+      "Professional Page setup",
+      "Bio, CTA & branding strategy",
+      "Content structure for engagement",
+      "Page health & quality score",
+    ],
+    icon: Star,
     color: "from-pink-500 to-rose-500",
   },
   {
-    number: "03",
-    title: "Search Engine Optimization (SEO)",
-    description: "Rank higher on Google, increase visibility, and attract qualified organic traffic using up-to-date methods.",
-    icon: TrendingUp,
-    color: "from-green-500 to-emerald-500",
-  },
-  {
-    number: "04",
-    title: "Google Ads & Keyword Research",
-    description: "Create high-performing ad campaigns that maximize ROI with smart keyword planning techniques.",
+    day: "DAY 4",
+    title: "Understanding Meta Ads Fundamentals",
+    topics: [
+      "Campaign objectives (Awareness, Traffic, Leads, Sales)",
+      "Ad structure: Campaign → Ad Set → Ad",
+      "Budgeting & bidding concepts",
+      "Learning phase explained simply",
+    ],
     icon: Target,
     color: "from-orange-500 to-amber-500",
   },
   {
-    number: "05",
-    title: "YouTube Marketing Mastery",
-    description: "Build, grow, and monetize YouTube channels with effective content strategies and optimization techniques.",
-    icon: Play,
-    color: "from-red-500 to-pink-500",
+    day: "DAY 5",
+    title: "Audience Targeting Masterclass",
+    topics: [
+      "Core audience vs Custom audience",
+      "Lookalike audience strategy",
+      "Interest & behavior targeting",
+      "Retargeting concepts (real examples)",
+    ],
+    icon: Users,
+    color: "from-green-500 to-emerald-500",
   },
   {
-    number: "06",
-    title: "Email Marketing & Automation",
-    description: "Design engaging email campaigns that convert and master AI-powered automation tools.",
-    icon: Zap,
+    day: "DAY 6",
+    title: "Creative Strategy for High-Converting Ads",
+    topics: [
+      "Ad copywriting formulas",
+      "Image vs Video ads",
+      "Reels & Story ads strategy",
+      "Creative mistakes to avoid",
+    ],
+    icon: Image,
     color: "from-purple-500 to-violet-500",
   },
   {
-    number: "07",
-    title: "Analytics & Performance Tracking",
-    description: "Measure results, interpret data insights, and make data-driven decisions for continuous improvement.",
-    icon: BookOpen,
+    day: "DAY 7",
+    title: "Lead Generation Ads (Practical)",
+    topics: [
+      "Lead form setup (Instant forms)",
+      "CRM & WhatsApp integration ideas",
+      "Lead quality improvement techniques",
+      "Follow-up strategy",
+    ],
+    icon: MousePointer,
     color: "from-teal-500 to-cyan-500",
   },
   {
-    number: "08",
-    title: "Launch Your Digital Agency",
-    description: "Get a complete roadmap to build and launch your own digital marketing agency or freelancing business.",
+    day: "DAY 8",
+    title: "Sales & Conversion Ads",
+    topics: [
+      "Website conversion ads",
+      "Pixel basics (easy explanation)",
+      "Catalogue & product ads",
+      "Scaling winning campaigns",
+    ],
+    icon: TrendingUp,
+    color: "from-red-500 to-pink-500",
+  },
+  {
+    day: "DAY 9",
+    title: "Ads Optimization & Performance Analysis",
+    topics: [
+      "Reading Ads Manager reports",
+      "CTR, CPC, CPM, ROAS explained",
+      "A/B testing basics",
+      "Budget scaling methods",
+    ],
+    icon: BarChart3,
+    color: "from-yellow-500 to-orange-500",
+  },
+  {
+    day: "DAY 10",
+    title: "Google My Business (GMB) Setup",
+    topics: [
+      "GMB account creation & verification",
+      "Business profile optimization",
+      "Categories, services & keywords",
+      "Local SEO basics",
+    ],
+    icon: MapPin,
+    color: "from-blue-500 to-indigo-500",
+  },
+  {
+    day: "DAY 11",
+    title: "GMB Growth & Local Lead Strategy",
+    topics: [
+      "Posting strategy on GMB",
+      "Reviews & reputation management",
+      "Map ranking improvement techniques",
+      "Combining GMB with Meta Ads",
+    ],
+    icon: LineChart,
+    color: "from-emerald-500 to-teal-500",
+  },
+  {
+    day: "DAY 12",
+    title: "Case Studies, Strategy & Career Guidance",
+    topics: [
+      "Live campaign case studies",
+      "Budget planning for clients",
+      "Freelancing & agency roadmap",
+      "Q&A + Final Assessment",
+    ],
     icon: Rocket,
-    color: "from-indigo-500 to-blue-500",
+    color: "from-violet-500 to-purple-500",
   },
 ];
 
 const bonusItems = [
-  { title: "30 Days LIVE Training Sessions", value: "₹19,999" },
-  { title: "AI Marketing Tools Masterclass", value: "₹4,999" },
-  { title: "Digital Marketing Toolkit + Templates", value: "₹2,999" },
-  { title: "Resume Building & Interview Prep", value: "₹1,999" },
-  { title: "1-on-1 Career Counseling Session", value: "₹2,999" },
-  { title: "Lifetime Access to Recordings", value: "₹4,999" },
+  { title: "12 LIVE Training Sessions (90 mins each)", value: "₹14,999" },
+  { title: "Access to Recorded Sessions", value: "₹4,999" },
+  { title: "Practical Assignments After Every Session", value: "₹2,999" },
+  { title: "Final Project - Real-World Campaign", value: "₹3,999" },
+  { title: "Dedicated Q&A and Community Support", value: "₹2,999" },
+  { title: "Industry-Recognized Certificate", value: "₹2,999" },
 ];
 
-const totalValue = 37994;
+const totalValue = 32994;
 
 const targetAudience = [
-  { icon: GraduationCap, title: "Students", description: "Start your digital career early and gain competitive advantage", image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" },
-  { icon: Briefcase, title: "Job Seekers", description: "Learn in-demand skills that companies are actively hiring for", image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" },
-  { icon: Target, title: "Freelancers", description: "Attract high-paying clients and build a sustainable business", image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" },
-  { icon: Users, title: "Homemakers", description: "Build your second income from home with flexible skills", image: "https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" },
-  { icon: TrendingUp, title: "Business Owners", description: "Grow your business using powerful digital techniques", image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" },
-  { icon: BookOpen, title: "Teachers", description: "Leverage AI tools and promote educational services", image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" },
+  { icon: Briefcase, title: "Small Business Owners", description: "Grow your online presence and generate leads with targeted ads", image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" },
+  { icon: TrendingUp, title: "Marketing Professionals", description: "Seeking Meta certification and advanced advertising skills", image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" },
+  { icon: Target, title: "Freelancers", description: "Expand your service offerings and attract high-paying clients", image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" },
+  { icon: GraduationCap, title: "Students & Career Switchers", description: "Target social media marketing roles with practical skills", image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" },
 ];
 
 const whyChoose = [
   { icon: Award, title: "Real-World Experience", description: "Learn from someone who has managed 500+ clients and ₹1 crore+ in ad campaigns" },
   { icon: GraduationCap, title: "Proven Track Record", description: "Guest Faculty at Auro University with 30+ years of marketing experience" },
-  { icon: Bot, title: "AI-Powered Curriculum", description: "Stay ahead with latest AI tools integrated throughout the course" },
-  { icon: Headphones, title: "Complete Support System", description: "Continuous mentorship and guidance from enrollment to agency launch" },
-  { icon: TrendingUp, title: "Income-Focused Training", description: "Every module designed to help you generate real income" },
-  { icon: Rocket, title: "Practical Implementation", description: "Build real projects and campaigns you can showcase immediately" },
+  { icon: Megaphone, title: "Meta-Certified Curriculum", description: "Industry-aligned curriculum based on Meta's official marketing principles" },
+  { icon: Headphones, title: "Complete Support System", description: "Continuous mentorship, Q&A sessions, and community support" },
+  { icon: TrendingUp, title: "Income-Focused Training", description: "Learn to run profitable Facebook & Instagram ad campaigns" },
+  { icon: Rocket, title: "Practical Implementation", description: "Work on live projects and real-world campaign strategies" },
 ];
+
+const courseDeliverables = [
+  { icon: Award, title: "Certificate of Completion", description: "Industry-recognized certification" },
+  { icon: BookOpen, title: "Practical Campaign Knowledge", description: "Real hands-on experience" },
+  { icon: BarChart3, title: "Live Ad Strategy Experience", description: "Work on actual campaigns" },
+  { icon: Users, title: "Mentorship by Vikaas Parekh", description: "Personal guidance from expert" },
+];
+
+const RAZORPAY_LINK = "https://rzp.io/rzp/IAVCWNAq";
 
 const AnimatedCounter = ({ target, suffix = "", inView }: { target: number; suffix?: string; inView: boolean }) => {
   const [count, setCount] = useState(0);
@@ -177,6 +279,10 @@ const LiveClasses = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const handleEnrollNow = () => {
+    window.open(RAZORPAY_LINK, "_blank");
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -190,7 +296,7 @@ const LiveClasses = () => {
               alt=""
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/90 to-primary/80" />
+            <div className="absolute inset-0 bg-gradient-to-r from-background/98 via-background/95 to-background/90" />
           </div>
 
           {/* Floating Elements */}
@@ -200,39 +306,40 @@ const LiveClasses = () => {
           <div className="container mx-auto px-4 relative z-10 py-16">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               {/* Left Content */}
-              <div className="text-primary-foreground">
+              <div className="text-foreground">
                 <div className="inline-flex items-center gap-2 bg-secondary/20 backdrop-blur-sm border border-secondary/30 rounded-full px-5 py-2.5 mb-8 animate-fade-in">
                   <span className="relative flex h-3 w-3">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
                     <span className="relative inline-flex rounded-full h-3 w-3 bg-secondary"></span>
                   </span>
-                  <span className="text-sm font-semibold">Live Online Classes Starting Soon!</span>
+                  <span className="text-sm font-semibold text-secondary">Live Online Classes Starting Soon!</span>
                 </div>
 
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 animate-fade-in-up">
-                  Unlock High-Income
+                  Facebook & Instagram
                   <br />
-                  <span className="text-secondary">Digital Marketing</span>
+                  <span className="text-secondary">(Meta Ads)</span>
                   <br />
-                  <span className="text-secondary">with AI</span>
+                  <span className="text-secondary">+ GMB Certification</span>
                 </h1>
 
-                <p className="text-lg md:text-xl text-primary-foreground/90 mb-8 max-w-xl leading-relaxed animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
-                  Transform your career in just <strong className="text-secondary">30 days</strong>. Master SEO, Google Ads, Social Media & AI tools 
-                  under the mentorship of <strong className="text-secondary">Vikaas Parekh</strong>.
+                <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-xl leading-relaxed animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+                  Master Meta Ads & Google My Business in <strong className="text-secondary">1 Month</strong>. 
+                  12 Live Sessions under the mentorship of <strong className="text-secondary">Vikaas Parekh</strong>.
                 </p>
 
-                {/* Price Badge */}
-                <div className="inline-flex items-center gap-6 bg-background/10 backdrop-blur-md border border-primary-foreground/20 rounded-2xl p-5 mb-8 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
-                  <div>
-                    <span className="text-sm text-primary-foreground/60 line-through">₹9,999</span>
-                    <div className="text-4xl font-bold text-secondary">₹2,999</div>
-                  </div>
-                  <div className="h-14 w-px bg-primary-foreground/20" />
-                  <div className="text-left">
-                    <div className="text-xs text-primary-foreground/60 uppercase tracking-wide">Limited Offer</div>
-                    <div className="text-2xl font-bold text-secondary">70% OFF</div>
-                  </div>
+                {/* Course Highlights */}
+                <div className="flex flex-wrap gap-4 mb-8 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
+                  {[
+                    { icon: Clock, text: "1 Month Duration" },
+                    { icon: Video, text: "12 Live Sessions" },
+                    { icon: Calendar, text: "90 Min Each" },
+                  ].map((item) => (
+                    <div key={item.text} className="flex items-center gap-2 bg-card/80 border border-border px-4 py-2 rounded-full">
+                      <item.icon className="h-4 w-4 text-secondary" />
+                      <span className="text-sm text-foreground">{item.text}</span>
+                    </div>
+                  ))}
                 </div>
 
                 {/* Stats Row */}
@@ -246,7 +353,7 @@ const LiveClasses = () => {
                       <div className="text-3xl font-bold text-secondary">
                         {stat.value === 1 ? "₹" : ""}<AnimatedCounter target={stat.value} suffix={stat.suffix} inView={statsInView} />
                       </div>
-                      <div className="text-xs text-primary-foreground/70">{stat.label}</div>
+                      <div className="text-xs text-muted-foreground">{stat.label}</div>
                     </div>
                   ))}
                 </div>
@@ -254,13 +361,13 @@ const LiveClasses = () => {
                 {/* Trust Points */}
                 <div className="flex flex-wrap gap-4 animate-fade-in-up" style={{ animationDelay: "0.6s" }}>
                   {[
-                    { icon: Video, text: "Live Zoom Sessions" },
+                    { icon: Monitor, text: "Live on Zoom" },
                     { icon: Play, text: "Recording Access" },
                     { icon: Award, text: "Certificate Included" },
                   ].map((item) => (
-                    <div key={item.text} className="flex items-center gap-2 bg-primary-foreground/10 px-4 py-2 rounded-full">
+                    <div key={item.text} className="flex items-center gap-2 bg-primary/20 px-4 py-2 rounded-full">
                       <item.icon className="h-4 w-4 text-secondary" />
-                      <span className="text-sm">{item.text}</span>
+                      <span className="text-sm text-foreground">{item.text}</span>
                     </div>
                   ))}
                 </div>
@@ -268,7 +375,7 @@ const LiveClasses = () => {
 
               {/* Right Content - Registration Form */}
               <div className="relative animate-scale-in">
-                <div className="bg-background rounded-3xl p-8 shadow-elevated relative overflow-hidden">
+                <div className="bg-card rounded-3xl p-8 shadow-elevated border border-border relative overflow-hidden">
                   {/* Urgency Badge */}
                   <div className="absolute top-0 right-0 bg-secondary text-secondary-foreground px-4 py-2 rounded-bl-2xl font-semibold text-sm flex items-center gap-2">
                     <span className="relative flex h-2 w-2">
@@ -280,14 +387,36 @@ const LiveClasses = () => {
 
                   <div className="text-center mb-6 pt-4">
                     <h2 className="text-2xl font-bold text-foreground mb-2">
-                      Register Now
+                      Enroll Now
                     </h2>
                     <p className="text-muted-foreground text-sm">
-                      Secure your seat before price increases
+                      Secure your seat in the next batch
                     </p>
                   </div>
 
-                  <form onSubmit={handleSubmit} className="space-y-4">
+                  {/* Price Display */}
+                  <div className="text-center mb-6 p-4 bg-background/50 rounded-xl border border-secondary/30">
+                    <div className="flex items-center justify-center gap-3 mb-1">
+                      <span className="text-lg text-muted-foreground line-through">₹9,999</span>
+                      <span className="bg-secondary/20 text-secondary px-3 py-1 rounded-full text-sm font-semibold">Limited Offer</span>
+                    </div>
+                    <div className="text-4xl font-bold text-secondary">₹4,999</div>
+                    <p className="text-xs text-muted-foreground mt-1">One-time payment • Lifetime access to recordings</p>
+                  </div>
+
+                  {/* Enroll Button - Links to Razorpay */}
+                  <Button
+                    onClick={handleEnrollNow}
+                    className="w-full bg-secondary hover:bg-secondary/90 text-secondary-foreground py-6 text-lg font-bold rounded-xl shadow-glow transition-all hover:scale-[1.02] mb-4"
+                  >
+                    Enroll Now - Pay ₹4,999 →
+                  </Button>
+
+                  <p className="text-center text-xs text-muted-foreground mb-4">
+                    Or fill the form below to get a callback
+                  </p>
+
+                  <form onSubmit={handleSubmit} className="space-y-3">
                     <input
                       type="text"
                       name="name"
@@ -295,7 +424,7 @@ const LiveClasses = () => {
                       onChange={handleChange}
                       required
                       placeholder="Your Full Name"
-                      className="w-full px-4 py-4 rounded-xl border border-border bg-muted/50 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all text-foreground placeholder:text-muted-foreground"
+                      className="w-full px-4 py-3 rounded-xl border border-border bg-muted/50 focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all text-foreground placeholder:text-muted-foreground"
                     />
                     <input
                       type="tel"
@@ -304,7 +433,7 @@ const LiveClasses = () => {
                       onChange={handleChange}
                       required
                       placeholder="WhatsApp Number"
-                      className="w-full px-4 py-4 rounded-xl border border-border bg-muted/50 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all text-foreground placeholder:text-muted-foreground"
+                      className="w-full px-4 py-3 rounded-xl border border-border bg-muted/50 focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all text-foreground placeholder:text-muted-foreground"
                     />
                     <input
                       type="email"
@@ -313,22 +442,23 @@ const LiveClasses = () => {
                       onChange={handleChange}
                       required
                       placeholder="Email Address"
-                      className="w-full px-4 py-4 rounded-xl border border-border bg-muted/50 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all text-foreground placeholder:text-muted-foreground"
+                      className="w-full px-4 py-3 rounded-xl border border-border bg-muted/50 focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all text-foreground placeholder:text-muted-foreground"
                     />
 
                     <Button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full bg-secondary hover:bg-secondary/90 text-secondary-foreground py-6 text-lg font-bold rounded-xl shadow-glow transition-all hover:scale-[1.02]"
+                      variant="outline"
+                      className="w-full border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground py-5 font-semibold rounded-xl"
                     >
-                      {isSubmitting ? "Registering..." : "Join at ₹2,999 Only →"}
+                      {isSubmitting ? "Submitting..." : "Request Callback"}
                     </Button>
                   </form>
 
                   {/* Bottom Features */}
                   <div className="flex justify-center gap-6 mt-6 pt-4 border-t border-border">
                     {[
-                      { icon: Clock, text: "30 Days" },
+                      { icon: Clock, text: "1 Month" },
                       { icon: Monitor, text: "LIVE on Zoom" },
                       { icon: Award, text: "Certificate" },
                     ].map((item) => (
@@ -340,6 +470,40 @@ const LiveClasses = () => {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Course Objective Section */}
+        <section className="py-20 bg-muted">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <span className="inline-block bg-secondary/20 text-secondary px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                Course Objective
+              </span>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                What You'll <span className="text-secondary">Learn & Achieve</span>
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                This course is designed to help students, business owners, freelancers, and job seekers master Meta advertising and local SEO.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                { icon: TrendingUp, title: "Run Profitable Ads", description: "Master Facebook & Instagram ad campaigns that generate real results" },
+                { icon: Target, title: "Generate Leads & Sales", description: "Create campaigns that drive conversions and brand visibility" },
+                { icon: MapPin, title: "Optimize GMB", description: "Leverage Google My Business for local growth and visibility" },
+                { icon: Rocket, title: "Real-World Strategies", description: "Learn techniques used in managing 500+ client portfolios" },
+              ].map((item) => (
+                <div key={item.title} className="bg-card p-6 rounded-2xl border border-border hover:border-secondary/50 transition-all group">
+                  <div className="w-14 h-14 rounded-2xl bg-secondary/20 flex items-center justify-center mb-4 group-hover:bg-secondary transition-colors">
+                    <item.icon className="h-7 w-7 text-secondary group-hover:text-secondary-foreground transition-colors" />
+                  </div>
+                  <h3 className="text-lg font-bold text-foreground mb-2">{item.title}</h3>
+                  <p className="text-muted-foreground text-sm">{item.description}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -362,12 +526,12 @@ const LiveClasses = () => {
                 {bonusItems.map((item, index) => (
                   <div
                     key={item.title}
-                    className="flex items-center justify-between p-5 bg-card rounded-xl border border-border/50 hover:border-accent/50 hover:shadow-card transition-all group"
+                    className="flex items-center justify-between p-5 bg-card rounded-xl border border-border hover:border-secondary/50 hover:shadow-card transition-all group"
                     style={{ animationDelay: `${index * 0.1}s` }}
                   >
                     <div className="flex items-center gap-4">
-                      <div className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center group-hover:bg-accent group-hover:scale-110 transition-all">
-                        <CheckCircle className="h-5 w-5 text-accent group-hover:text-accent-foreground" />
+                      <div className="w-8 h-8 rounded-full bg-secondary/20 flex items-center justify-center group-hover:bg-secondary group-hover:scale-110 transition-all">
+                        <CheckCircle className="h-5 w-5 text-secondary group-hover:text-secondary-foreground" />
                       </div>
                       <span className="font-medium text-foreground">{item.title}</span>
                     </div>
@@ -386,7 +550,7 @@ const LiveClasses = () => {
 
               {/* Registration Card */}
               <div className="sticky top-24">
-                <div className="bg-card rounded-3xl p-8 shadow-elevated border border-border/50 relative overflow-hidden">
+                <div className="bg-card rounded-3xl p-8 shadow-elevated border border-border relative overflow-hidden">
                   {/* Urgency Badge */}
                   <div className="absolute top-4 right-4 bg-secondary text-secondary-foreground px-4 py-2 rounded-full font-semibold text-sm flex items-center gap-2">
                     <span className="relative flex h-2 w-2">
@@ -397,51 +561,28 @@ const LiveClasses = () => {
                   </div>
 
                   <div className="text-center mb-6 pt-6">
-                    <h3 className="text-2xl font-bold text-foreground mb-2">Register Now</h3>
-                    <p className="text-muted-foreground text-sm">Secure your seat before price increases</p>
+                    <h3 className="text-2xl font-bold text-foreground mb-2">Enroll Now</h3>
+                    <p className="text-muted-foreground text-sm">Pay securely via Razorpay</p>
                   </div>
 
-                  <form onSubmit={handleSubmit} className="space-y-4">
-                    <input
-                      type="text"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      placeholder="Your Full Name"
-                      className="w-full px-4 py-4 rounded-xl border border-border bg-muted/50 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all text-foreground"
-                    />
-                    <input
-                      type="tel"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      required
-                      placeholder="WhatsApp Number"
-                      className="w-full px-4 py-4 rounded-xl border border-border bg-muted/50 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all text-foreground"
-                    />
-                    <input
-                      type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      placeholder="Email Address"
-                      className="w-full px-4 py-4 rounded-xl border border-border bg-muted/50 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all text-foreground"
-                    />
+                  <div className="text-center mb-6">
+                    <div className="flex items-center justify-center gap-3 mb-1">
+                      <span className="text-lg text-muted-foreground line-through">₹9,999</span>
+                      <span className="bg-secondary/20 text-secondary px-3 py-1 rounded-full text-sm font-semibold">50% OFF</span>
+                    </div>
+                    <div className="text-4xl font-bold text-secondary">₹4,999</div>
+                  </div>
 
-                    <Button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className="w-full bg-secondary hover:bg-secondary/90 text-secondary-foreground py-6 text-lg font-bold rounded-xl"
-                    >
-                      {isSubmitting ? "Registering..." : "Join at ₹2,999 Only →"}
-                    </Button>
-                  </form>
+                  <Button
+                    onClick={handleEnrollNow}
+                    className="w-full bg-secondary hover:bg-secondary/90 text-secondary-foreground py-6 text-lg font-bold rounded-xl shadow-glow mb-4"
+                  >
+                    Enroll Now - Pay ₹4,999 →
+                  </Button>
 
-                  <div className="flex justify-center gap-6 mt-6 pt-4 border-t border-border">
+                  <div className="flex justify-center gap-6 mt-4 pt-4 border-t border-border">
                     {[
-                      { icon: Clock, text: "30 Days" },
+                      { icon: Clock, text: "1 Month" },
                       { icon: Monitor, text: "LIVE on Zoom" },
                       { icon: Award, text: "Certificate" },
                     ].map((item) => (
@@ -469,10 +610,10 @@ const LiveClasses = () => {
                     alt="Vikaas Parekh - Founder & Mentor"
                     className="w-full h-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <div className="text-primary-foreground font-bold text-xl">Vikaas Parekh</div>
-                    <div className="text-primary-foreground/80">Founder & Lead Mentor</div>
+                    <div className="text-foreground font-bold text-xl">Vikaas Parekh</div>
+                    <div className="text-muted-foreground">Founder & Lead Mentor</div>
                   </div>
                 </div>
                 {/* Experience Badge */}
@@ -483,7 +624,7 @@ const LiveClasses = () => {
               </div>
 
               <div>
-                <span className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-6">
+                <span className="inline-block bg-secondary/20 text-secondary px-4 py-2 rounded-full text-sm font-semibold mb-6">
                   Meet Your Mentor
                 </span>
                 <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-2">
@@ -508,7 +649,7 @@ const LiveClasses = () => {
                     { icon: GraduationCap, label: "Guest Faculty", value: "Auro University" },
                     { icon: Award, label: "Success Rate", value: "95%" },
                   ].map((stat) => (
-                    <div key={stat.label} className="bg-background p-5 rounded-xl shadow-card border border-border/50 group hover:border-primary/30 transition-all">
+                    <div key={stat.label} className="bg-card p-5 rounded-xl shadow-card border border-border group hover:border-secondary/30 transition-all">
                       <stat.icon className="h-6 w-6 text-secondary mb-2" />
                       <div className="text-2xl font-bold text-foreground">{stat.value}</div>
                       <div className="text-sm text-muted-foreground">{stat.label}</div>
@@ -524,22 +665,22 @@ const LiveClasses = () => {
         <section className="py-20 bg-background">
           <div className="container mx-auto px-4">
             <div className="text-center mb-14">
-              <span className="inline-block bg-secondary/10 text-secondary px-4 py-2 rounded-full text-sm font-semibold mb-4">
-                Who Is This For?
+              <span className="inline-block bg-secondary/20 text-secondary px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                Who Should Enroll?
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                Transform Your Career with AI-Powered Digital Marketing
+                This Course Is Perfect For
               </h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
                 Whether you're a beginner or looking to enhance your skills, this program provides the practical knowledge you need.
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {targetAudience.map((item, index) => (
                 <div
                   key={item.title}
-                  className="group bg-card rounded-2xl overflow-hidden shadow-card hover:shadow-elevated transition-all hover:-translate-y-2"
+                  className="group bg-card rounded-2xl overflow-hidden shadow-card hover:shadow-elevated transition-all hover:-translate-y-2 border border-border"
                 >
                   <div className="h-40 overflow-hidden">
                     <img
@@ -550,12 +691,12 @@ const LiveClasses = () => {
                   </div>
                   <div className="p-6">
                     <div className="flex items-center gap-3 mb-3">
-                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-colors">
-                        <item.icon className="h-5 w-5 text-primary group-hover:text-primary-foreground transition-colors" />
+                      <div className="w-10 h-10 rounded-lg bg-secondary/20 flex items-center justify-center group-hover:bg-secondary transition-colors">
+                        <item.icon className="h-5 w-5 text-secondary group-hover:text-secondary-foreground transition-colors" />
                       </div>
-                      <h3 className="text-xl font-bold text-foreground">{item.title}</h3>
+                      <h3 className="text-lg font-bold text-foreground">{item.title}</h3>
                     </div>
-                    <p className="text-muted-foreground">{item.description}</p>
+                    <p className="text-muted-foreground text-sm">{item.description}</p>
                   </div>
                 </div>
               ))}
@@ -563,39 +704,46 @@ const LiveClasses = () => {
           </div>
         </section>
 
-        {/* Curriculum */}
+        {/* 12-Day Course Schedule */}
         <section className="py-20 bg-muted">
           <div className="container mx-auto px-4">
             <div className="text-center mb-14">
-              <span className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
+              <span className="inline-block bg-secondary/20 text-secondary px-4 py-2 rounded-full text-sm font-semibold mb-4">
                 Comprehensive Curriculum
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                8 Power-Packed Modules
+                12-Day Detailed Course Schedule
               </h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                Every module is designed for hands-on experience with AI tools integrated throughout.
+                Each session is 90 minutes of intensive, hands-on learning with practical assignments.
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {modules.map((module, index) => (
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {courseSchedule.map((module, index) => (
                 <div
-                  key={module.number}
-                  className="group relative bg-card p-6 rounded-2xl border border-border/50 hover:border-transparent hover:shadow-elevated transition-all overflow-hidden"
+                  key={module.day}
+                  className="group relative bg-card p-6 rounded-2xl border border-border hover:border-secondary/50 hover:shadow-elevated transition-all overflow-hidden"
                 >
                   {/* Gradient Background on Hover */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${module.color} opacity-0 group-hover:opacity-5 transition-opacity`} />
                   
                   <div className="relative">
                     <div className="flex items-start justify-between mb-4">
-                      <span className="text-5xl font-bold text-muted/30 group-hover:text-primary/20 transition-colors">{module.number}</span>
-                      <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${module.color} flex items-center justify-center shadow-lg transform group-hover:scale-110 group-hover:rotate-3 transition-all`}>
-                        <module.icon className="h-6 w-6 text-white" />
+                      <span className="text-xs font-bold text-secondary bg-secondary/20 px-3 py-1 rounded-full">{module.day}</span>
+                      <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${module.color} flex items-center justify-center shadow-lg transform group-hover:scale-110 group-hover:rotate-3 transition-all`}>
+                        <module.icon className="h-5 w-5 text-white" />
                       </div>
                     </div>
-                    <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors">{module.title}</h3>
-                    <p className="text-sm text-muted-foreground">{module.description}</p>
+                    <h3 className="text-lg font-bold text-foreground mb-3 group-hover:text-secondary transition-colors">{module.title}</h3>
+                    <ul className="space-y-2">
+                      {module.topics.map((topic, i) => (
+                        <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
+                          <CheckCircle className="h-4 w-4 text-secondary flex-shrink-0 mt-0.5" />
+                          <span>{topic}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
               ))}
@@ -614,10 +762,10 @@ const LiveClasses = () => {
           <div className="container mx-auto px-4 relative z-10">
             <div className="text-center mb-14">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                What Makes This Course Different
+                Why Choose This Meta-Certified Course?
               </h2>
               <p className="text-lg text-primary-foreground/80 max-w-2xl mx-auto">
-                Real-world experience meets cutting-edge AI technology
+                Industry-aligned curriculum based on Meta's official social media marketing principles
               </p>
             </div>
 
@@ -637,63 +785,57 @@ const LiveClasses = () => {
           </div>
         </section>
 
-        {/* Course Details */}
+        {/* Course Deliverables */}
         <section className="py-20 bg-background">
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto">
               <div className="text-center mb-14">
-                <span className="inline-block bg-secondary/10 text-secondary px-4 py-2 rounded-full text-sm font-semibold mb-4">
-                  Program Details
+                <span className="inline-block bg-secondary/20 text-secondary px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                  Course Deliverables
                 </span>
                 <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-                  Course Details & Schedule
+                  What You'll Walk Away With
                 </h2>
               </div>
 
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-                {[
-                  { icon: Clock, title: "Duration", value: "30 Days", desc: "Intensive practical training" },
-                  { icon: Calendar, title: "Schedule", value: "3 Days/Week", desc: "Flexible timing options" },
-                  { icon: Video, title: "Platform", value: "Live Zoom", desc: "Interactive sessions" },
-                  { icon: Globe, title: "Language", value: "Hindi & English", desc: "Easy to understand" },
-                ].map((item) => (
-                  <div key={item.title} className="bg-card p-6 rounded-2xl shadow-card border border-border/50 text-center group hover:border-primary/30 hover:shadow-elevated transition-all">
-                    <div className="w-14 h-14 mx-auto rounded-2xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary group-hover:scale-110 transition-all">
-                      <item.icon className="h-7 w-7 text-primary group-hover:text-primary-foreground transition-colors" />
+                {courseDeliverables.map((item) => (
+                  <div key={item.title} className="bg-card p-6 rounded-2xl shadow-card border border-border text-center group hover:border-secondary/30 hover:shadow-elevated transition-all">
+                    <div className="w-14 h-14 mx-auto rounded-2xl bg-secondary/20 flex items-center justify-center mb-4 group-hover:bg-secondary group-hover:scale-110 transition-all">
+                      <item.icon className="h-7 w-7 text-secondary group-hover:text-secondary-foreground transition-colors" />
                     </div>
-                    <div className="text-2xl font-bold text-foreground mb-1">{item.value}</div>
-                    <div className="text-sm font-medium text-foreground mb-1">{item.title}</div>
-                    <div className="text-xs text-muted-foreground">{item.desc}</div>
+                    <div className="text-lg font-bold text-foreground mb-1">{item.title}</div>
+                    <div className="text-sm text-muted-foreground">{item.description}</div>
                   </div>
                 ))}
               </div>
 
-              {/* Flexible Learning Banner */}
+              {/* Course Format Banner */}
               <div className="relative rounded-3xl overflow-hidden">
                 <img
                   src="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
                   alt="Online learning"
                   className="w-full h-64 object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-primary/95 to-primary/80" />
+                <div className="absolute inset-0 bg-gradient-to-r from-background/98 to-background/80" />
                 <div className="absolute inset-0 flex items-center">
                   <div className="container mx-auto px-8">
-                    <h3 className="text-2xl md:text-3xl font-bold text-primary-foreground mb-3">
-                      100% Flexible, Online Learning
+                    <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-3">
+                      Course Format & Delivery
                     </h3>
-                    <p className="text-primary-foreground/80 mb-6 max-w-xl">
-                      Learn from anywhere in India. All you need is an internet connection and the desire to grow.
+                    <p className="text-muted-foreground mb-6 max-w-xl">
+                      12 live interactive sessions via Zoom, each 90 minutes. Learn from anywhere in India.
                     </p>
                     <div className="flex flex-wrap gap-4">
                       {[
-                        { icon: Globe, text: "Join from Anywhere" },
-                        { icon: MessageCircle, text: "Interactive Sessions" },
-                        { icon: Play, text: "Recorded Classes" },
-                        { icon: Headphones, text: "Live Doubt Solving" },
+                        { icon: Video, text: "Live Zoom Sessions" },
+                        { icon: MessageCircle, text: "Q&A Support" },
+                        { icon: Play, text: "Recorded Access" },
+                        { icon: Headphones, text: "Community Support" },
                       ].map((item) => (
-                        <div key={item.text} className="flex items-center gap-2 bg-primary-foreground/10 px-4 py-2 rounded-full">
+                        <div key={item.text} className="flex items-center gap-2 bg-secondary/20 px-4 py-2 rounded-full">
                           <item.icon className="h-4 w-4 text-secondary" />
-                          <span className="text-sm text-primary-foreground">{item.text}</span>
+                          <span className="text-sm text-foreground">{item.text}</span>
                         </div>
                       ))}
                     </div>
@@ -705,62 +847,41 @@ const LiveClasses = () => {
         </section>
 
         {/* Final CTA */}
-        <section className="py-20 bg-gradient-to-br from-secondary via-secondary to-secondary/90 relative overflow-hidden">
+        <section className="py-20 bg-gradient-to-br from-primary via-primary to-primary/90 relative overflow-hidden">
           <div className="absolute inset-0 opacity-20">
-            <div className="absolute top-10 left-10 w-64 h-64 bg-primary rounded-full blur-3xl" />
+            <div className="absolute top-10 left-10 w-64 h-64 bg-secondary rounded-full blur-3xl" />
             <div className="absolute bottom-10 right-10 w-96 h-96 bg-accent rounded-full blur-3xl" />
           </div>
 
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-secondary-foreground mb-6">
-                Start Your Digital Journey Today
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground mb-6">
+                Start Your Digital Marketing Journey Today
               </h2>
-              <p className="text-xl text-secondary-foreground/80 mb-10 max-w-2xl mx-auto">
-                Don't just scroll through social media—learn how to grow on it! Transform your digital knowledge into real, sustainable income.
+              <p className="text-xl text-primary-foreground/80 mb-10 max-w-2xl mx-auto">
+                Master Facebook & Instagram (Meta Ads) + Google My Business. Transform your skills into real, sustainable income.
               </p>
 
-              <div className="bg-background p-8 md:p-10 rounded-3xl shadow-elevated max-w-lg mx-auto">
+              <div className="bg-card p-8 md:p-10 rounded-3xl shadow-elevated max-w-lg mx-auto">
                 <div className="text-center mb-6">
                   <div className="flex items-center justify-center gap-3 mb-2">
                     <span className="text-lg text-muted-foreground line-through">₹9,999</span>
-                    <span className="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm font-semibold">70% OFF</span>
+                    <span className="bg-secondary/20 text-secondary px-3 py-1 rounded-full text-sm font-semibold">50% OFF</span>
                   </div>
-                  <div className="text-5xl font-bold text-primary">₹2,999</div>
+                  <div className="text-5xl font-bold text-secondary">₹4,999</div>
                   <p className="text-muted-foreground mt-2">One-time payment • Lifetime access to recordings</p>
                 </div>
 
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    placeholder="Your Name"
-                    className="w-full px-4 py-4 rounded-xl border border-border bg-muted/50 focus:ring-2 focus:ring-primary outline-none text-foreground"
-                  />
-                  <input
-                    type="tel"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    required
-                    placeholder="WhatsApp Number"
-                    className="w-full px-4 py-4 rounded-xl border border-border bg-muted/50 focus:ring-2 focus:ring-primary outline-none text-foreground"
-                  />
-                  <Button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="w-full bg-primary hover:bg-primary/90 text-primary-foreground py-6 text-lg font-bold rounded-xl transition-all hover:scale-[1.02]"
-                  >
-                    {isSubmitting ? "Processing..." : "Enroll Now — Limited Seats!"}
-                  </Button>
-                </form>
+                <Button
+                  onClick={handleEnrollNow}
+                  className="w-full bg-secondary hover:bg-secondary/90 text-secondary-foreground py-6 text-lg font-bold rounded-xl shadow-glow transition-all hover:scale-[1.02] mb-4"
+                >
+                  Enroll Now — Pay ₹4,999 →
+                </Button>
 
-                <div className="flex items-center justify-center gap-2 mt-6 text-muted-foreground">
+                <div className="flex items-center justify-center gap-2 mt-4 text-muted-foreground">
                   <Shield className="h-5 w-5" />
-                  <span className="text-sm">Secure payment • Instant access</span>
+                  <span className="text-sm">Secure payment via Razorpay • Instant access</span>
                 </div>
               </div>
             </div>
