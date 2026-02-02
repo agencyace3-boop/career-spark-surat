@@ -10,12 +10,12 @@
     --primary: 224 71% 33%;
     --primary-foreground: 0 0% 100%;
 
-    /* Secondary - Light Green (Energy & Growth) */
-    --secondary: 142 69% 73%;
-    --secondary-foreground: 224 71% 20%;
+    /* Secondary - Vibrant Light Green (Energy & Growth) */
+    --secondary: 142 76% 55%;
+    --secondary-foreground: 224 71% 15%;
 
-    /* Accent - Bright Green */
-    --accent: 142 71% 45%;
+    /* Accent - Bright Neon Green */
+    --accent: 142 80% 50%;
     --accent-foreground: 0 0% 100%;
 
     /* Background - Very Dark Blue */
@@ -49,28 +49,28 @@
     /* Border/Input */
     --border: 222 47% 25%;
     --input: 222 47% 25%;
-    --ring: 142 69% 73%;
+    --ring: 142 76% 55%;
 
     --radius: 0.75rem;
 
     /* Sidebar */
     --sidebar-background: 222 47% 11%;
     --sidebar-foreground: 210 40% 98%;
-    --sidebar-primary: 142 69% 73%;
+    --sidebar-primary: 142 76% 55%;
     --sidebar-primary-foreground: 224 71% 20%;
     --sidebar-accent: 222 47% 18%;
     --sidebar-accent-foreground: 210 40% 98%;
     --sidebar-border: 222 47% 25%;
-    --sidebar-ring: 142 69% 73%;
+    --sidebar-ring: 142 76% 55%;
 
     /* Custom gradients and effects */
     --gradient-primary: linear-gradient(135deg, hsl(224 71% 33%), hsl(224 71% 25%));
-    --gradient-secondary: linear-gradient(135deg, hsl(142 69% 73%), hsl(142 69% 60%));
+    --gradient-secondary: linear-gradient(135deg, hsl(142 76% 55%), hsl(142 76% 45%));
     --gradient-hero: linear-gradient(135deg, hsl(222 47% 11% / 0.98), hsl(224 71% 20% / 0.95));
-    --gradient-accent: linear-gradient(135deg, hsl(142 71% 45%), hsl(142 71% 35%));
-    --shadow-card: 0 4px 20px -4px hsl(142 69% 73% / 0.1);
+    --gradient-accent: linear-gradient(135deg, hsl(142 80% 50%), hsl(142 80% 40%));
+    --shadow-card: 0 4px 20px -4px hsl(142 76% 55% / 0.15);
     --shadow-elevated: 0 20px 50px -15px hsl(0 0% 0% / 0.4);
-    --shadow-glow: 0 0 40px hsl(142 69% 73% / 0.3);
+    --shadow-glow: 0 0 40px hsl(142 76% 55% / 0.4);
   }
 
   .dark {
@@ -78,8 +78,8 @@
     --primary: 224 71% 40%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 142 69% 73%;
-    --secondary-foreground: 224 71% 20%;
+    --secondary: 142 76% 55%;
+    --secondary-foreground: 224 71% 15%;
 
     --background: 222 47% 8%;
     --foreground: 210 40% 98%;
@@ -96,7 +96,7 @@
     --muted: 217 33% 17%;
     --muted-foreground: 215 20% 65%;
 
-    --accent: 142 71% 45%;
+    --accent: 142 80% 50%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 63% 31%;
@@ -104,16 +104,16 @@
 
     --border: 217 33% 20%;
     --input: 217 33% 20%;
-    --ring: 142 69% 73%;
+    --ring: 142 76% 55%;
 
     --sidebar-background: 222 47% 11%;
     --sidebar-foreground: 210 40% 98%;
-    --sidebar-primary: 142 69% 73%;
+    --sidebar-primary: 142 76% 55%;
     --sidebar-primary-foreground: 224 71% 20%;
     --sidebar-accent: 217 33% 17%;
     --sidebar-accent-foreground: 210 40% 98%;
     --sidebar-border: 217 33% 20%;
-    --sidebar-ring: 142 69% 73%;
+    --sidebar-ring: 142 76% 55%;
   }
 }
 
@@ -210,8 +210,8 @@
 
   /* Pulse glow animation - now with green */
   @keyframes pulse-glow {
-    0%, 100% { box-shadow: 0 0 20px hsl(142 69% 73% / 0.3); }
-    50% { box-shadow: 0 0 40px hsl(142 69% 73% / 0.5); }
+    0%, 100% { box-shadow: 0 0 20px hsl(142 76% 55% / 0.4); }
+    50% { box-shadow: 0 0 50px hsl(142 76% 55% / 0.6); }
   }
 
   .animate-pulse-glow {
