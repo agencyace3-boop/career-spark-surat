@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { useToast } from "@/hooks/use-toast";
 import {
   Play,
   CheckCircle,
@@ -35,6 +34,29 @@ import {
   MousePointer,
   LineChart,
 } from "lucide-react";
+
+// Import mentor image and tool logos
+import mentorImage from "@/assets/mentor-vikaas.png";
+import googleLogo from "@/assets/tools/google.svg";
+import metaLogo from "@/assets/tools/meta.svg";
+import shopifyLogo from "@/assets/tools/shopify.svg";
+import hubspotLogo from "@/assets/tools/hubspot.svg";
+import mailchimpLogo from "@/assets/tools/mailchimp.svg";
+import wordpressLogo from "@/assets/tools/wordpress.svg";
+import canvaLogo from "@/assets/tools/canva.svg";
+import semrushLogo from "@/assets/tools/semrush.svg";
+
+// Tools that students will master
+const toolsList = [
+  { name: "Meta Ads", logo: metaLogo },
+  { name: "Google", logo: googleLogo },
+  { name: "Canva", logo: canvaLogo },
+  { name: "Semrush", logo: semrushLogo },
+  { name: "HubSpot", logo: hubspotLogo },
+  { name: "Mailchimp", logo: mailchimpLogo },
+  { name: "WordPress", logo: wordpressLogo },
+  { name: "Shopify", logo: shopifyLogo },
+];
 
 // 12-Day Course Schedule based on Meta Ads + GMB Course
 const courseSchedule = [
@@ -220,6 +242,9 @@ const courseDeliverables = [
 
 const RAZORPAY_LINK = "https://rzp.io/rzp/IAVCWNAq";
 
+// Batch start date: 21st Feb 2025
+const BATCH_START_DATE = new Date("2025-02-21T10:00:00+05:30");
+
 const AnimatedCounter = ({ target, suffix = "", inView }: { target: number; suffix?: string; inView: boolean }) => {
   const [count, setCount] = useState(0);
   
@@ -246,10 +271,55 @@ const AnimatedCounter = ({ target, suffix = "", inView }: { target: number; suff
   return <>{count.toLocaleString()}{suffix}</>;
 };
 
+// Countdown Timer Component
+const CountdownTimer = () => {
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  });
+
+  useEffect(() => {
+    const calculateTimeLeft = () => {
+      const now = new Date();
+      const difference = BATCH_START_DATE.getTime() - now.getTime();
+      
+      if (difference > 0) {
+        setTimeLeft({
+          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+          hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+          minutes: Math.floor((difference / 1000 / 60) % 60),
+          seconds: Math.floor((difference / 1000) % 60),
+        });
+      }
+    };
+
+    calculateTimeLeft();
+    const timer = setInterval(calculateTimeLeft, 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    <div className="flex items-center justify-center gap-2 md:gap-4">
+      {[
+        { value: timeLeft.days, label: "Days" },
+        { value: timeLeft.hours, label: "Hours" },
+        { value: timeLeft.minutes, label: "Mins" },
+        { value: timeLeft.seconds, label: "Secs" },
+      ].map((item, index) => (
+        <div key={item.label} className="flex flex-col items-center">
+          <div className="bg-secondary text-secondary-foreground font-bold text-xl md:text-3xl px-3 md:px-4 py-2 md:py-3 rounded-lg min-w-[50px] md:min-w-[70px] text-center shadow-lg">
+            {String(item.value).padStart(2, "0")}
+          </div>
+          <span className="text-xs md:text-sm font-medium text-white mt-1">{item.label}</span>
+        </div>
+      ))}
+    </div>
+  );
+};
+
 const LiveClasses = () => {
-  const { toast } = useToast();
-  const [formData, setFormData] = useState({ name: "", phone: "", email: "" });
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const [seatsLeft, setSeatsLeft] = useState(18);
   const [statsInView, setStatsInView] = useState(false);
   const statsRef = useRef<HTMLDivElement>(null);
@@ -262,22 +332,6 @@ const LiveClasses = () => {
     if (statsRef.current) observer.observe(statsRef.current);
     return () => observer.disconnect();
   }, []);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    toast({
-      title: "Registration Successful! 🎉",
-      description: "Our team will contact you within 24 hours with the joining details.",
-    });
-    setFormData({ name: "", phone: "", email: "" });
-    setIsSubmitting(false);
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
 
   const handleEnrollNow = () => {
     window.open(RAZORPAY_LINK, "_blank");
@@ -296,7 +350,7 @@ const LiveClasses = () => {
               alt=""
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-background via-background/98 to-background/95" />
+            <div className="absolute inset-0 bg-gradient-to-r from-background via-background/98 to-background/90" />
           </div>
 
           {/* Floating Elements */}
@@ -312,7 +366,7 @@ const LiveClasses = () => {
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
                     <span className="relative inline-flex rounded-full h-3 w-3 bg-secondary"></span>
                   </span>
-                  <span className="text-sm font-semibold text-secondary">Live Online Classes Starting Soon!</span>
+                  <span className="text-sm font-bold text-secondary">Fresh Batch Starting 21st February!</span>
                 </div>
 
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 animate-fade-in-up text-white drop-shadow-lg">
@@ -323,10 +377,16 @@ const LiveClasses = () => {
                   <span className="text-secondary drop-shadow-md">+ GMB Certification</span>
                 </h1>
 
-                <p className="text-lg md:text-xl text-foreground/90 mb-8 max-w-xl leading-relaxed animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+                <p className="text-lg md:text-xl text-white mb-8 max-w-xl leading-relaxed animate-fade-in-up font-medium drop-shadow-md" style={{ animationDelay: "0.2s" }}>
                   Master Meta Ads & Google My Business in <strong className="text-secondary font-bold">1 Month</strong>. 
                   12 Live Sessions under the mentorship of <strong className="text-secondary font-bold">Vikaas Parekh</strong>.
                 </p>
+
+                {/* Countdown Timer */}
+                <div className="mb-8 animate-fade-in-up" style={{ animationDelay: "0.25s" }}>
+                  <p className="text-sm font-bold text-secondary mb-3 text-center lg:text-left">⏰ Batch Starts In:</p>
+                  <CountdownTimer />
+                </div>
 
                 {/* Course Highlights */}
                 <div className="flex flex-wrap gap-4 mb-8 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
@@ -337,13 +397,13 @@ const LiveClasses = () => {
                   ].map((item) => (
                     <div key={item.text} className="flex items-center gap-2 bg-card border border-secondary/30 px-4 py-2.5 rounded-full shadow-md">
                       <item.icon className="h-4 w-4 text-secondary" />
-                      <span className="text-sm font-medium text-white">{item.text}</span>
+                      <span className="text-sm font-bold text-white">{item.text}</span>
                     </div>
                   ))}
                 </div>
 
                 {/* Stats Row */}
-                <div ref={statsRef} className="grid grid-cols-3 gap-6 mb-8 bg-card/80 backdrop-blur-sm rounded-2xl p-5 border border-border">
+                <div ref={statsRef} className="grid grid-cols-3 gap-6 mb-8 bg-card/90 backdrop-blur-sm rounded-2xl p-5 border border-secondary/30">
                   {[
                     { value: 30, suffix: "+", label: "Years Experience" },
                     { value: 500, suffix: "+", label: "Clients Managed" },
@@ -353,7 +413,7 @@ const LiveClasses = () => {
                       <div className="text-3xl font-bold text-secondary drop-shadow-md">
                         {stat.value === 1 ? "₹" : ""}<AnimatedCounter target={stat.value} suffix={stat.suffix} inView={statsInView} />
                       </div>
-                      <div className="text-sm text-white/80 font-medium">{stat.label}</div>
+                      <div className="text-sm text-white font-medium">{stat.label}</div>
                     </div>
                   ))}
                 </div>
@@ -367,17 +427,17 @@ const LiveClasses = () => {
                   ].map((item) => (
                     <div key={item.text} className="flex items-center gap-2 bg-secondary/20 border border-secondary/30 px-4 py-2.5 rounded-full">
                       <item.icon className="h-4 w-4 text-secondary" />
-                      <span className="text-sm font-medium text-white">{item.text}</span>
+                      <span className="text-sm font-bold text-white">{item.text}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
-              {/* Right Content - Registration Form */}
+              {/* Right Content - Enroll Card */}
               <div className="relative animate-scale-in">
-                <div className="bg-card rounded-3xl p-8 shadow-elevated border border-border relative overflow-hidden">
+                <div className="bg-card rounded-3xl p-8 shadow-elevated border border-secondary/30 relative overflow-hidden">
                   {/* Urgency Badge */}
-                  <div className="absolute top-0 right-0 bg-secondary text-secondary-foreground px-4 py-2 rounded-bl-2xl font-semibold text-sm flex items-center gap-2">
+                  <div className="absolute top-0 right-0 bg-secondary text-secondary-foreground px-4 py-2 rounded-bl-2xl font-bold text-sm flex items-center gap-2">
                     <span className="relative flex h-2 w-2">
                       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary-foreground opacity-75"></span>
                       <span className="relative inline-flex rounded-full h-2 w-2 bg-secondary-foreground"></span>
@@ -389,8 +449,19 @@ const LiveClasses = () => {
                     <h2 className="text-2xl font-bold text-foreground mb-2">
                       Enroll Now
                     </h2>
-                    <p className="text-muted-foreground text-sm">
+                    <p className="text-muted-foreground text-sm font-medium">
                       Secure your seat in the next batch
+                    </p>
+                  </div>
+
+                  {/* Batch Timing */}
+                  <div className="bg-primary/10 border border-primary/30 rounded-xl p-4 mb-6">
+                    <div className="flex items-center justify-center gap-2 mb-2">
+                      <Calendar className="h-5 w-5 text-secondary" />
+                      <span className="font-bold text-foreground">Batch Starts: 21st February 2025</span>
+                    </div>
+                    <p className="text-center text-sm text-muted-foreground font-medium">
+                      ⏰ Timings: 8:00 PM - 9:30 PM (IST) | Mon-Fri
                     </p>
                   </div>
 
@@ -400,8 +471,8 @@ const LiveClasses = () => {
                       <span className="text-lg text-muted-foreground line-through">₹5,999</span>
                       <span className="bg-secondary text-secondary-foreground px-3 py-1 rounded-full text-sm font-bold">50% OFF</span>
                     </div>
-                    <div className="text-4xl font-bold text-secondary">₹2,999</div>
-                    <p className="text-xs text-muted-foreground mt-1">One-time payment • Lifetime access to recordings</p>
+                    <div className="text-5xl font-bold text-secondary">₹2,999</div>
+                    <p className="text-sm text-muted-foreground mt-1 font-medium">One-time payment • Lifetime access to recordings</p>
                   </div>
 
                   {/* Enroll Button - Links to Razorpay */}
@@ -412,58 +483,15 @@ const LiveClasses = () => {
                     Enroll Now - Pay ₹2,999 →
                   </Button>
 
-                  <p className="text-center text-xs text-muted-foreground mb-4">
-                    Or fill the form below to get a callback
-                  </p>
-
-                  <form onSubmit={handleSubmit} className="space-y-3">
-                    <input
-                      type="text"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      placeholder="Your Full Name"
-                      className="w-full px-4 py-3 rounded-xl border border-border bg-muted/50 focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all text-foreground placeholder:text-muted-foreground"
-                    />
-                    <input
-                      type="tel"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      required
-                      placeholder="WhatsApp Number"
-                      className="w-full px-4 py-3 rounded-xl border border-border bg-muted/50 focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all text-foreground placeholder:text-muted-foreground"
-                    />
-                    <input
-                      type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      placeholder="Email Address"
-                      className="w-full px-4 py-3 rounded-xl border border-border bg-muted/50 focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all text-foreground placeholder:text-muted-foreground"
-                    />
-
-                    <Button
-                      type="submit"
-                      disabled={isSubmitting}
-                      variant="outline"
-                      className="w-full border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground py-5 font-semibold rounded-xl"
-                    >
-                      {isSubmitting ? "Submitting..." : "Request Callback"}
-                    </Button>
-                  </form>
-
                   {/* Bottom Features */}
-                  <div className="flex justify-center gap-6 mt-6 pt-4 border-t border-border">
+                  <div className="flex justify-center gap-6 mt-4 pt-4 border-t border-border">
                     {[
                       { icon: Clock, text: "1 Month" },
                       { icon: Monitor, text: "LIVE on Zoom" },
                       { icon: Award, text: "Certificate" },
                     ].map((item) => (
-                      <div key={item.text} className="flex items-center gap-2 text-muted-foreground text-sm">
-                        <item.icon className="h-4 w-4" />
+                      <div key={item.text} className="flex items-center gap-2 text-muted-foreground text-sm font-medium">
+                        <item.icon className="h-4 w-4 text-secondary" />
                         <span>{item.text}</span>
                       </div>
                     ))}
@@ -474,17 +502,42 @@ const LiveClasses = () => {
           </div>
         </section>
 
+        {/* Master These Tools Section */}
+        <section className="py-16 bg-muted border-y border-border">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-10">
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
+                Master These <span className="text-secondary">Industry Tools</span>
+              </h2>
+              <p className="text-muted-foreground font-medium">
+                Learn to use the same tools that professionals use worldwide
+              </p>
+            </div>
+
+            <div className="grid grid-cols-4 md:grid-cols-8 gap-6">
+              {toolsList.map((tool) => (
+                <div key={tool.name} className="flex flex-col items-center gap-3 group">
+                  <div className="w-16 h-16 md:w-20 md:h-20 bg-card rounded-2xl border border-border p-3 flex items-center justify-center shadow-card group-hover:shadow-elevated group-hover:border-secondary/50 group-hover:scale-105 transition-all">
+                    <img src={tool.logo} alt={tool.name} className="w-10 h-10 md:w-12 md:h-12 object-contain" />
+                  </div>
+                  <span className="text-xs md:text-sm font-bold text-foreground text-center">{tool.name}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Course Objective Section */}
-        <section className="py-20 bg-muted">
+        <section className="py-20 bg-background">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
-              <span className="inline-block bg-secondary/20 text-secondary px-4 py-2 rounded-full text-sm font-semibold mb-4">
+              <span className="inline-block bg-secondary/20 text-secondary px-4 py-2 rounded-full text-sm font-bold mb-4">
                 Course Objective
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                 What You'll <span className="text-secondary">Learn & Achieve</span>
               </h2>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto font-medium">
                 This course is designed to help students, business owners, freelancers, and job seekers master Meta advertising and local SEO.
               </p>
             </div>
@@ -501,7 +554,7 @@ const LiveClasses = () => {
                     <item.icon className="h-7 w-7 text-secondary group-hover:text-secondary-foreground transition-colors" />
                   </div>
                   <h3 className="text-lg font-bold text-foreground mb-2">{item.title}</h3>
-                  <p className="text-muted-foreground text-sm">{item.description}</p>
+                  <p className="text-muted-foreground text-sm font-medium">{item.description}</p>
                 </div>
               ))}
             </div>
@@ -509,13 +562,13 @@ const LiveClasses = () => {
         </section>
 
         {/* Everything You'll Get Section */}
-        <section className="py-20 bg-background">
+        <section className="py-20 bg-muted">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
                 Here's <span className="text-secondary">EVERYTHING</span> You'll Get
               </h2>
-              <p className="text-lg text-muted-foreground">
+              <p className="text-lg text-muted-foreground font-medium">
                 When You Join This Program Today!
               </p>
             </div>
@@ -533,9 +586,9 @@ const LiveClasses = () => {
                       <div className="w-8 h-8 rounded-full bg-secondary/20 flex items-center justify-center group-hover:bg-secondary group-hover:scale-110 transition-all">
                         <CheckCircle className="h-5 w-5 text-secondary group-hover:text-secondary-foreground" />
                       </div>
-                      <span className="font-medium text-foreground">{item.title}</span>
+                      <span className="font-bold text-foreground">{item.title}</span>
                     </div>
-                    <span className="text-muted-foreground font-medium">({item.value} Value)</span>
+                    <span className="text-muted-foreground font-bold">({item.value} Value)</span>
                   </div>
                 ))}
 
@@ -550,9 +603,9 @@ const LiveClasses = () => {
 
               {/* Registration Card */}
               <div className="sticky top-24">
-                <div className="bg-card rounded-3xl p-8 shadow-elevated border border-border relative overflow-hidden">
+                <div className="bg-card rounded-3xl p-8 shadow-elevated border border-secondary/30 relative overflow-hidden">
                   {/* Urgency Badge */}
-                  <div className="absolute top-4 right-4 bg-secondary text-secondary-foreground px-4 py-2 rounded-full font-semibold text-sm flex items-center gap-2">
+                  <div className="absolute top-4 right-4 bg-secondary text-secondary-foreground px-4 py-2 rounded-full font-bold text-sm flex items-center gap-2">
                     <span className="relative flex h-2 w-2">
                       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary-foreground opacity-75"></span>
                       <span className="relative inline-flex rounded-full h-2 w-2 bg-secondary-foreground"></span>
@@ -562,22 +615,22 @@ const LiveClasses = () => {
 
                   <div className="text-center mb-6 pt-6">
                     <h3 className="text-2xl font-bold text-foreground mb-2">Enroll Now</h3>
-                    <p className="text-muted-foreground text-sm">Pay securely via Razorpay</p>
+                    <p className="text-muted-foreground text-sm font-medium">Pay securely via Razorpay</p>
                   </div>
 
                   <div className="text-center mb-6">
                     <div className="flex items-center justify-center gap-3 mb-1">
-                      <span className="text-lg text-muted-foreground line-through">₹9,999</span>
-                      <span className="bg-secondary/20 text-secondary px-3 py-1 rounded-full text-sm font-semibold">50% OFF</span>
+                      <span className="text-lg text-muted-foreground line-through">₹5,999</span>
+                      <span className="bg-secondary/20 text-secondary px-3 py-1 rounded-full text-sm font-bold">50% OFF</span>
                     </div>
-                    <div className="text-4xl font-bold text-secondary">₹4,999</div>
+                    <div className="text-5xl font-bold text-secondary">₹2,999</div>
                   </div>
 
                   <Button
                     onClick={handleEnrollNow}
                     className="w-full bg-secondary hover:bg-secondary/90 text-secondary-foreground py-6 text-lg font-bold rounded-xl shadow-glow mb-4"
                   >
-                    Enroll Now - Pay ₹4,999 →
+                    Enroll Now - Pay ₹2,999 →
                   </Button>
 
                   <div className="flex justify-center gap-6 mt-4 pt-4 border-t border-border">
@@ -586,8 +639,8 @@ const LiveClasses = () => {
                       { icon: Monitor, text: "LIVE on Zoom" },
                       { icon: Award, text: "Certificate" },
                     ].map((item) => (
-                      <div key={item.text} className="flex items-center gap-2 text-muted-foreground text-sm">
-                        <item.icon className="h-4 w-4" />
+                      <div key={item.text} className="flex items-center gap-2 text-muted-foreground text-sm font-medium">
+                        <item.icon className="h-4 w-4 text-secondary" />
                         <span>{item.text}</span>
                       </div>
                     ))}
@@ -599,45 +652,45 @@ const LiveClasses = () => {
         </section>
 
         {/* Mentor Section */}
-        <section className="py-20 bg-muted overflow-hidden">
+        <section className="py-20 bg-background overflow-hidden">
           <div className="container mx-auto px-4">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="relative group">
                 <div className="absolute -inset-4 bg-gradient-to-r from-primary via-secondary to-accent rounded-3xl blur-xl opacity-30 group-hover:opacity-50 transition-opacity" />
                 <div className="relative aspect-[4/5] max-w-md mx-auto rounded-3xl overflow-hidden shadow-elevated">
                   <img
-                    src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                    src={mentorImage}
                     alt="Vikaas Parekh - Founder & Mentor"
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <div className="text-foreground font-bold text-xl">Vikaas Parekh</div>
-                    <div className="text-muted-foreground">Founder & Lead Mentor</div>
+                    <div className="text-white font-bold text-xl drop-shadow-lg">Vikaas Parekh</div>
+                    <div className="text-white/90 font-medium drop-shadow-md">Founder & Lead Mentor</div>
                   </div>
                 </div>
                 {/* Experience Badge */}
                 <div className="absolute -bottom-4 -right-4 lg:right-0 bg-secondary text-secondary-foreground p-5 rounded-2xl shadow-elevated">
                   <div className="text-3xl font-bold">30+</div>
-                  <div className="text-sm">Years Experience</div>
+                  <div className="text-sm font-medium">Years Experience</div>
                 </div>
               </div>
 
               <div>
-                <span className="inline-block bg-secondary/20 text-secondary px-4 py-2 rounded-full text-sm font-semibold mb-6">
+                <span className="inline-block bg-secondary/20 text-secondary px-4 py-2 rounded-full text-sm font-bold mb-6">
                   Meet Your Mentor
                 </span>
                 <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-2">
                   Vikaas Parekh
                 </h2>
-                <p className="text-xl text-secondary font-semibold mb-6">
+                <p className="text-xl text-secondary font-bold mb-6">
                   Founder - Surat Digital Marketing School
                 </p>
-                <p className="text-muted-foreground mb-6 leading-relaxed text-lg">
-                  With over <strong className="text-foreground">30 years of rich experience</strong> spanning Finance, Real Estate, and Event Management, 
+                <p className="text-foreground mb-6 leading-relaxed text-lg font-medium">
+                  With over <strong className="text-secondary">30 years of rich experience</strong> spanning Finance, Real Estate, and Event Management, 
                   Vikaas Parekh brings unparalleled expertise to digital marketing education.
                 </p>
-                <p className="text-muted-foreground mb-8 leading-relaxed">
+                <p className="text-muted-foreground mb-8 leading-relaxed font-medium">
                   As the founder of a leading digital marketing firm, he has successfully managed <strong className="text-foreground">500+ client portfolios</strong> and orchestrated 
                   ad campaigns worth over <strong className="text-foreground">₹1 crore</strong>. Currently serving as <strong className="text-foreground">Guest Faculty at Auro University, Surat</strong>.
                 </p>
@@ -652,7 +705,7 @@ const LiveClasses = () => {
                     <div key={stat.label} className="bg-card p-5 rounded-xl shadow-card border border-border group hover:border-secondary/30 transition-all">
                       <stat.icon className="h-6 w-6 text-secondary mb-2" />
                       <div className="text-2xl font-bold text-foreground">{stat.value}</div>
-                      <div className="text-sm text-muted-foreground">{stat.label}</div>
+                      <div className="text-sm text-muted-foreground font-medium">{stat.label}</div>
                     </div>
                   ))}
                 </div>
@@ -662,16 +715,16 @@ const LiveClasses = () => {
         </section>
 
         {/* Who Should Join */}
-        <section className="py-20 bg-background">
+        <section className="py-20 bg-muted">
           <div className="container mx-auto px-4">
             <div className="text-center mb-14">
-              <span className="inline-block bg-secondary/20 text-secondary px-4 py-2 rounded-full text-sm font-semibold mb-4">
+              <span className="inline-block bg-secondary/20 text-secondary px-4 py-2 rounded-full text-sm font-bold mb-4">
                 Who Should Enroll?
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                 This Course Is Perfect For
               </h2>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto font-medium">
                 Whether you're a beginner or looking to enhance your skills, this program provides the practical knowledge you need.
               </p>
             </div>
@@ -696,7 +749,7 @@ const LiveClasses = () => {
                       </div>
                       <h3 className="text-lg font-bold text-foreground">{item.title}</h3>
                     </div>
-                    <p className="text-muted-foreground text-sm">{item.description}</p>
+                    <p className="text-muted-foreground text-sm font-medium">{item.description}</p>
                   </div>
                 </div>
               ))}
@@ -705,16 +758,16 @@ const LiveClasses = () => {
         </section>
 
         {/* 12-Day Course Schedule */}
-        <section className="py-20 bg-muted">
+        <section className="py-20 bg-background">
           <div className="container mx-auto px-4">
             <div className="text-center mb-14">
-              <span className="inline-block bg-secondary/20 text-secondary px-4 py-2 rounded-full text-sm font-semibold mb-4">
+              <span className="inline-block bg-secondary/20 text-secondary px-4 py-2 rounded-full text-sm font-bold mb-4">
                 Comprehensive Curriculum
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                 12-Day Detailed Course Schedule
               </h2>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto font-medium">
                 Each session is 90 minutes of intensive, hands-on learning with practical assignments.
               </p>
             </div>
@@ -738,7 +791,7 @@ const LiveClasses = () => {
                     <h3 className="text-lg font-bold text-foreground mb-3 group-hover:text-secondary transition-colors">{module.title}</h3>
                     <ul className="space-y-2">
                       {module.topics.map((topic, i) => (
-                        <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
+                        <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground font-medium">
                           <CheckCircle className="h-4 w-4 text-secondary flex-shrink-0 mt-0.5" />
                           <span>{topic}</span>
                         </li>
@@ -764,7 +817,7 @@ const LiveClasses = () => {
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
                 Why Choose This Meta-Certified Course?
               </h2>
-              <p className="text-lg text-primary-foreground/80 max-w-2xl mx-auto">
+              <p className="text-lg text-primary-foreground/80 max-w-2xl mx-auto font-medium">
                 Industry-aligned curriculum based on Meta's official social media marketing principles
               </p>
             </div>
@@ -777,7 +830,7 @@ const LiveClasses = () => {
                   </div>
                   <div>
                     <h3 className="font-bold text-lg mb-2">{item.title}</h3>
-                    <p className="text-sm text-primary-foreground/70 leading-relaxed">{item.description}</p>
+                    <p className="text-sm text-primary-foreground/70 leading-relaxed font-medium">{item.description}</p>
                   </div>
                 </div>
               ))}
@@ -786,11 +839,11 @@ const LiveClasses = () => {
         </section>
 
         {/* Course Deliverables */}
-        <section className="py-20 bg-background">
+        <section className="py-20 bg-muted">
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto">
               <div className="text-center mb-14">
-                <span className="inline-block bg-secondary/20 text-secondary px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                <span className="inline-block bg-secondary/20 text-secondary px-4 py-2 rounded-full text-sm font-bold mb-4">
                   Course Deliverables
                 </span>
                 <h2 className="text-3xl md:text-4xl font-bold text-foreground">
@@ -805,7 +858,7 @@ const LiveClasses = () => {
                       <item.icon className="h-7 w-7 text-secondary group-hover:text-secondary-foreground transition-colors" />
                     </div>
                     <div className="text-lg font-bold text-foreground mb-1">{item.title}</div>
-                    <div className="text-sm text-muted-foreground">{item.description}</div>
+                    <div className="text-sm text-muted-foreground font-medium">{item.description}</div>
                   </div>
                 ))}
               </div>
@@ -817,13 +870,13 @@ const LiveClasses = () => {
                   alt="Online learning"
                   className="w-full h-64 object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-background/98 to-background/80" />
+                <div className="absolute inset-0 bg-gradient-to-r from-background via-background/95 to-background/80" />
                 <div className="absolute inset-0 flex items-center">
                   <div className="container mx-auto px-8">
-                    <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-3">
+                    <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-3 drop-shadow-md">
                       Course Format & Delivery
                     </h3>
-                    <p className="text-muted-foreground mb-6 max-w-xl">
+                    <p className="text-foreground mb-6 max-w-xl font-medium drop-shadow-sm">
                       12 live interactive sessions via Zoom, each 90 minutes. Learn from anywhere in India.
                     </p>
                     <div className="flex flex-wrap gap-4">
@@ -833,9 +886,9 @@ const LiveClasses = () => {
                         { icon: Play, text: "Recorded Access" },
                         { icon: Headphones, text: "Community Support" },
                       ].map((item) => (
-                        <div key={item.text} className="flex items-center gap-2 bg-secondary/20 px-4 py-2 rounded-full">
+                        <div key={item.text} className="flex items-center gap-2 bg-secondary/30 backdrop-blur-sm px-4 py-2 rounded-full border border-secondary/50">
                           <item.icon className="h-4 w-4 text-secondary" />
-                          <span className="text-sm text-foreground">{item.text}</span>
+                          <span className="text-sm text-white font-bold">{item.text}</span>
                         </div>
                       ))}
                     </div>
@@ -858,30 +911,30 @@ const LiveClasses = () => {
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground mb-6">
                 Start Your Digital Marketing Journey Today
               </h2>
-              <p className="text-xl text-primary-foreground/80 mb-10 max-w-2xl mx-auto">
+              <p className="text-xl text-primary-foreground/80 mb-10 max-w-2xl mx-auto font-medium">
                 Master Facebook & Instagram (Meta Ads) + Google My Business. Transform your skills into real, sustainable income.
               </p>
 
-              <div className="bg-card p-8 md:p-10 rounded-3xl shadow-elevated max-w-lg mx-auto">
+              <div className="bg-card p-8 md:p-10 rounded-3xl shadow-elevated max-w-lg mx-auto border border-secondary/30">
                 <div className="text-center mb-6">
                   <div className="flex items-center justify-center gap-3 mb-2">
-                    <span className="text-lg text-muted-foreground line-through">₹9,999</span>
-                    <span className="bg-secondary/20 text-secondary px-3 py-1 rounded-full text-sm font-semibold">50% OFF</span>
+                    <span className="text-lg text-muted-foreground line-through">₹5,999</span>
+                    <span className="bg-secondary/20 text-secondary px-3 py-1 rounded-full text-sm font-bold">50% OFF</span>
                   </div>
-                  <div className="text-5xl font-bold text-secondary">₹4,999</div>
-                  <p className="text-muted-foreground mt-2">One-time payment • Lifetime access to recordings</p>
+                  <div className="text-5xl font-bold text-secondary">₹2,999</div>
+                  <p className="text-muted-foreground mt-2 font-medium">One-time payment • Lifetime access to recordings</p>
                 </div>
 
                 <Button
                   onClick={handleEnrollNow}
                   className="w-full bg-secondary hover:bg-secondary/90 text-secondary-foreground py-6 text-lg font-bold rounded-xl shadow-glow transition-all hover:scale-[1.02] mb-4"
                 >
-                  Enroll Now — Pay ₹4,999 →
+                  Enroll Now — Pay ₹2,999 →
                 </Button>
 
                 <div className="flex items-center justify-center gap-2 mt-4 text-muted-foreground">
                   <Shield className="h-5 w-5" />
-                  <span className="text-sm">Secure payment via Razorpay • Instant access</span>
+                  <span className="text-sm font-medium">Secure payment via Razorpay • Instant access</span>
                 </div>
               </div>
             </div>
