@@ -40,7 +40,7 @@ const CourseCategories = () => {
             Course Categories
           </h2>
           <p className="text-lg text-muted-foreground">
-            List of type of courses offered by Surat DMS.
+            List of type of courses offered by Surat Digital Marketing School.
           </p>
         </div>
 

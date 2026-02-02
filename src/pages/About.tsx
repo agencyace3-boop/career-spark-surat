@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const milestones = [{
   year: "2014",
   title: "Founded",
-  description: "Surat DMS was established with a vision to provide practical digital marketing education"
+  description: "Surat Digital Marketing School was established with a vision to provide practical digital marketing education"
 }, {
   year: "2016",
   title: "1000+ Students",
@@ -113,7 +113,7 @@ const About = () => {
                   From Vision to <span className="text-secondary">Reality</span>
                 </h2>
                 <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                  Surat DMS was founded in 2014 by Vikaas Parekh, a digital marketing veteran 
+                  Surat Digital Marketing School was founded in 2014 by Vikaas Parekh, a digital marketing veteran 
                   who saw a gap between theoretical education and practical industry needs. 
                 </p>
                 <p className="text-muted-foreground mb-8 leading-relaxed">

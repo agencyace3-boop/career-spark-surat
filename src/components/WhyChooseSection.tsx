@@ -54,7 +54,7 @@ const WhyChooseSection = () => {
             Why Choose Us
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            Why <span className="text-primary">Surat DMS</span> is Your Best Choice
+            Why <span className="text-primary">Surat Digital Marketing School</span> is Your Best Choice
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             We don't just teach digital marketing—we transform careers. Here's what makes us the 
@@ -88,7 +88,7 @@ const WhyChooseSection = () => {
             <div className="relative rounded-3xl overflow-hidden shadow-elevated">
               <img
                 src="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                alt="Students learning digital marketing at Surat DMS"
+                alt="Students learning digital marketing at Surat Digital Marketing School"
                 className="w-full h-[350px] object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent" />
