@@ -82,7 +82,7 @@ const Header = () => {
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
                   <Link to="/live-classes" onClick={() => window.scrollTo(0, 0)} className="cursor-pointer w-full">
-                    🔴 Live Classes
+                    🎓 Online Course
                   </Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>
@@ -105,8 +105,8 @@ const Header = () => {
           {/* CTA Button */}
           <div className="hidden lg:flex items-center gap-3">
             <Link to="/live-classes" onClick={() => window.scrollTo(0, 0)}>
-              <Button size="sm" className="bg-secondary hover:bg-secondary/90 text-secondary-foreground shadow-glow">
-                Join Live Classes
+              <Button size="sm" className="bg-secondary hover:bg-secondary/90 text-secondary-foreground shadow-glow font-bold">
+                Join Online Course
               </Button>
             </Link>
           </div>
@@ -154,7 +154,7 @@ const Header = () => {
                 }`}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                🔴 Live Classes
+                🎓 Online Course
               </Link>
               {navItems.slice(1).map((item) => (
                 <Link
@@ -171,7 +171,7 @@ const Header = () => {
               <div className="flex flex-col gap-3 mt-4 pt-4 border-t border-primary/10">
                 <Link to="/live-classes" onClick={() => setIsMobileMenuOpen(false)}>
                   <Button className="w-full bg-secondary hover:bg-secondary/90 text-secondary-foreground font-bold">
-                    Join Live Classes
+                    Join Online Course
                   </Button>
                 </Link>
               </div>
