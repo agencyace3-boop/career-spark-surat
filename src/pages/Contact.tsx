@@ -262,7 +262,7 @@ const Contact = () => {
                 {/* Google Map */}
                 <div className="rounded-3xl overflow-hidden shadow-elevated h-[400px]">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3719.6!2d72.8!3d21.2!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDEyJzAwLjAiTiA3MsKwNDgnMDAuMCJF!5e0!3m2!1sen!2sin!4v1"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.0!2d72.7931!3d21.1544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04db8db8a3c31%3A0x8c6e5d3c6c5b5a5a!2sGreen%20Signature%2C%20Vesu%2C%20Surat%2C%20Gujarat%20395007!5e0!3m2!1sen!2sin!4v1"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
