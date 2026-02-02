@@ -8,7 +8,6 @@ import Testimonials from "@/components/Testimonials";
 import AboutSection from "@/components/AboutSection";
 import WhyChooseSection from "@/components/WhyChooseSection";
 import FAQ from "@/components/FAQ";
-import Newsletter from "@/components/Newsletter";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -25,7 +24,6 @@ const Index = () => {
         <AboutSection />
         <WhyChooseSection />
         <FAQ />
-        <Newsletter />
       </main>
       <Footer />
     </div>

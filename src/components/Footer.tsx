@@ -6,7 +6,6 @@ import {
   MapPin,
   Phone,
   Mail,
-  MessageCircle,
 } from "lucide-react";
 import logo from "@/assets/logo.png";
 
@@ -40,15 +39,15 @@ const socialLinks = [
 const Footer = () => {
   return (
     <footer id="contact" className="bg-primary text-primary-foreground">
-      <div className="container mx-auto px-4 py-16">
-        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-10">
+      <div className="container mx-auto px-4 py-12 md:py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 md:gap-10">
           {/* Brand Column */}
-          <div className="lg:col-span-2">
+          <div className="sm:col-span-2 lg:col-span-2">
             <div className="flex items-center mb-6">
               <img 
                 src={logo} 
                 alt="Surat Digital Marketing School" 
-                className="h-16 w-auto object-contain"
+                className="h-14 md:h-16 w-auto object-contain"
               />
             </div>
             
@@ -138,17 +137,6 @@ const Footer = () => {
           </p>
         </div>
       </div>
-
-      {/* WhatsApp Button */}
-      <a
-        href="https://api.whatsapp.com/send?phone=919558866993"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 w-14 h-14 bg-secondary rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform z-50"
-        aria-label="Chat on WhatsApp"
-      >
-        <MessageCircle className="h-7 w-7 text-secondary-foreground" />
-      </a>
     </footer>
   );
 };

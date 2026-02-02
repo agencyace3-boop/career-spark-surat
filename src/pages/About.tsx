@@ -195,11 +195,30 @@ const About = () => {
 
             <div className="max-w-4xl mx-auto">
               <div className="relative">
-                {/* Timeline Line */}
-                <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-primary via-secondary to-accent" />
+                {/* Timeline Line - hidden on mobile */}
+                <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-primary via-secondary to-accent" />
                 
-                {milestones.map((milestone, index) => <div key={milestone.year} className={`relative flex items-center mb-12 ${index % 2 === 0 ? "justify-start" : "justify-end"}`}>
-                    <div className={`w-5/12 ${index % 2 === 0 ? "text-right pr-8" : "text-left pl-8"}`}>
+                {/* Mobile Timeline Line */}
+                <div className="md:hidden absolute left-4 top-0 h-full w-1 bg-gradient-to-b from-primary via-secondary to-accent" />
+                
+                {milestones.map((milestone, index) => (
+                  <div 
+                    key={milestone.year} 
+                    className={`relative flex items-center mb-8 md:mb-12 ${index % 2 === 0 ? "md:justify-start" : "md:justify-end"} justify-start`}
+                  >
+                    {/* Mobile layout */}
+                    <div className="md:hidden pl-12 w-full">
+                      <div className="bg-card p-4 rounded-2xl shadow-card border border-border/50">
+                        <span className="inline-block bg-secondary text-secondary-foreground px-3 py-1 rounded-full text-sm font-bold mb-2">
+                          {milestone.year}
+                        </span>
+                        <h3 className="text-lg font-bold text-foreground mb-2">{milestone.title}</h3>
+                        <p className="text-sm text-muted-foreground">{milestone.description}</p>
+                      </div>
+                    </div>
+                    
+                    {/* Desktop layout */}
+                    <div className={`hidden md:block w-5/12 ${index % 2 === 0 ? "text-right pr-8" : "text-left pl-8"}`}>
                       <div className="bg-card p-6 rounded-2xl shadow-card border border-border/50">
                         <span className="inline-block bg-secondary text-secondary-foreground px-3 py-1 rounded-full text-sm font-bold mb-2">
                           {milestone.year}
@@ -208,9 +227,14 @@ const About = () => {
                         <p className="text-sm text-muted-foreground">{milestone.description}</p>
                       </div>
                     </div>
-                    {/* Center Dot */}
-                    <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-secondary border-4 border-background" />
-                  </div>)}
+                    
+                    {/* Center Dot - Desktop */}
+                    <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-secondary border-4 border-background" />
+                    
+                    {/* Left Dot - Mobile */}
+                    <div className="md:hidden absolute left-2 transform w-4 h-4 rounded-full bg-secondary border-4 border-background" />
+                  </div>
+                ))}
               </div>
             </div>
           </div>
