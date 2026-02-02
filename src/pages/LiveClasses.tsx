@@ -499,30 +499,6 @@ const LiveClasses = () => {
           </div>
         </section>
 
-        {/* Master These Tools Section */}
-        <section className="py-16 bg-muted border-y border-border">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-10">
-              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
-                Master These <span className="text-secondary">Industry Tools</span>
-              </h2>
-              <p className="text-muted-foreground font-medium">
-                Learn to use the same tools that professionals use worldwide
-              </p>
-            </div>
-
-            <div className="grid grid-cols-4 md:grid-cols-8 gap-6">
-              {toolsList.map((tool) => (
-                <div key={tool.name} className="flex flex-col items-center gap-3 group">
-                  <div className="w-16 h-16 md:w-20 md:h-20 bg-card rounded-2xl border border-border p-3 flex items-center justify-center shadow-card group-hover:shadow-elevated group-hover:border-secondary/50 group-hover:scale-105 transition-all">
-                    <img src={tool.logo} alt={tool.name} className="w-10 h-10 md:w-12 md:h-12 object-contain" />
-                  </div>
-                  <span className="text-xs md:text-sm font-bold text-foreground text-center">{tool.name}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* Course Objective Section */}
         <section className="py-20 bg-background">
