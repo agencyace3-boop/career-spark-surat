@@ -12,14 +12,12 @@ import logo from "@/assets/logo.png";
 const quickLinks = [
   { label: "Home", href: "#" },
   { label: "Courses", href: "#courses" },
-  { label: "Blog", href: "#blog" },
   { label: "About Us", href: "#about" },
 ];
 
 const quickLinks2 = [
   { label: "Our Services", href: "#business" },
-  { label: "Reserve Your Spot", href: "#" },
-  { label: "Privacy Policy", href: "#" },
+  { label: "Privacy Policy", href: "/privacy-policy" },
   { label: "Contact Us", href: "#contact" },
 ];
 
