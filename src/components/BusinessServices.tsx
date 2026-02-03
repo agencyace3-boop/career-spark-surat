@@ -10,7 +10,7 @@ const BusinessServices = () => {
           <div className="relative order-2 lg:order-1">
             <div className="rounded-2xl overflow-hidden shadow-elevated">
               <img
-                src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                src="/images/business-services.jpg"
                 alt="Business consulting and digital strategy"
                 className="w-full h-[450px] object-cover"
               />

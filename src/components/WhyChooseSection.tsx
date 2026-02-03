@@ -87,7 +87,7 @@ const WhyChooseSection = () => {
           <div className="space-y-8">
             <div className="relative rounded-3xl overflow-hidden shadow-elevated">
               <img
-                src="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                src="/images/why-choose.jpg"
                 alt="Students learning digital marketing at Surat Digital Marketing School"
                 className="w-full h-[350px] object-cover"
               />

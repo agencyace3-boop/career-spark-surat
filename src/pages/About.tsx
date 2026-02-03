@@ -48,28 +48,28 @@ const values = [{
 const team = [{
   name: "Vikaas Parekh",
   role: "Founder & Lead Trainer",
-  image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+  image: "/images/team/vikaas.jpg",
   description: "10+ years of experience in digital marketing. Trained 3000+ professionals. Google & Meta certified expert.",
   linkedin: "#",
   twitter: "#"
 }, {
   name: "Riya Sharma",
   role: "SEO Specialist & Trainer",
-  image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+  image: "/images/team/riya.jpg",
   description: "SEO expert with experience in ranking 500+ websites. Specializes in technical SEO and content strategy.",
   linkedin: "#",
   twitter: "#"
 }, {
   name: "Amit Patel",
   role: "PPC & Analytics Expert",
-  image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+  image: "/images/testimonials/amit.jpg",
   description: "Google Ads certified with ₹50Cr+ managed ad spend. Expert in conversion optimization and data analytics.",
   linkedin: "#",
   twitter: "#"
 }, {
   name: "Priya Desai",
   role: "Social Media Strategist",
-  image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+  image: "/images/team/priya.jpg",
   description: "Social media expert who has managed campaigns for 200+ brands. Meta Blueprint certified professional.",
   linkedin: "#",
   twitter: "#"
@@ -144,12 +144,12 @@ const About = () => {
               <div className="relative">
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-4">
-                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Students learning" className="rounded-2xl shadow-elevated" />
-                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Classroom session" className="rounded-2xl shadow-elevated" />
+                    <img src="/images/about/students-1.jpg" alt="Students learning" className="rounded-2xl shadow-elevated" />
+                    <img src="/images/about/classroom.jpg" alt="Classroom session" className="rounded-2xl shadow-elevated" />
                   </div>
                   <div className="space-y-4 pt-8">
-                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Team collaboration" className="rounded-2xl shadow-elevated" />
-                    <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Training session" className="rounded-2xl shadow-elevated" />
+                    <img src="/images/hero-bg.jpg" alt="Team collaboration" className="rounded-2xl shadow-elevated" />
+                    <img src="/images/why-choose.jpg" alt="Training session" className="rounded-2xl shadow-elevated" />
                   </div>
                 </div>
               </div>

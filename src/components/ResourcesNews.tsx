@@ -5,25 +5,25 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 const blogs = [
   {
     title: "Digital Marketing Expert Surat",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+    image: "/images/blogs/digital-marketing-expert-surat.jpg",
     date: "July 15, 2025",
     category: "Blog",
   },
   {
     title: "10 marketing trends that you should be prepared for in 2022",
-    image: "https://images.unsplash.com/photo-1553835973-dec43bfddbeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+    image: "/images/blogs/marketing-trends.jpg",
     date: "July 28, 2022",
     category: "Marketing",
   },
   {
     title: "How to design a simple, yet unique and memorable brand identity",
-    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+    image: "/images/blogs/brand-identity.jpg",
     date: "July 28, 2022",
     category: "Branding",
   },
   {
     title: "Increasing engagement with Instagram and Facebook",
-    image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+    image: "/images/blogs/instagram-facebook.jpg",
     date: "July 28, 2022",
     category: "Social Media",
   },
