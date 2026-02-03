@@ -3,10 +3,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { blogs } from "@/data/blogs";
 import { Calendar, ArrowRight } from "lucide-react";
-
 const Blog = () => {
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       <Header />
       <main>
         {/* Hero Section */}
@@ -32,49 +30,16 @@ const Blog = () => {
         </section>
 
         {/* Quick Links */}
-        <section className="py-8 bg-muted border-b border-border">
-          <div className="container mx-auto px-4">
-            <div className="flex flex-wrap justify-center gap-4">
-              <span className="text-muted-foreground font-medium">Quick Links:</span>
-              <Link to="/" className="text-primary hover:text-primary/80 font-medium transition-colors">
-                Home
-              </Link>
-              <span className="text-border">|</span>
-              <Link to="/courses" className="text-primary hover:text-primary/80 font-medium transition-colors">
-                All Courses
-              </Link>
-              <span className="text-border">|</span>
-              <Link to="/online-course" className="text-primary hover:text-primary/80 font-medium transition-colors">
-                Online Course
-              </Link>
-              <span className="text-border">|</span>
-              <Link to="/about" className="text-primary hover:text-primary/80 font-medium transition-colors">
-                About Us
-              </Link>
-              <span className="text-border">|</span>
-              <Link to="/contact" className="text-primary hover:text-primary/80 font-medium transition-colors">
-                Contact
-              </Link>
-            </div>
-          </div>
-        </section>
+        
 
         {/* Blog Grid */}
         <section className="py-20 bg-background">
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {blogs.map((blog) => (
-                <article 
-                  key={blog.id} 
-                  className="bg-card rounded-3xl overflow-hidden shadow-card hover:shadow-elevated transition-all hover:-translate-y-1 group"
-                >
+              {blogs.map(blog => <article key={blog.id} className="bg-card rounded-3xl overflow-hidden shadow-card hover:shadow-elevated transition-all hover:-translate-y-1 group">
                   <Link to={`/blog/${blog.slug}`}>
                     <div className="relative overflow-hidden">
-                      <img 
-                        src={blog.image} 
-                        alt={blog.title}
-                        className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
+                      <img src={blog.image} alt={blog.title} className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500" />
                       <span className="absolute top-4 left-4 bg-secondary text-secondary-foreground px-3 py-1 rounded-full text-xs font-semibold">
                         {blog.category}
                       </span>
@@ -93,22 +58,16 @@ const Blog = () => {
                     <p className="text-muted-foreground text-sm mb-4 line-clamp-3">
                       {blog.excerpt}
                     </p>
-                    <Link 
-                      to={`/blog/${blog.slug}`}
-                      className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all"
-                    >
+                    <Link to={`/blog/${blog.slug}`} className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all">
                       Read More <ArrowRight className="h-4 w-4" />
                     </Link>
                   </div>
-                </article>
-              ))}
+                </article>)}
             </div>
           </div>
         </section>
       </main>
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Blog;
