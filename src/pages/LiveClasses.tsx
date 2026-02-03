@@ -550,8 +550,8 @@ Certification<br />
 
                   <div className="text-center mb-6">
                     <div className="flex items-center justify-center gap-3 mb-1">
-                      <span className="text-lg text-muted-foreground line-through">₹5,999</span>
-                      <span className="bg-secondary/20 text-secondary px-3 py-1 rounded-full text-sm font-bold">50% OFF</span>
+                      <span className="text-lg text-muted-foreground line-through">₹9,999</span>
+                      <span className="bg-secondary/20 text-secondary px-3 py-1 rounded-full text-sm font-bold">70% OFF</span>
                     </div>
                     <div className="text-5xl font-bold text-secondary">₹2,999</div>
                   </div>
@@ -834,8 +834,8 @@ Certification<br />
               <div className="bg-card p-8 md:p-10 rounded-3xl shadow-elevated max-w-lg mx-auto border border-secondary/30">
                 <div className="text-center mb-6">
                   <div className="flex items-center justify-center gap-3 mb-2">
-                    <span className="text-lg text-muted-foreground line-through">₹5,999</span>
-                    <span className="bg-secondary/20 text-secondary px-3 py-1 rounded-full text-sm font-bold">50% OFF</span>
+                    <span className="text-lg text-muted-foreground line-through">₹9,999</span>
+                    <span className="bg-secondary/20 text-secondary px-3 py-1 rounded-full text-sm font-bold">70% OFF</span>
                   </div>
                   <div className="text-5xl font-bold text-secondary">₹2,999</div>
                   <p className="text-muted-foreground mt-2 font-medium">One-time payment • Lifetime access to recordings</p>
