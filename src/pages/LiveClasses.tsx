@@ -236,7 +236,7 @@ const CountdownTimer = () => {
     }, 1000);
     return () => clearInterval(timer);
   }, []);
-  return <div className="flex items-center justify-center gap-2 md:gap-4">
+  return <div className="flex items-center justify-center lg:justify-start gap-2 md:gap-4">
       {[{
       value: timeLeft.days,
       label: "Days"
@@ -300,31 +300,31 @@ const LiveClasses = () => {
                   <span className="text-sm font-bold text-secondary">Fresh Batch Starting 21st February 2026!</span>
                 </div>
 
-                <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 animate-fade-in-up text-white drop-shadow-lg">Facebook      
-Instagram 
-+ Google My Business
-Certification<br />
-                  <span className="text-secondary drop-shadow-md"> Google My Business</span><br />
-                  <span className="text-secondary drop-shadow-md">Google My Business</span>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 animate-fade-in-up drop-shadow-lg">
+                  <span className="text-white">Facebook</span><br />
+                  <span className="text-white">Instagram</span><br />
+                  <span className="text-secondary">Google My Business</span><br />
+                  <span className="text-secondary">Certification</span>
                 </h1>
 
                 <p className="text-lg md:text-xl text-white mb-8 max-w-xl leading-relaxed animate-fade-in-up font-medium drop-shadow-md" style={{
                 animationDelay: "0.2s"
               }}>
-                  Master Meta Ads & Google My Business in <strong className="text-secondary font-bold">1 Month</strong>. 
-                  12 Live Sessions under the mentorship of <strong className="text-secondary font-bold">Vikaas Parekh</strong>.
+                  Master Meta Ads & Google My Business in <span className="text-secondary font-bold">1 Month</span>. 12 Live Sessions under the mentorship of <span className="text-secondary font-bold">Vikaas Parekh</span>.
                 </p>
 
                 {/* Countdown Timer */}
                 <div className="mb-8 animate-fade-in-up" style={{
                 animationDelay: "0.25s"
               }}>
-                  <p className="text-sm font-bold text-secondary mb-3 text-center lg:text-left">⏰ Batch Starts In:</p>
+                  <p className="text-sm font-bold text-secondary mb-3 flex items-center gap-2 justify-center lg:justify-start">
+                    <span className="text-base">⏰</span> Batch Starts In:
+                  </p>
                   <CountdownTimer />
                 </div>
 
                 {/* Course Highlights */}
-                <div className="flex flex-wrap gap-2 md:gap-4 mb-8 animate-fade-in-up" style={{
+                <div className="flex flex-wrap gap-2 md:gap-4 mb-8 animate-fade-in-up justify-center lg:justify-start" style={{
                 animationDelay: "0.3s"
               }}>
                   {[{
@@ -336,7 +336,7 @@ Certification<br />
                 }, {
                   icon: Calendar,
                   text: "90 Min Each"
-                }].map(item => <div key={item.text} className="flex items-center gap-2 bg-card border border-secondary/30 px-3 md:px-4 py-2 md:py-2.5 rounded-full shadow-md">
+                }].map(item => <div key={item.text} className="flex items-center gap-2 bg-secondary/20 border border-secondary/30 px-3 md:px-4 py-2 md:py-2.5 rounded-full shadow-md">
                       <item.icon className="h-4 w-4 text-secondary" />
                       <span className="text-xs md:text-sm font-bold text-white">{item.text}</span>
                     </div>)}
@@ -367,7 +367,7 @@ Certification<br />
                 </div>
 
                 {/* Trust Points */}
-                <div className="flex flex-wrap gap-2 md:gap-4 animate-fade-in-up" style={{
+                <div className="flex flex-wrap gap-2 md:gap-4 animate-fade-in-up justify-center lg:justify-start" style={{
                 animationDelay: "0.6s"
               }}>
                   {[{
