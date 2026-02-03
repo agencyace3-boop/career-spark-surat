@@ -84,8 +84,75 @@ const Contact = () => {
           </div>
         </section>
 
-        {/* Contact Info Cards */}
-        
+        {/* Services Section */}
+        <section className="py-16 bg-background">
+          <div className="container mx-auto px-4">
+            <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+              {/* Consultancy Card */}
+              <div className="bg-card p-8 rounded-3xl shadow-elevated border border-border/50 hover:shadow-lg transition-shadow">
+                <div className="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-6">
+                  <svg className="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-foreground mb-3">Digital Marketing Consultancy</h3>
+                <p className="text-muted-foreground mb-4">
+                  Get expert guidance to grow your business online. Our consultancy services include:
+                </p>
+                <ul className="space-y-2 text-muted-foreground">
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-accent flex-shrink-0" />
+                    <span>Complete Digital Strategy Planning</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-accent flex-shrink-0" />
+                    <span>Social Media Marketing Audits</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-accent flex-shrink-0" />
+                    <span>SEO & Google Ads Optimization</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-accent flex-shrink-0" />
+                    <span>E-commerce Growth Solutions</span>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Branding Card */}
+              <div className="bg-card p-8 rounded-3xl shadow-elevated border border-border/50 hover:shadow-lg transition-shadow">
+                <div className="w-14 h-14 bg-secondary/10 rounded-2xl flex items-center justify-center mb-6">
+                  <svg className="w-7 h-7 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-foreground mb-3">Branding & Creative Services</h3>
+                <p className="text-muted-foreground mb-4">
+                  Build a powerful brand identity that stands out. Our branding services include:
+                </p>
+                <ul className="space-y-2 text-muted-foreground">
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-accent flex-shrink-0" />
+                    <span>Logo & Visual Identity Design</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-accent flex-shrink-0" />
+                    <span>Social Media Creatives & Templates</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-accent flex-shrink-0" />
+                    <span>Marketing Collateral Design</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-accent flex-shrink-0" />
+                    <span>Brand Guidelines & Strategy</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
 
         {/* Contact Form & Map */}
         <section className="py-16 bg-muted">
