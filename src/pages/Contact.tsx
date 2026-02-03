@@ -14,7 +14,7 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Call Us",
-    details: ["+91 99247 07478"],
+    details: ["+91 95588 66993"],
   },
   {
     icon: Mail,
@@ -240,7 +240,7 @@ const Contact = () => {
                   <p className="text-sm text-muted-foreground mb-4">Or reach us directly:</p>
                   <div className="flex flex-wrap gap-4">
                     <a
-                      href="tel:+919924707478"
+                      href="tel:+919558866993"
                       className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-lg text-sm font-medium hover:bg-primary/90 transition-colors"
                     >
                       <Phone className="h-4 w-4" />

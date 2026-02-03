@@ -89,9 +89,9 @@ const FAQ = () => {
                   Talk to Counselor
                 </Button>
               </Link>
-              <a href="tel:+919924707478">
+              <a href="tel:+919558866993">
                 <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/5">
-                  Call +91 99247 07478
+                  Call +91 95588 66993
                 </Button>
               </a>
             </div>

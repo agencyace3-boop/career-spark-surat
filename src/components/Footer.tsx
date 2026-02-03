@@ -7,23 +7,18 @@ import {
   Phone,
   Mail,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 import logo from "@/assets/logo.png";
 
 const quickLinks = [
-  { label: "Home", href: "#" },
-  { label: "Courses", href: "#courses" },
-  { label: "About Us", href: "#about" },
+  { label: "Home", href: "/" },
+  { label: "Courses", href: "/courses" },
+  { label: "About Us", href: "/about" },
 ];
 
 const quickLinks2 = [
-  { label: "Our Services", href: "#business" },
-  { label: "Contact Us", href: "#contact" },
-];
-
-const categories = [
-  { label: "All Courses", href: "#courses" },
-  { label: "Online Courses", href: "#courses" },
-  { label: "Offline Courses", href: "#courses" },
+  { label: "Online Course", href: "/online-course" },
+  { label: "Contact Us", href: "/contact" },
 ];
 
 const socialLinks = [
@@ -73,12 +68,13 @@ const Footer = () => {
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.label}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
+                    onClick={() => window.scrollTo(0, 0)}
                     className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -90,12 +86,13 @@ const Footer = () => {
             <ul className="space-y-2">
               {quickLinks2.map((link) => (
                 <li key={link.label}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
+                    onClick={() => window.scrollTo(0, 0)}
                     className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -106,11 +103,11 @@ const Footer = () => {
             <h4 className="font-bold mb-4">GET IN TOUCH</h4>
             <div className="space-y-3">
               <a
-                href="tel:+919924707478"
+                href="tel:+919558866993"
                 className="flex items-center gap-3 text-primary-foreground/80 hover:text-primary-foreground transition-colors"
               >
                 <Phone className="h-5 w-5 flex-shrink-0" />
-                <span>(+91) 99247 07478</span>
+                <span>(+91) 95588 66993</span>
               </a>
               <div className="flex items-start gap-3 text-primary-foreground/80">
                 <MapPin className="h-5 w-5 flex-shrink-0 mt-1" />
