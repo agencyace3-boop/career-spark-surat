@@ -301,11 +301,11 @@ const LiveClasses = () => {
                 </div>
 
                 <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 animate-fade-in-up text-white drop-shadow-lg">Facebook      
-Instagram  
+Instagram   
 Google My Business
 Certification<br />
                   <span className="text-secondary drop-shadow-md"> Google My Business</span><br />
-                  <span className="text-secondary drop-shadow-md">Certification</span>
+                  <span className="text-secondary drop-shadow-md">Google My Business</span>
                 </h1>
 
                 <p className="text-lg md:text-xl text-white mb-8 max-w-xl leading-relaxed animate-fade-in-up font-medium drop-shadow-md" style={{
