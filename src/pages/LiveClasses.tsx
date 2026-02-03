@@ -324,9 +324,9 @@ const LiveClasses = () => {
                   <span className="text-sm font-bold text-secondary">Fresh Batch Starting 21st February 2026!</span>
                 </div>
 
-                <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 animate-fade-in-up text-white drop-shadow-lg">Facebook & Instagram
+                <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 animate-fade-in-up text-white drop-shadow-lg">Facebook & Instagram Google My Business
 Google My Business<br />
-                  <span className="text-secondary drop-shadow-md">(Meta Ads)</span>
+                  <span className="text-secondary drop-shadow-md"></span>
                   <br />
                   <span className="text-secondary drop-shadow-md">+ GMB Certification</span>
                 </h1>
