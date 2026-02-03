@@ -1,8 +1,8 @@
+import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { blogs } from "@/data/blogs";
 import { Calendar, ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 const Blog = () => {
   return (
@@ -31,6 +31,34 @@ const Blog = () => {
           </div>
         </section>
 
+        {/* Quick Links */}
+        <section className="py-8 bg-muted border-b border-border">
+          <div className="container mx-auto px-4">
+            <div className="flex flex-wrap justify-center gap-4">
+              <span className="text-muted-foreground font-medium">Quick Links:</span>
+              <Link to="/" className="text-primary hover:text-primary/80 font-medium transition-colors">
+                Home
+              </Link>
+              <span className="text-border">|</span>
+              <Link to="/courses" className="text-primary hover:text-primary/80 font-medium transition-colors">
+                All Courses
+              </Link>
+              <span className="text-border">|</span>
+              <Link to="/online-course" className="text-primary hover:text-primary/80 font-medium transition-colors">
+                Online Course
+              </Link>
+              <span className="text-border">|</span>
+              <Link to="/about" className="text-primary hover:text-primary/80 font-medium transition-colors">
+                About Us
+              </Link>
+              <span className="text-border">|</span>
+              <Link to="/contact" className="text-primary hover:text-primary/80 font-medium transition-colors">
+                Contact
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* Blog Grid */}
         <section className="py-20 bg-background">
           <div className="container mx-auto px-4">
@@ -40,51 +68,40 @@ const Blog = () => {
                   key={blog.id} 
                   className="bg-card rounded-3xl overflow-hidden shadow-card hover:shadow-elevated transition-all hover:-translate-y-1 group"
                 >
-                  <div className="relative overflow-hidden">
-                    <img 
-                      src={blog.image} 
-                      alt={blog.title}
-                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <span className="absolute top-4 left-4 bg-secondary text-secondary-foreground px-3 py-1 rounded-full text-xs font-semibold">
-                      {blog.category}
-                    </span>
-                  </div>
+                  <Link to={`/blog/${blog.slug}`}>
+                    <div className="relative overflow-hidden">
+                      <img 
+                        src={blog.image} 
+                        alt={blog.title}
+                        className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <span className="absolute top-4 left-4 bg-secondary text-secondary-foreground px-3 py-1 rounded-full text-xs font-semibold">
+                        {blog.category}
+                      </span>
+                    </div>
+                  </Link>
                   <div className="p-6">
                     <div className="flex items-center gap-2 text-muted-foreground text-sm mb-3">
                       <Calendar className="h-4 w-4" />
                       <span>{blog.date}</span>
                     </div>
-                    <h3 className="text-xl font-bold text-foreground mb-3 line-clamp-2 group-hover:text-primary transition-colors">
-                      {blog.title}
-                    </h3>
+                    <Link to={`/blog/${blog.slug}`}>
+                      <h3 className="text-xl font-bold text-foreground mb-3 line-clamp-2 group-hover:text-primary transition-colors">
+                        {blog.title}
+                      </h3>
+                    </Link>
                     <p className="text-muted-foreground text-sm mb-4 line-clamp-3">
                       {blog.excerpt}
                     </p>
-                    <a 
-                      href={blog.externalUrl} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
+                    <Link 
+                      to={`/blog/${blog.slug}`}
                       className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all"
                     >
                       Read More <ArrowRight className="h-4 w-4" />
-                    </a>
+                    </Link>
                   </div>
                 </article>
               ))}
-            </div>
-
-            {/* Browse More */}
-            <div className="text-center mt-12">
-              <a 
-                href="https://suratdms.com/blog/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                <Button size="lg" className="bg-secondary hover:bg-secondary/90 text-secondary-foreground">
-                  Browse All Articles on suratdms.com
-                </Button>
-              </a>
             </div>
           </div>
         </section>
