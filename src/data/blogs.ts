@@ -15,7 +15,7 @@ export const blogs: Blog[] = [
     title: "Digital Marketing Expert Surat",
     slug: "digital-marketing-expert-surat",
     excerpt: "Learn from the best digital marketing experts in Surat. Discover strategies and insights to grow your online presence.",
-    image: "https://suratdms.com/wp-content/uploads/2025/07/Digital-Marketing-Expert-Surat.jpg",
+    image: "/images/blogs/digital-marketing-expert-surat.jpg",
     category: "Blog",
     date: "July 15, 2025",
     content: `In this era, everybody goes online before anything is bought, be it a product or a service. Digital marketing makes your business visible just at the time when people are searching for it.
@@ -106,7 +106,7 @@ You'll receive detailed reports with keyword ranking, traffic updates, and clear
     title: "10 Marketing Trends That You Should Be Prepared For",
     slug: "10-marketing-trends",
     excerpt: "Stay ahead of the curve with these essential marketing trends that will shape the digital landscape.",
-    image: "https://suratdms.com/wp-content/uploads/2022/07/6.jpg",
+    image: "/images/blogs/marketing-trends.jpg",
     category: "Marketing",
     date: "July 28, 2022",
     content: `The digital marketing landscape is constantly evolving, and staying ahead of trends is crucial for business success. Here are 10 marketing trends you should be prepared for:
@@ -160,7 +160,7 @@ Staying informed about these trends and adapting your strategy accordingly will 
     title: "How to Design a Simple, Yet Unique and Memorable Brand Identity",
     slug: "design-unique-brand-identity",
     excerpt: "Create a lasting impression with a brand identity that stands out. Learn the key principles of effective branding.",
-    image: "https://suratdms.com/wp-content/uploads/2022/07/7.jpg",
+    image: "/images/blogs/brand-identity.jpg",
     category: "Branding",
     date: "July 28, 2022",
     content: `A strong brand identity is the foundation of any successful business. It's how your customers recognize and remember you. Here's how to create one that stands out:
@@ -217,7 +217,7 @@ A well-designed brand identity takes time and thoughtful consideration, but the 
     title: "Increasing Engagement with Instagram and Facebook",
     slug: "increasing-engagement-instagram-facebook",
     excerpt: "Boost your social media presence with proven strategies to increase engagement on Instagram and Facebook.",
-    image: "https://suratdms.com/wp-content/uploads/2022/07/8.jpg",
+    image: "/images/blogs/instagram-facebook.jpg",
     category: "Social Media",
     date: "July 28, 2022",
     content: `Social media engagement is crucial for building brand awareness and fostering customer relationships. Here's how to boost your engagement on Instagram and Facebook:
@@ -287,7 +287,7 @@ Increasing engagement takes time and experimentation. Stay consistent, provide v
     title: "Engendering a Culture of Professional Development",
     slug: "culture-professional-development",
     excerpt: "Foster growth and learning in your organization with effective professional development strategies.",
-    image: "https://suratdms.com/wp-content/uploads/2022/07/9.jpg",
+    image: "/images/blogs/professional-development.jpg",
     category: "Career",
     date: "July 28, 2022",
     content: `Creating a culture of continuous learning and professional development is essential for both individual career growth and organizational success.
