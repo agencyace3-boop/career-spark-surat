@@ -9,7 +9,7 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Visit Our Campus",
-    details: ["Green signature, 142, opp. THE LEGEND", "nr. Prime shoppers, Vesu", "Surat, Gujarat 395007"],
+    details: ["142, Green Signature, opp. THE LEGEND", "behind Prime Shoppers, Vesu", "Surat, Gujarat 395007"],
   },
   {
     icon: Phone,

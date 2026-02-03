@@ -111,7 +111,7 @@ const Footer = () => {
               </a>
               <div className="flex items-start gap-3 text-primary-foreground/80">
                 <MapPin className="h-5 w-5 flex-shrink-0 mt-1" />
-                <span>Green signature, 142, opp. THE LEGEND, nr. Prime shoppers, Vesu, Surat, Gujarat 395007</span>
+                <span>142, Green Signature, opp. THE LEGEND, behind Prime Shoppers, Vesu, Surat, Gujarat 395007</span>
               </div>
               <a
                 href="mailto:Vikasparekh@live.com"

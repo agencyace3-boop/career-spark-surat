@@ -4,25 +4,25 @@ import { Award, Users, BookOpen, Target, CheckCircle, Linkedin, Twitter, Mail } 
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 const milestones = [{
-  year: "2014",
+  year: "2019",
   title: "Founded",
   description: "Surat Digital Marketing School was established with a vision to provide practical digital marketing education"
 }, {
-  year: "2016",
-  title: "1000+ Students",
-  description: "Crossed the milestone of training 1000 students in digital marketing"
+  year: "2020",
+  title: "500+ Students",
+  description: "Crossed the milestone of training 500 students in digital marketing"
 }, {
-  year: "2018",
+  year: "2021",
   title: "Google Partner",
   description: "Became an official Google Partner certified training institute"
 }, {
-  year: "2020",
-  title: "Online Launch",
-  description: "Launched comprehensive online training programs during the pandemic"
-}, {
   year: "2022",
-  title: "3000+ Alumni",
-  description: "Our alumni network grew to 3000+ professionals across India"
+  title: "Online Launch",
+  description: "Launched comprehensive online training programs"
+}, {
+  year: "2023",
+  title: "2000+ Alumni",
+  description: "Our alumni network grew to 2000+ professionals across India"
 }, {
   year: "2024",
   title: "Industry Leader",
@@ -113,12 +113,12 @@ const About = () => {
                   From Vision to <span className="text-secondary">Reality</span>
                 </h2>
                 <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                  Surat Digital Marketing School was founded in 2014 by Vikaas Parekh, a digital marketing veteran 
+                  Surat Digital Marketing School was founded in 2019 by Vikaas Parekh, a digital marketing veteran 
                   who saw a gap between theoretical education and practical industry needs. 
                 </p>
                 <p className="text-muted-foreground mb-8 leading-relaxed">
                   What started as a small training center in Surat has grown into Gujarat's 
-                  most trusted digital marketing institute. With over 3,000 successful alumni, 
+                  most trusted digital marketing institute. With over 2,000 successful alumni, 
                   95% placement rate, and partnerships with leading companies, we've proven 
                   that practical education creates real results.
                 </p>
