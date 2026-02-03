@@ -116,22 +116,22 @@ const targetAudience = [{
   icon: Briefcase,
   title: "Small Business Owners",
   description: "Grow your online presence and generate leads with targeted ads",
-  image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+  image: "/images/audience/business-owner.jpg"
 }, {
   icon: TrendingUp,
   title: "Marketing Professionals",
   description: "Seeking Meta certification and advanced advertising skills",
-  image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+  image: "/images/audience/marketing-pro.jpg"
 }, {
   icon: Target,
   title: "Freelancers",
   description: "Expand your service offerings and attract high-paying clients",
-  image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+  image: "/images/audience/freelancer.jpg"
 }, {
   icon: GraduationCap,
   title: "Students & Career Switchers",
   description: "Target social media marketing roles with practical skills",
-  image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+  image: "/images/audience/student.jpg"
 }];
 const whyChoose = [{
   icon: Award,
@@ -280,7 +280,7 @@ const LiveClasses = () => {
         <section className="relative min-h-screen flex items-center overflow-hidden">
           {/* Background Image */}
           <div className="absolute inset-0">
-            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="" className="w-full h-full object-cover" />
+            <img src="/images/hero-bg.jpg" alt="" className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-r from-background via-background/98 to-background/90" />
           </div>
 
@@ -781,7 +781,7 @@ const LiveClasses = () => {
 
               {/* Course Format Banner */}
               <div className="relative rounded-3xl overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Online learning" className="w-full h-64 object-cover" />
+                <img src="/images/why-choose.jpg" alt="Online learning" className="w-full h-64 object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-r from-background via-background/95 to-background/80" />
                 <div className="absolute inset-0 flex items-center">
                   <div className="container mx-auto px-8">

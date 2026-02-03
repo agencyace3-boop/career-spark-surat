@@ -8,7 +8,7 @@ const testimonials = [
     name: "Priya Sharma",
     role: "Digital Marketing Manager",
     company: "TechCorp India",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80",
+    image: "/images/testimonials/priya.jpg",
     rating: 5,
     text: "Surat Digital Marketing School completely transformed my career. Within 3 months of completing the course, I landed a job at a top tech company with a 150% salary increase. The hands-on training and placement support were exceptional!",
     course: "Advanced Digital Marketing",
@@ -19,7 +19,7 @@ const testimonials = [
     name: "Rahul Patel",
     role: "SEO Specialist",
     company: "Digital First Agency",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80",
+    image: "/images/testimonials/rahul.jpg",
     rating: 5,
     text: "The SEO training at Surat Digital Marketing School is unmatched. I learned advanced techniques that helped me rank websites on page 1 of Google. The trainers share real strategies that actually work in today's competitive market.",
     course: "Advanced SEO Strategy",
@@ -30,7 +30,7 @@ const testimonials = [
     name: "Sneha Desai",
     role: "Social Media Manager",
     company: "Brand Solutions",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80",
+    image: "/images/testimonials/neha.jpg",
     rating: 5,
     text: "I was a complete beginner when I joined Surat Digital Marketing School. The structured curriculum and patient trainers helped me master social media marketing. Now I manage campaigns for national brands!",
     course: "Social Media Marketing",
@@ -41,7 +41,7 @@ const testimonials = [
     name: "Amit Joshi",
     role: "PPC Specialist",
     company: "AdTech Solutions",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80",
+    image: "/images/testimonials/amit.jpg",
     rating: 5,
     text: "The Google Ads training was incredibly practical. We managed real campaigns with actual budgets. This experience gave me the confidence to handle large advertising budgets for clients.",
     course: "Pay Per Click (PPC)",
@@ -52,7 +52,7 @@ const testimonials = [
     name: "Meera Shah",
     role: "Freelance Consultant",
     company: "Self-Employed",
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80",
+    image: "/images/testimonials/sneha.jpg",
     rating: 5,
     text: "Thanks to Surat Digital Marketing School, I now run my own digital marketing consultancy. The agency setup training and business skills I learned here were invaluable. I earn 3x more than my previous job!",
     course: "Agency Setup Training",
@@ -63,7 +63,7 @@ const testimonials = [
     name: "Vikram Rana",
     role: "E-commerce Manager",
     company: "ShopEasy India",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80",
+    image: "/images/testimonials/vikram.jpg",
     rating: 5,
     text: "The e-commerce solutions course helped me understand the complete online selling ecosystem. From SEO to paid ads to conversion optimization—everything was covered in depth.",
     course: "E-commerce Solutions",
@@ -114,7 +114,7 @@ const Testimonials = () => {
         <div className="mb-16">
           <div className="relative rounded-3xl overflow-hidden shadow-elevated max-w-4xl mx-auto">
             <img
-              src="https://images.unsplash.com/photo-1560439514-4e9645039924?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+              src="/images/testimonials/video-bg.jpg"
               alt="Student success story video testimonial"
               className="w-full h-[400px] object-cover"
             />

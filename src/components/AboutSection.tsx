@@ -97,14 +97,14 @@ const AboutSection = () => {
               <div className="space-y-4">
                 <div className="rounded-2xl overflow-hidden shadow-elevated">
                   <img
-                    src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                    src="/images/about/training.jpg"
                     alt="Digital marketing training session"
                     className="w-full h-48 object-cover hover:scale-105 transition-transform duration-500"
                   />
                 </div>
                 <div className="rounded-2xl overflow-hidden shadow-elevated">
                   <img
-                    src="https://images.unsplash.com/photo-1552581234-26160f608093?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                    src="/images/about/campaigns.jpg"
                     alt="Students working on marketing campaigns"
                     className="w-full h-64 object-cover hover:scale-105 transition-transform duration-500"
                   />
@@ -113,14 +113,14 @@ const AboutSection = () => {
               <div className="space-y-4 pt-8">
                 <div className="rounded-2xl overflow-hidden shadow-elevated">
                   <img
-                    src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                    src="/images/courses/business-training.jpg"
                     alt="Expert mentor guiding students"
                     className="w-full h-64 object-cover hover:scale-105 transition-transform duration-500"
                   />
                 </div>
                 <div className="rounded-2xl overflow-hidden shadow-elevated">
                   <img
-                    src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                    src="/images/courses/agency-setup.jpg"
                     alt="Marketing strategy presentation"
                     className="w-full h-48 object-cover hover:scale-105 transition-transform duration-500"
                   />

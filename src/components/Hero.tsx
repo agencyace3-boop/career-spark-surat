@@ -7,19 +7,19 @@ const heroSlides = [{
   headline: "Transform Your Career with",
   highlight: "Digital Marketing Mastery",
   subheadline: "Join 3,000+ successful graduates who launched thriving careers in digital marketing. Get certified, get placed, get ahead.",
-  image: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
+  image: "/images/courses/seo.jpg"
 }, {
   id: 2,
   headline: "From Beginner to",
   highlight: "Industry Expert",
   subheadline: "Master SEO, Google Ads, Social Media Marketing & more with hands-on projects and real-world campaigns.",
-  image: "https://images.unsplash.com/photo-1533750349088-cd871a92f312?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
+  image: "/images/hero/hero-2.jpg"
 }, {
   id: 3,
   headline: "Learn from",
   highlight: "Industry Experts",
   subheadline: "Our trainers bring 10+ years of real-world experience from top agencies and Fortune 500 companies.",
-  image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
+  image: "/images/courses/business-training.jpg"
 }];
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
