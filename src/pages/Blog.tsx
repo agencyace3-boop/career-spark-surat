@@ -1,0 +1,97 @@
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import { blogs } from "@/data/blogs";
+import { Calendar, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
+const Blog = () => {
+  return (
+    <div className="min-h-screen bg-background">
+      <Header />
+      <main>
+        {/* Hero Section */}
+        <section className="relative py-20 bg-primary overflow-hidden">
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute top-10 right-10 w-64 h-64 bg-secondary rounded-full blur-3xl" />
+            <div className="absolute bottom-10 left-10 w-96 h-96 bg-accent rounded-full blur-3xl" />
+          </div>
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="max-w-3xl mx-auto text-center">
+              <span className="inline-block bg-secondary/20 text-secondary px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                Resources & News
+              </span>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6">
+                Digital Marketing <span className="text-secondary">Blog</span>
+              </h1>
+              <p className="text-lg text-primary-foreground/80">
+                Stay updated with the latest trends, tips, and strategies in digital marketing. 
+                Learn from industry experts and grow your skills.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Blog Grid */}
+        <section className="py-20 bg-background">
+          <div className="container mx-auto px-4">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {blogs.map((blog) => (
+                <article 
+                  key={blog.id} 
+                  className="bg-card rounded-3xl overflow-hidden shadow-card hover:shadow-elevated transition-all hover:-translate-y-1 group"
+                >
+                  <div className="relative overflow-hidden">
+                    <img 
+                      src={blog.image} 
+                      alt={blog.title}
+                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <span className="absolute top-4 left-4 bg-secondary text-secondary-foreground px-3 py-1 rounded-full text-xs font-semibold">
+                      {blog.category}
+                    </span>
+                  </div>
+                  <div className="p-6">
+                    <div className="flex items-center gap-2 text-muted-foreground text-sm mb-3">
+                      <Calendar className="h-4 w-4" />
+                      <span>{blog.date}</span>
+                    </div>
+                    <h3 className="text-xl font-bold text-foreground mb-3 line-clamp-2 group-hover:text-primary transition-colors">
+                      {blog.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm mb-4 line-clamp-3">
+                      {blog.excerpt}
+                    </p>
+                    <a 
+                      href={blog.externalUrl} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all"
+                    >
+                      Read More <ArrowRight className="h-4 w-4" />
+                    </a>
+                  </div>
+                </article>
+              ))}
+            </div>
+
+            {/* Browse More */}
+            <div className="text-center mt-12">
+              <a 
+                href="https://suratdms.com/blog/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                <Button size="lg" className="bg-secondary hover:bg-secondary/90 text-secondary-foreground">
+                  Browse All Articles on suratdms.com
+                </Button>
+              </a>
+            </div>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </div>
+  );
+};
+
+export default Blog;

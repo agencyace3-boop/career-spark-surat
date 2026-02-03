@@ -74,7 +74,7 @@ const team = [{
   linkedin: "#",
   twitter: "#"
 }];
-const certifications = ["Google Partner Certified", "Meta Blueprint Partner", "HubSpot Academy Partner", "ISO 9001:2015 Certified", "Semrush Academy Partner", "NSDC Skill Partner"];
+const certifications = ["Google Partner Certified", "Meta Partner"];
 const About = () => {
   return <div className="min-h-screen bg-background">
       <Header />
