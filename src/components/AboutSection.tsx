@@ -21,10 +21,8 @@ const keypoints = [
 ];
 
 const achievements = [
-  "Google Partner Certified Institute",
-  "Meta Blueprint Certified Trainers",
-  "HubSpot Academy Partner",
-  "ISO 9001:2015 Certified",
+  "Google Partner Certified",
+  "Meta Partner",
 ];
 
 const AboutSection = () => {
