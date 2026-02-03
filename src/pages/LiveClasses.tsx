@@ -8,38 +8,14 @@ import { Play, CheckCircle, Clock, Users, Award, BookOpen, Target, Briefcase, Gr
 import mentorImage from "@/assets/mentor-vikaas.png";
 import googleLogo from "@/assets/tools/google.svg";
 import metaLogo from "@/assets/tools/meta.svg";
-import shopifyLogo from "@/assets/tools/shopify.svg";
-import hubspotLogo from "@/assets/tools/hubspot.svg";
-import mailchimpLogo from "@/assets/tools/mailchimp.svg";
-import wordpressLogo from "@/assets/tools/wordpress.svg";
-import canvaLogo from "@/assets/tools/canva.svg";
-import semrushLogo from "@/assets/tools/semrush.svg";
 
 // Tools that students will master
 const toolsList = [{
-  name: "Meta Ads",
+  name: "Facebook & Instagram",
   logo: metaLogo
 }, {
-  name: "Google",
+  name: "Google My Business",
   logo: googleLogo
-}, {
-  name: "Canva",
-  logo: canvaLogo
-}, {
-  name: "Semrush",
-  logo: semrushLogo
-}, {
-  name: "HubSpot",
-  logo: hubspotLogo
-}, {
-  name: "Mailchimp",
-  logo: mailchimpLogo
-}, {
-  name: "WordPress",
-  logo: wordpressLogo
-}, {
-  name: "Shopify",
-  logo: shopifyLogo
 }];
 
 // 12-Day Course Schedule based on Meta Ads + GMB Course
@@ -324,12 +300,10 @@ const LiveClasses = () => {
                   <span className="text-sm font-bold text-secondary">Fresh Batch Starting 21st February 2026!</span>
                 </div>
 
-                <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 animate-fade-in-up text-white drop-shadow-lg">Facebook      Instagram 
-Google My Business  Certification
-Certification<br />
-                  <span className="text-secondary drop-shadow-md"></span>
-                  <br />
-                  <span className="text-secondary drop-shadow-md">+ GMB Certification</span>
+                <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 animate-fade-in-up text-white drop-shadow-lg">
+                  Facebook & Instagram<br />
+                  <span className="text-secondary drop-shadow-md">+ Google My Business</span><br />
+                  <span className="text-secondary drop-shadow-md">Certification</span>
                 </h1>
 
                 <p className="text-lg md:text-xl text-white mb-8 max-w-xl leading-relaxed animate-fade-in-up font-medium drop-shadow-md" style={{
