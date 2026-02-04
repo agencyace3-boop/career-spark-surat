@@ -54,7 +54,7 @@ const WhyChooseSection = () => {
             Why Choose Us
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            Why <span className="text-primary">Surat Digital Marketing School</span> is Your Best Choice
+            Why <span className="text-secondary">Surat Digital Marketing School</span> is Your Best Choice
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             We don't just teach digital marketing—we transform careers. Here's what makes us the 
