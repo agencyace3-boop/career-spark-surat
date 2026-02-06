@@ -22,7 +22,7 @@ const PopularCourses = () => {
             </p>
           </div>
           <Link to="/courses">
-            <Button variant="outline" className="border-primary text-primary hover:bg-primary/5">
+            <Button variant="outline" className="border-secondary text-secondary hover:bg-secondary/5">
               View All Courses <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </Link>

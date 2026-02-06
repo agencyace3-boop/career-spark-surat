@@ -38,7 +38,7 @@ const Courses = () => {
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            All <span className="text-primary">Courses</span>
+            All <span className="text-secondary">Courses</span>
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Explore our comprehensive collection of {courses.length} digital marketing courses
