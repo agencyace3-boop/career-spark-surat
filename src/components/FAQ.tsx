@@ -84,16 +84,16 @@ const FAQ = () => {
               Still have questions? We're here to help!
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link to="/contact">
-                <Button size="lg" className="bg-secondary hover:bg-secondary/90 text-secondary-foreground">
-                  Talk to Counselor
-                </Button>
-              </Link>
               <a href="tel:+919558866993">
-                <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/5">
+                <Button size="lg" className="bg-secondary hover:bg-secondary/90 text-secondary-foreground">
                   Call +91 95588 66993
                 </Button>
               </a>
+              <Link to="/contact">
+                <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/5">
+                  Talk to Counselor
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

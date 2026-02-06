@@ -99,7 +99,7 @@ const Testimonials = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <span className="inline-block bg-secondary/10 text-secondary px-4 py-2 rounded-full text-sm font-semibold mb-4">
-            Success Stories
+            Student Success
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
             Hear from Our <span className="text-secondary">Successful</span> Alumni
