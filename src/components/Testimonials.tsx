@@ -160,7 +160,7 @@ const Testimonials = () => {
 
                 {/* Course Badge */}
                 <div className="mb-6">
-                  <span className="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-medium">
+                  <span className="inline-block bg-secondary/10 text-secondary px-3 py-1 rounded-full text-xs font-medium">
                     {testimonial.course}
                   </span>
                 </div>
