@@ -90,7 +90,7 @@ const FAQ = () => {
                 </Button>
               </Link>
               <a href="tel:+919558866993">
-                <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/5">
+                <Button size="lg" variant="outline" className="border-secondary text-secondary hover:bg-secondary/5">
                   Call +91 95588 66993
                 </Button>
               </a>
