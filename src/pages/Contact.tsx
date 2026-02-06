@@ -71,7 +71,7 @@ const Contact = () => {
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-3xl mx-auto text-center">
               <span className="inline-block bg-secondary/20 text-secondary px-4 py-2 rounded-full text-sm font-semibold mb-4">
-                Get In Touch
+                Contact Us
               </span>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6">
                 Let's Start Your <span className="text-secondary">Digital Journey</span>
