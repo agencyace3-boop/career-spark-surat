@@ -4,6 +4,8 @@ import { useState } from "react";
 import { MapPin, Phone, Mail, Clock, Send, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
+
 const contactInfo = [{
   icon: MapPin,
   title: "Visit Our Campus",
@@ -22,6 +24,7 @@ const contactInfo = [{
   details: ["Monday - Saturday", "10:00 AM - 7:00 PM", "Sunday: Closed"]
 }];
 const courses = ["Advanced Digital Marketing", "SEO Strategy", "Social Media Marketing", "Google Ads (PPC)", "E-commerce Solutions", "Agency Setup Training", "Website Development", "Other"];
+
 const Contact = () => {
   const {
     toast
@@ -34,24 +37,46 @@ const Contact = () => {
     message: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    toast({
-      title: "Message Sent Successfully!",
-      description: "Our team will contact you within 24 hours."
-    });
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      course: "",
-      message: ""
-    });
-    setIsSubmitting(false);
+    try {
+      const { data, error } = await supabase.functions.invoke('send-form-notification', {
+        body: {
+          formType: 'contact',
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          course: formData.course || undefined,
+          message: formData.message || undefined,
+        },
+      });
+
+      if (error) throw error;
+
+      toast({
+        title: "Message Sent Successfully!",
+        description: "Our team will contact you within 24 hours."
+      });
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        course: "",
+        message: ""
+      });
+    } catch (error) {
+      console.error('Error sending form:', error);
+      toast({
+        title: "Failed to send message",
+        description: "Please try again or contact us directly via phone.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
