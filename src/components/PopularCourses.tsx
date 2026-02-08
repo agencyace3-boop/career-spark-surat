@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Clock, Users, ArrowRight, Star } from "lucide-react";
+import { Users, ArrowRight, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { courses } from "@/data/courses";
 
@@ -49,7 +49,6 @@ const PopularCourses = () => {
                 <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">{course.title}</h3>
                 <p className="text-muted-foreground text-sm mb-4 line-clamp-2">{course.description}</p>
                 <div className="flex items-center gap-4 mb-4 text-sm text-muted-foreground">
-                  <div className="flex items-center gap-1"><Clock className="h-4 w-4" /><span>{course.duration}</span></div>
                   <div className="flex items-center gap-1"><Users className="h-4 w-4" /><span>{course.instructor}</span></div>
                 </div>
                 <div className="flex items-center justify-between pt-4 border-t border-border">

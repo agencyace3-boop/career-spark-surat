@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import { Clock, Users, Globe, BarChart3, CheckCircle, BookOpen, Briefcase, Wrench, FolderOpen } from "lucide-react";
+import { CheckCircle, BookOpen, Briefcase, Wrench, FolderOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -36,18 +36,6 @@ const CourseDetail = () => {
     .filter(c => c.id !== course.id && c.categories.some(cat => course.categories.includes(cat)))
     .slice(0, 3);
 
-  const getLevelColor = (level: string) => {
-    switch (level) {
-      case "beginner":
-        return "text-green-600";
-      case "intermediate":
-        return "text-yellow-600";
-      case "expert":
-        return "text-red-600";
-      default:
-        return "text-muted-foreground";
-    }
-  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -111,38 +99,6 @@ const CourseDetail = () => {
                     Reserve Your Spot
                   </Button>
                   
-                  <div className="space-y-4">
-                    <div className="flex items-center justify-between text-sm">
-                      <div className="flex items-center gap-2 text-muted-foreground">
-                        <Clock className="h-4 w-4" />
-                        <span>Duration</span>
-                      </div>
-                      <span className="font-medium text-foreground">{course.duration}</span>
-                    </div>
-                    <div className="flex items-center justify-between text-sm">
-                      <div className="flex items-center gap-2 text-muted-foreground">
-                        <Users className="h-4 w-4" />
-                        <span>Maximum Students</span>
-                      </div>
-                      <span className="font-medium text-foreground">{course.maxStudents}</span>
-                    </div>
-                    <div className="flex items-center justify-between text-sm">
-                      <div className="flex items-center gap-2 text-muted-foreground">
-                        <Globe className="h-4 w-4" />
-                        <span>Language</span>
-                      </div>
-                      <span className="font-medium text-foreground">{course.language}</span>
-                    </div>
-                    <div className="flex items-center justify-between text-sm">
-                      <div className="flex items-center gap-2 text-muted-foreground">
-                        <BarChart3 className="h-4 w-4" />
-                        <span>Skill Level</span>
-                      </div>
-                      <span className={`font-medium capitalize ${getLevelColor(course.level)}`}>
-                        {course.level}
-                      </span>
-                    </div>
-                  </div>
                 </CardContent>
               </Card>
             </div>
@@ -359,10 +315,6 @@ const CourseDetail = () => {
                           <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors line-clamp-2 text-sm mb-2">
                             {relatedCourse.title}
                           </h4>
-                          <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                            <Clock className="h-3 w-3" />
-                            <span>{relatedCourse.duration}</span>
-                          </div>
                         </div>
                       </div>
                     </Card>
