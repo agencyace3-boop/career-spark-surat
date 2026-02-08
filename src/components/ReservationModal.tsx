@@ -2,6 +2,7 @@ import { useState } from "react";
 import { X, GraduationCap, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 interface ReservationModalProps {
   isOpen: boolean;
@@ -25,17 +26,37 @@ const ReservationModal = ({ isOpen, onClose, courseName = "Digital Marketing Cou
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    try {
+      const { data, error } = await supabase.functions.invoke('send-form-notification', {
+        body: {
+          formType: 'reservation',
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          courseName: courseName,
+          message: formData.message || undefined,
+        },
+      });
 
-    toast({
-      title: "Request Submitted Successfully!",
-      description: "Our team will contact you within 24 hours to confirm your enrollment.",
-    });
+      if (error) throw error;
 
-    setFormData({ name: "", phone: "", email: "", message: "" });
-    setIsSubmitting(false);
-    onClose();
+      toast({
+        title: "Request Submitted Successfully!",
+        description: "Our team will contact you within 24 hours to confirm your enrollment.",
+      });
+
+      setFormData({ name: "", phone: "", email: "", message: "" });
+      onClose();
+    } catch (error) {
+      console.error('Error sending form:', error);
+      toast({
+        title: "Failed to submit request",
+        description: "Please try again or contact us directly via phone.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
