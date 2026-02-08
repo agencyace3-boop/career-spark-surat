@@ -1,23 +1,11 @@
 import { Link } from "react-router-dom";
-import { Clock, BarChart3 } from "lucide-react";
+
 import { Card, CardContent } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { courses } from "@/data/courses";
 
 const Courses = () => {
-  const getLevelColor = (level: string) => {
-    switch (level) {
-      case "beginner":
-        return "text-green-600";
-      case "intermediate":
-        return "text-yellow-600";
-      case "expert":
-        return "text-red-600";
-      default:
-        return "text-muted-foreground";
-    }
-  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -66,18 +54,6 @@ const Courses = () => {
                   <h3 className="text-base font-bold text-foreground mb-2 group-hover:text-primary transition-colors line-clamp-2">
                     {course.title}
                   </h3>
-                  <div className="flex items-center gap-3 text-sm text-muted-foreground mb-3">
-                    <div className="flex items-center gap-1">
-                      <Clock className="h-3.5 w-3.5" />
-                      <span>{course.duration}</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <BarChart3 className="h-3.5 w-3.5" />
-                      <span className={`capitalize ${getLevelColor(course.level)}`}>
-                        {course.level}
-                      </span>
-                    </div>
-                  </div>
                   <div className="flex items-center gap-2 pt-3 border-t border-border">
                     <div className="w-7 h-7 rounded-full bg-primary/10 flex items-center justify-center">
                       <span className="text-xs font-bold text-primary">VP</span>
