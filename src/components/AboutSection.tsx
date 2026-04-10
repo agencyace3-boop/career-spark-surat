@@ -39,7 +39,7 @@ const AboutSection = () => {
               Gujarat's Premier <span className="text-secondary">Digital Marketing</span> Training Institute
             </h2>
             <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-              Since 2014, Surat Digital Marketing School has been at the forefront of 
+              Since 2014, Surat Digital Marketing has been at the forefront of 
               digital marketing education in Gujarat. We've trained over 3,000 professionals 
               who now work at top companies across India and abroad.
             </p>

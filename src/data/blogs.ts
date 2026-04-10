@@ -20,11 +20,11 @@ export const blogs: Blog[] = [
     date: "July 15, 2025",
     content: `In this era, everybody goes online before anything is bought, be it a product or a service. Digital marketing makes your business visible just at the time when people are searching for it.
 
-With Surat Digital Marketing School, you get tailor-made SEO strategies to fit your objectives and target audience. We get the right people to be in the right place at the right time.
+With Surat Digital Marketing, you get tailor-made SEO strategies to fit your objectives and target audience. We get the right people to be in the right place at the right time.
 
-## Why Work with Surat Digital Marketing School?
+## Why Work with Surat Digital Marketing?
 
-Choosing the right consultant in Surat can change your business's digital future. At Surat Digital Marketing School, we don't just offer traffic—we build growth.
+Choosing the right consultant in Surat can change your business's digital future. At Surat Digital Marketing, we don't just offer traffic—we build growth.
 
 **Here's why businesses in Surat choose us:**
 

@@ -44,7 +44,7 @@ const Footer = () => {
             <div className="flex items-center mb-6">
               <img 
                 src={logo} 
-                alt="Surat Digital Marketing School" 
+                alt="Surat Digital Marketing" 
                 className="h-14 md:h-16 w-auto object-contain"
               />
             </div>
@@ -133,7 +133,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-primary-foreground/20 mt-12 pt-8 text-center text-primary-foreground/60">
           <p>
-            © Copyright {new Date().getFullYear()} Surat Digital Marketing School, All Right Reserved.
+            © Copyright {new Date().getFullYear()} Surat Digital Marketing, All Right Reserved.
           </p>
         </div>
       </div>

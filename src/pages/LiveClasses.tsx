@@ -611,7 +611,7 @@ const LiveClasses = () => {
                   Vikaas Parekh
                 </h2>
                 <p className="text-xl text-secondary font-bold mb-6">
-                  Founder - Surat Digital Marketing School
+                  Founder - Surat Digital Marketing
                 </p>
                 <p className="text-foreground mb-6 leading-relaxed text-lg font-medium">
                   With over <strong className="text-secondary">30 years of rich experience</strong> spanning Finance, Real Estate, and Event Management, 
