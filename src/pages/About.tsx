@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const milestones = [{
   year: "2019",
   title: "Founded",
-  description: "Surat Digital Marketing School was established with a vision to provide practical digital marketing education"
+  description: "Surat Digital Marketing was established with a vision to provide practical digital marketing education"
 }, {
   year: "2020",
   title: "500+ Students",
@@ -94,7 +94,7 @@ const About = () => {
                 Empowering Careers Through <span className="text-secondary">Digital Excellence</span>
               </h1>
               <p className="text-lg text-primary-foreground/80">
-                Since 2014, Surat Digital Marketing School has been Gujarat's premier destination 
+                Since 2014, Surat Digital Marketing has been Gujarat's premier destination 
                 for practical digital marketing education. We don't just teach—we transform careers.
               </p>
             </div>
@@ -113,7 +113,7 @@ const About = () => {
                   From Vision to <span className="text-secondary">Reality</span>
                 </h2>
                 <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                  Surat Digital Marketing School was founded in 2019 by Vikaas Parekh, a digital marketing veteran 
+                  Surat Digital Marketing was founded in 2019 by Vikaas Parekh, a digital marketing veteran 
                   who saw a gap between theoretical education and practical industry needs. 
                 </p>
                 <p className="text-muted-foreground mb-8 leading-relaxed">

@@ -46,7 +46,7 @@ const Header = () => {
           <Link to="/" className="flex items-center gap-2 group">
             <img 
               src={logo} 
-              alt="Surat Digital Marketing School" 
+              alt="Surat Digital Marketing" 
               className="h-12 md:h-24 w-auto object-contain"
             />
           </Link>
