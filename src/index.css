@@ -6,16 +6,16 @@
 
 @layer base {
   :root {
-    /* Primary - Bright Red (Buttons / Links / Interaction) */
-    --primary: 358 82% 48%;
+    /* Primary - Action Maroon (Buttons / Links / Interaction) */
+    --primary: 350 70% 30%;
     --primary-foreground: 0 0% 100%;
 
-    /* Secondary - Bright Red (Borders / Dividers / Layout) */
-    --secondary: 358 78% 42%;
+    /* Secondary - Dark Maroon (Borders / Dividers / Layout) */
+    --secondary: 350 60% 20%;
     --secondary-foreground: 0 0% 100%;
 
-    /* Accent - Bright Red variant */
-    --accent: 358 82% 52%;
+    /* Accent - Maroon variant */
+    --accent: 350 70% 30%;
     --accent-foreground: 0 0% 100%;
 
     /* Background - Root Cream */
@@ -47,30 +47,30 @@
     --destructive-foreground: 0 0% 100%;
 
     /* Border/Input - Dark Maroon */
-    --border: 358 78% 42%;
-    --input: 358 60% 50%;
-    --ring: 358 82% 48%;
+    --border: 350 60% 20%;
+    --input: 350 40% 30%;
+    --ring: 350 70% 30%;
 
     --radius: 0.75rem;
 
     /* Sidebar */
     --sidebar-background: 0 0% 17%;
     --sidebar-foreground: 40 33% 94%;
-    --sidebar-primary: 358 82% 48%;
+    --sidebar-primary: 350 70% 30%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 0 0% 25%;
     --sidebar-accent-foreground: 40 33% 94%;
     --sidebar-border: 0 0% 25%;
-    --sidebar-ring: 358 82% 48%;
+    --sidebar-ring: 350 70% 30%;
 
     /* Custom gradients and effects */
-    --gradient-primary: linear-gradient(135deg, hsl(358 82% 48%), hsl(358 82% 38%));
-    --gradient-secondary: linear-gradient(135deg, hsl(358 78% 42%), hsl(358 78% 32%));
+    --gradient-primary: linear-gradient(135deg, hsl(350 70% 30%), hsl(350 70% 22%));
+    --gradient-secondary: linear-gradient(135deg, hsl(350 60% 20%), hsl(350 60% 14%));
     --gradient-hero: linear-gradient(135deg, hsl(40 33% 94% / 0.98), hsl(40 28% 90% / 0.95));
-    --gradient-accent: linear-gradient(135deg, hsl(358 82% 48%), hsl(358 82% 58%));
+    --gradient-accent: linear-gradient(135deg, hsl(350 70% 30%), hsl(350 60% 40%));
     --shadow-card: 0 4px 20px -4px hsl(0 0% 17% / 0.12);
     --shadow-elevated: 0 20px 50px -15px hsl(0 0% 17% / 0.25);
-    --shadow-glow: 0 0 40px hsl(358 82% 48% / 0.4);
+    --shadow-glow: 0 0 40px hsl(350 70% 30% / 0.4);
   }
 
   .dark {
@@ -209,8 +209,8 @@
 
   /* Pulse glow animation - now with green */
   @keyframes pulse-glow {
-    0%, 100% { box-shadow: 0 0 20px hsl(358 82% 48% / 0.4); }
-    50% { box-shadow: 0 0 50px hsl(358 82% 48% / 0.6); }
+    0%, 100% { box-shadow: 0 0 20px hsl(350 70% 30% / 0.4); }
+    50% { box-shadow: 0 0 50px hsl(350 70% 30% / 0.6); }
   }
 
   .animate-pulse-glow {
