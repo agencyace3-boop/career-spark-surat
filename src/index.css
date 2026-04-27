@@ -6,36 +6,36 @@
 
 @layer base {
   :root {
-    /* Primary - Electric Lime (Bold action color) */
-    --primary: 72 79% 54%;
-    --primary-foreground: 0 0% 15%;
+    /* Primary - Action Maroon (Buttons / Links / Interaction) */
+    --primary: 350 70% 30%;
+    --primary-foreground: 0 0% 100%;
 
-    /* Secondary - Lemon Zest (Warm accent) */
-    --secondary: 55 97% 55%;
-    --secondary-foreground: 0 0% 15%;
+    /* Secondary - Module Grey (Borders / Dividers / Layout) */
+    --secondary: 0 0% 85%;
+    --secondary-foreground: 0 0% 17%;
 
-    /* Accent - Electric Lime variant */
-    --accent: 72 79% 54%;
-    --accent-foreground: 0 0% 15%;
+    /* Accent - Maroon variant */
+    --accent: 350 70% 30%;
+    --accent-foreground: 0 0% 100%;
 
-    /* Background - Cream / Parchment */
-    --background: 54 70% 92%;
+    /* Background - Root Cream */
+    --background: 40 33% 94%;
     --foreground: 0 0% 17%;
 
     /* Section Background - Slightly deeper cream */
-    --section: 54 50% 88%;
+    --section: 40 28% 90%;
     --section-foreground: 0 0% 17%;
 
-    /* Card - Pure cream */
-    --card: 54 75% 95%;
+    /* Card - Clean White */
+    --card: 0 0% 100%;
     --card-foreground: 0 0% 17%;
 
     /* Popover */
-    --popover: 54 75% 95%;
+    --popover: 0 0% 100%;
     --popover-foreground: 0 0% 17%;
 
-    /* Muted - Soft cream */
-    --muted: 54 40% 85%;
+    /* Muted - Soft grey */
+    --muted: 0 0% 92%;
     --muted-foreground: 0 0% 35%;
 
     /* Success */
@@ -46,73 +46,73 @@
     --destructive: 0 75% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    /* Border/Input */
-    --border: 54 30% 78%;
-    --input: 54 30% 82%;
-    --ring: 72 79% 54%;
+    /* Border/Input - Module Grey */
+    --border: 0 0% 85%;
+    --input: 0 0% 88%;
+    --ring: 350 70% 30%;
 
     --radius: 0.75rem;
 
     /* Sidebar */
     --sidebar-background: 0 0% 17%;
-    --sidebar-foreground: 54 70% 92%;
-    --sidebar-primary: 72 79% 54%;
-    --sidebar-primary-foreground: 0 0% 15%;
+    --sidebar-foreground: 40 33% 94%;
+    --sidebar-primary: 350 70% 30%;
+    --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 0 0% 25%;
-    --sidebar-accent-foreground: 54 70% 92%;
+    --sidebar-accent-foreground: 40 33% 94%;
     --sidebar-border: 0 0% 25%;
-    --sidebar-ring: 72 79% 54%;
+    --sidebar-ring: 350 70% 30%;
 
     /* Custom gradients and effects */
-    --gradient-primary: linear-gradient(135deg, hsl(72 79% 54%), hsl(72 79% 46%));
-    --gradient-secondary: linear-gradient(135deg, hsl(55 97% 55%), hsl(55 97% 47%));
-    --gradient-hero: linear-gradient(135deg, hsl(54 70% 92% / 0.98), hsl(54 60% 88% / 0.95));
-    --gradient-accent: linear-gradient(135deg, hsl(72 79% 54%), hsl(55 97% 55%));
+    --gradient-primary: linear-gradient(135deg, hsl(350 70% 30%), hsl(350 70% 22%));
+    --gradient-secondary: linear-gradient(135deg, hsl(0 0% 85%), hsl(0 0% 75%));
+    --gradient-hero: linear-gradient(135deg, hsl(40 33% 94% / 0.98), hsl(40 28% 90% / 0.95));
+    --gradient-accent: linear-gradient(135deg, hsl(350 70% 30%), hsl(350 60% 40%));
     --shadow-card: 0 4px 20px -4px hsl(0 0% 17% / 0.12);
     --shadow-elevated: 0 20px 50px -15px hsl(0 0% 17% / 0.25);
-    --shadow-glow: 0 0 40px hsl(72 79% 54% / 0.5);
+    --shadow-glow: 0 0 40px hsl(350 70% 30% / 0.4);
   }
 
   .dark {
-    --primary: 72 79% 54%;
-    --primary-foreground: 0 0% 15%;
+    --primary: 350 70% 45%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 55 97% 55%;
-    --secondary-foreground: 0 0% 15%;
+    --secondary: 0 0% 25%;
+    --secondary-foreground: 0 0% 100%;
 
     --background: 0 0% 12%;
-    --foreground: 54 70% 92%;
+    --foreground: 40 33% 94%;
 
     --section: 0 0% 17%;
-    --section-foreground: 54 70% 92%;
+    --section-foreground: 40 33% 94%;
 
     --card: 0 0% 18%;
-    --card-foreground: 54 70% 92%;
+    --card-foreground: 40 33% 94%;
 
     --popover: 0 0% 18%;
-    --popover-foreground: 54 70% 92%;
+    --popover-foreground: 40 33% 94%;
 
     --muted: 0 0% 22%;
-    --muted-foreground: 54 30% 75%;
+    --muted-foreground: 0 0% 75%;
 
-    --accent: 72 79% 54%;
-    --accent-foreground: 0 0% 15%;
+    --accent: 350 70% 45%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 63% 45%;
     --destructive-foreground: 0 0% 100%;
 
     --border: 0 0% 28%;
     --input: 0 0% 28%;
-    --ring: 72 79% 54%;
+    --ring: 350 70% 45%;
 
     --sidebar-background: 0 0% 12%;
-    --sidebar-foreground: 54 70% 92%;
-    --sidebar-primary: 72 79% 54%;
-    --sidebar-primary-foreground: 0 0% 15%;
+    --sidebar-foreground: 40 33% 94%;
+    --sidebar-primary: 350 70% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 0 0% 22%;
-    --sidebar-accent-foreground: 54 70% 92%;
+    --sidebar-accent-foreground: 40 33% 94%;
     --sidebar-border: 0 0% 28%;
-    --sidebar-ring: 72 79% 54%;
+    --sidebar-ring: 350 70% 45%;
   }
 }
 
@@ -209,8 +209,8 @@
 
   /* Pulse glow animation - now with green */
   @keyframes pulse-glow {
-    0%, 100% { box-shadow: 0 0 20px hsl(142 76% 55% / 0.4); }
-    50% { box-shadow: 0 0 50px hsl(142 76% 55% / 0.6); }
+    0%, 100% { box-shadow: 0 0 20px hsl(350 70% 30% / 0.4); }
+    50% { box-shadow: 0 0 50px hsl(350 70% 30% / 0.6); }
   }
 
   .animate-pulse-glow {
