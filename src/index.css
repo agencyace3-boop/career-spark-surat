@@ -209,8 +209,8 @@
 
   /* Pulse glow animation - now with green */
   @keyframes pulse-glow {
-    0%, 100% { box-shadow: 0 0 20px hsl(142 76% 55% / 0.4); }
-    50% { box-shadow: 0 0 50px hsl(142 76% 55% / 0.6); }
+    0%, 100% { box-shadow: 0 0 20px hsl(350 70% 30% / 0.4); }
+    50% { box-shadow: 0 0 50px hsl(350 70% 30% / 0.6); }
   }
 
   .animate-pulse-glow {
