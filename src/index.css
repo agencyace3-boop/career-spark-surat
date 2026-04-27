@@ -6,16 +6,16 @@
 
 @layer base {
   :root {
-    /* Primary - Bright Red (Buttons / Links / Interaction) */
-    --primary: 358 78% 48%;
+    /* Primary - Action Maroon (Buttons / Links / Interaction) */
+    --primary: 350 70% 30%;
     --primary-foreground: 0 0% 100%;
 
-    /* Secondary - Bright Red (text highlights) */
-    --secondary: 358 82% 52%;
+    /* Secondary - Dark Maroon (Borders / Dividers / Layout) */
+    --secondary: 350 60% 20%;
     --secondary-foreground: 0 0% 100%;
 
-    /* Accent - Bright Red variant */
-    --accent: 358 78% 48%;
+    /* Accent - Maroon variant */
+    --accent: 350 70% 30%;
     --accent-foreground: 0 0% 100%;
 
     /* Background - Root Cream */
