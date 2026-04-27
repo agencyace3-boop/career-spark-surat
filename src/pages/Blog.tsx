@@ -15,11 +15,11 @@ const Blog = () => {
           </div>
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-3xl mx-auto text-center">
-              <span className="inline-block bg-secondary/20 text-secondary px-4 py-2 rounded-full text-sm font-semibold mb-4">
+              <span className="inline-block bg-secondary/20 text-white px-4 py-2 rounded-full text-sm font-semibold mb-4">
                 Resources & News
               </span>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6">
-                Digital Marketing <span className="text-secondary">Blog</span>
+                Digital Marketing <span className="text-[hsl(0_95%_55%)] drop-shadow-md">Blog</span>
               </h1>
               <p className="text-lg text-primary-foreground/80">
                 Stay updated with the latest trends, tips, and strategies in digital marketing. 
