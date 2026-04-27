@@ -54,7 +54,7 @@ const Hero = () => {
           <h1 key={`headline-${currentSlide}`} className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-primary-foreground animate-fade-in-up">
             {slide.headline}
             <br />
-            <span className="text-secondary">{slide.highlight}</span>
+            <span className="text-[hsl(0_95%_55%)] drop-shadow-md">{slide.highlight}</span>
           </h1>
 
           {/* Subheadline */}
