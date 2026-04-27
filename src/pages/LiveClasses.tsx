@@ -301,13 +301,13 @@ const LiveClasses = () => {
                 </div>
 
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 animate-fade-in-up drop-shadow-lg">
-                  <span className="text-white">Facebook</span><br />
-                  <span className="text-white">Instagram</span><br />
+                  <span className="text-black">Facebook</span><br />
+                  <span className="text-black">Instagram</span><br />
                   <span className="text-secondary">Google My Business</span><br />
                   <span className="text-secondary">Certification</span>
                 </h1>
 
-                <p className="text-lg md:text-xl text-white mb-8 max-w-xl leading-relaxed animate-fade-in-up font-medium drop-shadow-md" style={{
+                <p className="text-lg md:text-xl text-black mb-8 max-w-xl leading-relaxed animate-fade-in-up font-medium drop-shadow-md" style={{
                 animationDelay: "0.2s"
               }}>
                   Master Meta Ads & Google My Business in <span className="text-secondary font-bold">1 Month</span>. 12 Live Sessions under the mentorship of <span className="text-secondary font-bold">Vikaas Parekh</span>.
